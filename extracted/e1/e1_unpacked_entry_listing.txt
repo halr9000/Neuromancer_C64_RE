@@ -1,0 +1,162 @@
+===== E1 UNPACKED ENTRY [$080D] =====
+e1_unpacked_entry: ; First instruction after packer handoff
+$080D  78        SEI
+$080E  A9 7F     LDA   #$7F
+$0810  8D 0D DD  STA   $DD0D
+$0813  A9 34     LDA   #$34
+$0815  85 01     STA   $01
+$0817  A2 0C     LDX   #$0C
+$0819  A0 D2     LDY   #$D2
+$081B  B9 50 E8  LDA   $E850,Y
+$081E  99 2D FF  STA   $FF2D,Y
+$0821  88        DEY
+$0822  C0 FF     CPY   #$FF
+$0824  D0 F5     BNE   $081B
+$0826  CE 20 08  DEC   $0820
+$0829  CE 1D 08  DEC   $081D
+$082C  EC 1D 08  CPX   $081D
+$082F  D0 EA     BNE   $081B
+$0831  E6 01     INC   $01
+$0833  A2 F9     LDX   #$F9
+$0835  9A        TXS
+$0836  C8        INY
+$0837  B9 00 0A  LDA   $0A00,Y
+$083A  99 00 01  STA   $0100,Y
+$083D  B9 00 0B  LDA   $0B00,Y
+$0840  99 00 D8  STA   $D800,Y
+$0843  4A        LSR   A
+$0844  4A        LSR   A
+$0845  4A        LSR   A
+$0846  4A        LSR   A
+$0847  99 00 DA  STA   $DA00,Y
+$084A  C8        INY
+$084B  D0 EA     BNE   $0837
+$084D  EE 3F 08  INC   $083F
+$0850  EE 42 08  INC   $0842
+$0853  EE 49 08  INC   $0849
+$0856  CE 39 08  DEC   $0839
+$0859  CE 3C 08  DEC   $083C
+$085C  10 D9     BPL   $0837
+$085E  A2 0E     LDX   #$0E
+$0860  A9 80     LDA   #$80
+$0862  9D 02 D4  STA   $D402,X
+$0865  9D 03 D4  STA   $D403,X
+$0868  A9 21     LDA   #$21
+$086A  9D 04 D4  STA   $D404,X
+$086D  A9 08     LDA   #$08
+$086F  9D 05 D4  STA   $D405,X
+$0872  A9 80     LDA   #$80
+$0874  9D 06 D4  STA   $D406,X
+$0877  8A        TXA
+$0878  38        SEC
+$0879  E9 07     SBC   #$07
+$087B  AA        TAX
+$087C  10 E2     BPL   $0860
+$087E  A0 0F     LDY   #$0F
+$0880  A9 00     LDA   #$00
+$0882  0A        ASL   A
+$0883  90 17     BCC   $089C
+$0885  A2 FF     LDX   #$FF
+$0887  8E 0E D4  STX   $D40E
+$088A  8E 0F D4  STX   $D40F
+$088D  8D 13 D4  STA   $D413
+$0890  A2 F0     LDX   #$F0
+$0892  8E 14 D4  STX   $D414
+$0895  A2 81     LDX   #$81
+$0897  8E 12 D4  STX   $D412
+$089A  A0 8F     LDY   #$8F
+$089C  8C 18 D4  STY   $D418
+$089F  A0 02     LDY   #$02
+$08A1  A9 FF     LDA   #$FF
+$08A3  99 01 DC  STA   $DC01,Y
+$08A6  99 01 DD  STA   $DD01,Y
+$08A9  88        DEY
+$08AA  D0 F7     BNE   $08A3
+$08AC  C0 10     CPY   #$10
+$08AE  B0 0C     BCS   $08BC
+$08B0  B9 30 0D  LDA   $0D30,Y
+$08B3  99 00 DC  STA   $DC00,Y
+$08B6  B9 40 0D  LDA   $0D40,Y
+$08B9  99 00 DD  STA   $DD00,Y
+$08BC  B9 00 0D  LDA   $0D00,Y
+$08BF  99 00 D0  STA   $D000,Y
+$08C2  C8        INY
+$08C3  C0 2F     CPY   #$2F
+$08C5  D0 E5     BNE   $08AC
+$08C7  AD 30 03  LDA   $0330
+$08CA  85 C3     STA   $C3
+$08CC  AD 31 03  LDA   $0331
+$08CF  85 C8     STA   $C8
+$08D1  A9 20     LDA   #$20
+$08D3  A2 06     LDX   #$06
+$08D5  8D 00 DE  STA   $DE00
+$08D8  8D FE DF  STA   $DFFE
+$08DB  8E 00 DE  STX   $DE00
+$08DE  AD 0D DC  LDA   $DC0D
+$08E1  AD 0D DD  LDA   $DD0D
+$08E4  C6 01     DEC   $01
+$08E6  A0 00     LDY   #$00
+$08E8  4C 8E 00  JMP   $008E
+$08EB  20 79 9D  JSR   $9D79
+$08EE  4C F9 85  JMP   $85F9
+$08F1  20 11 9D  JSR   $9D11
+$08F4  20 A1 8E  JSR   $8EA1
+$08F7  24 80     BIT   $80
+$08F9  20 F9 85  JSR   $85F9
+$08FC  0D 4F 4B  ORA   $4B4F
+$08FF  0D 2F 35  ORA   $352F
+$0902  49 02     EOR   #$02
+$0904  E0 02     CPX   #$02
+$0906  34        .byte $34 ; undocumented/unclassified opcode
+$0907  03        .byte $03 ; undocumented/unclassified opcode
+$0908  54        .byte $54 ; undocumented/unclassified opcode
+$0909  03        .byte $03 ; undocumented/unclassified opcode
+$090A  2D 08 00  AND   $0008
+$090D  00        BRK
+$090E  00        BRK
+$090F  00        BRK
+$0910  00        BRK
+$0911  A0 1F     LDY   #$1F
+$0913  86 18     STX   $18
+$0915  86 20     STX   $20
+$0917  B1 0A     LDA   ($0A),Y
+$0919  C6 1C     DEC   $1C
+$091B  85 00     STA   $00
+$091D  A5 10     LDA   $10
+$091F  91 0A     STA   ($0A),Y
+$0921  88        DEY
+$0922  10 F3     BPL   $0917
+$0924  C6 1E     DEC   $1E
+$0926  CA        DEX
+$0927  CA        DEX
+$0928  D0 E7     BNE   $0911
+$092A  4C 0A 02  JMP   $020A
+$092D  7F        .byte $7F ; undocumented/unclassified opcode
+$092E  08        PHP
+$092F  08        PHP
+$0930  81 01     STA   ($01,X)
+$0932  08        PHP
+$0933  FF        .byte $FF ; undocumented/unclassified opcode
+$0934  FF        .byte $FF ; undocumented/unclassified opcode
+$0935  FF        .byte $FF ; undocumented/unclassified opcode
+$0936  FF        .byte $FF ; undocumented/unclassified opcode
+$0937  25 40     AND   $40
+$0939  FF        .byte $FF ; undocumented/unclassified opcode
+$093A  04        .byte $04 ; undocumented/unclassified opcode
+$093B  00        BRK
+$093C  00        BRK
+$093D  00        BRK
+$093E  08        PHP
+$093F  00        BRK
+$0940  00        BRK
+$0941  00        BRK
+$0942  08        PHP
+$0943  00        BRK
+$0944  00        BRK
+$0945  00        BRK
+$0946  00        BRK
+$0947  24 00     BIT   $00
+$0949  08        PHP
+$094A  00        BRK
+$094B  00        BRK
+$094C  00        BRK

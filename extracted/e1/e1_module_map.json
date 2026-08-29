@@ -1,0 +1,356 @@
+{
+  "source_image": "intake/NEUROMA0.D64",
+  "source_sha256": "a3deff9c8206173489afdd8c33b537a168ecd16a52a960b94b3cdd4e8f6dc5ad",
+  "loader_file": "extracted/e1/e1_file_a.prg",
+  "loader_file_sha256": "87579d6589df3de96f81fee76b864d9a4e6aaf886649e0814dc8925d5a60acd4",
+  "loader_entries": {
+    "initialize_drive": "0x400E -> 0x42B1",
+    "load_module": "0x4011",
+    "drive_command": "B-E 2 0 18 02",
+    "final_handoff": "0x4300"
+  },
+  "drive_block_execute": {
+    "source": "T18/S02",
+    "bytes": 256,
+    "sha256": "814c17546f6df891094b1f9379353350e5386d6db808eedc85ca743b5464d218"
+  },
+  "modules": [
+    {
+      "name": "core_4300",
+      "role": "main runtime and entry",
+      "start": "T01/S02",
+      "sectors": [
+        "T01/S02",
+        "T01/S03",
+        "T01/S04",
+        "T01/S05",
+        "T01/S06",
+        "T01/S07",
+        "T01/S08",
+        "T01/S09",
+        "T01/S10",
+        "T01/S11",
+        "T01/S12",
+        "T01/S13",
+        "T01/S14",
+        "T01/S15",
+        "T01/S16",
+        "T01/S17",
+        "T01/S18",
+        "T01/S19",
+        "T01/S20",
+        "T02/S00",
+        "T02/S01",
+        "T02/S02",
+        "T02/S03",
+        "T02/S04",
+        "T02/S05",
+        "T02/S06",
+        "T02/S07",
+        "T02/S08",
+        "T02/S09",
+        "T02/S10",
+        "T02/S11",
+        "T02/S12",
+        "T02/S13",
+        "T02/S14",
+        "T02/S15",
+        "T02/S16",
+        "T02/S17",
+        "T02/S18",
+        "T02/S19",
+        "T02/S20",
+        "T03/S00",
+        "T03/S01",
+        "T03/S02",
+        "T03/S03",
+        "T03/S04",
+        "T03/S05",
+        "T03/S06",
+        "T03/S07",
+        "T03/S08"
+      ],
+      "sector_count": 49,
+      "encoded_length": 12541,
+      "destination": "0x4300",
+      "end_exclusive": "0x73FD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0x4300-0x73FC"
+      ],
+      "sha256": "55071067378f633d3835c3b51d78abc666b5df294996c71b07433c701eba809c"
+    },
+    {
+      "name": "room_disk_tables_fe00",
+      "role": "room-to-side/track/sector tables in RAM beneath KERNAL",
+      "start": "T06/S19",
+      "sectors": [
+        "T06/S19",
+        "T06/S20"
+      ],
+      "sector_count": 2,
+      "encoded_length": 509,
+      "destination": "0xFE00",
+      "end_exclusive": "0xFFFD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xFE00-0xFFFC"
+      ],
+      "sha256": "96bcb7e0d59eb109e684739e833f96fff5d4cf53d4911fd739516c328a14e9c8"
+    },
+    {
+      "name": "module_b800",
+      "role": "high-memory runtime module",
+      "start": "T03/S10",
+      "sectors": [
+        "T03/S10",
+        "T03/S11",
+        "T03/S12",
+        "T03/S13",
+        "T03/S14",
+        "T03/S15",
+        "T03/S16",
+        "T03/S17",
+        "T03/S18"
+      ],
+      "sector_count": 9,
+      "encoded_length": 2301,
+      "destination": "0xB800",
+      "end_exclusive": "0xC0FD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xB800-0xC0FC"
+      ],
+      "sha256": "57a32f47971198d9549438f56c7e102b4b8e3bcc2ed2396b5ee142f0f62ad542"
+    },
+    {
+      "name": "module_c700",
+      "role": "high-memory runtime module",
+      "start": "T03/S19",
+      "sectors": [
+        "T03/S19",
+        "T03/S20",
+        "T04/S00"
+      ],
+      "sector_count": 3,
+      "encoded_length": 765,
+      "destination": "0xC700",
+      "end_exclusive": "0xC9FD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xC700-0xC9FC"
+      ],
+      "sha256": "05f03ef46cb8b054fda39bbb17b6d011965c99bbf591c2aa6b40c02de34fc7f7"
+    },
+    {
+      "name": "state_new",
+      "role": "new-game template",
+      "start": "T04/S01",
+      "sectors": [
+        "T04/S01",
+        "T04/S02",
+        "T04/S03",
+        "T04/S04",
+        "T04/S05",
+        "T04/S06"
+      ],
+      "sector_count": 6,
+      "encoded_length": 1533,
+      "destination": "0xC100",
+      "end_exclusive": "0xC6FD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xC100-0xC6FC"
+      ],
+      "sha256": "b080918e1985fa8c1fcd096626b94e8cc87a54a6e0dbc2944345b86e1e75a18f"
+    },
+    {
+      "name": "state_slot_1",
+      "role": "old-game slot 1",
+      "start": "T04/S07",
+      "sectors": [
+        "T04/S07",
+        "T04/S08",
+        "T04/S09",
+        "T04/S10",
+        "T04/S11",
+        "T04/S12",
+        "T04/S13",
+        "T04/S14",
+        "T04/S15"
+      ],
+      "sector_count": 9,
+      "encoded_length": 2301,
+      "destination": "0xC100",
+      "end_exclusive": "0xC9FD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xC100-0xC9FC"
+      ],
+      "sha256": "4b433096ed9fdbe8de3a0a31ca5c8d496b6c54d28280ac933081b20a4f56f331"
+    },
+    {
+      "name": "state_slot_2",
+      "role": "old-game slot 2",
+      "start": "T04/S16",
+      "sectors": [
+        "T04/S16",
+        "T04/S17",
+        "T04/S18",
+        "T04/S19",
+        "T04/S20",
+        "T05/S00",
+        "T05/S01",
+        "T05/S02",
+        "T05/S03"
+      ],
+      "sector_count": 9,
+      "encoded_length": 2301,
+      "destination": "0xC100",
+      "end_exclusive": "0xC9FD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xC100-0xC9FC"
+      ],
+      "sha256": "34f6056d9f76b61d5b889362095cc11017c670cb694f23563793e41755a5ae71"
+    },
+    {
+      "name": "state_slot_3",
+      "role": "old-game slot 3",
+      "start": "T05/S04",
+      "sectors": [
+        "T05/S04",
+        "T05/S05",
+        "T05/S06",
+        "T05/S07",
+        "T05/S08",
+        "T05/S09",
+        "T05/S10",
+        "T05/S11",
+        "T05/S12"
+      ],
+      "sector_count": 9,
+      "encoded_length": 2301,
+      "destination": "0xC100",
+      "end_exclusive": "0xC9FD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xC100-0xC9FC"
+      ],
+      "sha256": "67bd932489a5684167df3c000080da6a1cb10fc3ea74be0cab76d282e3044068"
+    },
+    {
+      "name": "state_slot_4",
+      "role": "old-game slot 4",
+      "start": "T05/S13",
+      "sectors": [
+        "T05/S13",
+        "T05/S14",
+        "T05/S15",
+        "T05/S16",
+        "T05/S17",
+        "T05/S18",
+        "T05/S19",
+        "T05/S20",
+        "T06/S00"
+      ],
+      "sector_count": 9,
+      "encoded_length": 2301,
+      "destination": "0xC100",
+      "end_exclusive": "0xC9FD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xC100-0xC9FC"
+      ],
+      "sha256": "3128ad48079b0624a05c6510c93508f64b8c75606aa0b94e2af33f759c7b8139"
+    },
+    {
+      "name": "module_0380",
+      "role": "low-memory runtime module",
+      "start": "T03/S09",
+      "sectors": [
+        "T03/S09"
+      ],
+      "sector_count": 1,
+      "encoded_length": 127,
+      "destination": "0x0380",
+      "end_exclusive": "0x03FF",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0x0380-0x03FE"
+      ],
+      "sha256": "9c0c37ce1a402ae4b78002bf21c40880bd219069e4a7a866c4117fe9e38474e0"
+    },
+    {
+      "name": "module_a400",
+      "role": "BASIC-ROM underlay module",
+      "start": "T13/S00",
+      "sectors": [
+        "T13/S00",
+        "T13/S01",
+        "T13/S02",
+        "T13/S03",
+        "T13/S04",
+        "T13/S05",
+        "T13/S06",
+        "T13/S07",
+        "T13/S08"
+      ],
+      "sector_count": 9,
+      "encoded_length": 2176,
+      "destination": "0xA400",
+      "end_exclusive": "0xAC80",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xA400-0xAC7F"
+      ],
+      "sha256": "a98d897796a1b0cfe5981ed5f58a1942aea966f4af410a2430ead51bee30ebc2"
+    },
+    {
+      "name": "module_8400",
+      "role": "main high-memory module",
+      "start": "T32/S10",
+      "sectors": [
+        "T32/S10",
+        "T32/S11",
+        "T32/S12",
+        "T32/S13",
+        "T32/S14",
+        "T32/S15",
+        "T32/S16",
+        "T33/S00",
+        "T33/S01",
+        "T33/S02",
+        "T33/S03",
+        "T33/S04",
+        "T33/S05",
+        "T33/S06",
+        "T33/S07",
+        "T33/S08"
+      ],
+      "sector_count": 16,
+      "encoded_length": 4093,
+      "destination": "0x8400",
+      "end_exclusive": "0x93FD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0x8400-0x93FC"
+      ],
+      "sha256": "3b5a1d0df91c9d82c7daade518767a3246b91673ccd0e4b3f5c3fbb502cf8ff9"
+    }
+  ],
+  "state_selection": {
+    "new_game": "T04/S01",
+    "old_game_slots": [
+      "T04/S07",
+      "T04/S16",
+      "T05/S04",
+      "T05/S13"
+    ]
+  },
+  "new_game_ready_snapshot": {
+    "file": "e1_new_game_ready_memory.bin",
+    "entry": "0x4300",
+    "sha256": "a2972b228a6305475f84aa82f7c18cf25d7c3fb144d14b9adbe5b2d9bbd03e1a"
+  }
+}

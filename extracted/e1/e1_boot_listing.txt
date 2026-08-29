@@ -1,0 +1,302 @@
+===== E1 AUTOSTART HOOK [$02A7-$02D0] =====
+e1_istop_first_hit: ; Redirect KERNAL load pointer to $C000
+$02A7  A9 0B     LDA   #$0B
+$02A9  8D 11 D0  STA   $D011
+$02AC  8D 20 D0  STA   $D020
+$02AF  A2 BD     LDX   #$BD
+$02B1  8E 28 03  STX   $0328
+$02B4  A2 00     LDX   #$00
+$02B6  A0 C0     LDY   #$C0
+$02B8  86 AE     STX   $AE
+$02BA  84 AF     STY   $AF
+$02BC  60        RTS
+e1_istop_wait_for_c240: ; Transfer to relocated bootstrap at $C100
+$02BD  A5 AE     LDA   $AE
+$02BF  C9 40     CMP   #$40
+$02C1  F0 01     BEQ   $02C4
+$02C3  60        RTS
+$02C4  A5 AF     LDA   $AF
+$02C6  C9 C2     CMP   #$C2
+$02C8  F0 01     BEQ   $02CB
+$02CA  60        RTS
+$02CB  20 15 FD  JSR   $FD15
+$02CE  4C 00 C1  JMP   $C100
+
+===== C64 STAGE 1 [$C100-$C172] =====
+e1_stage1_entry: ; Upload and execute the 1541 fastloader
+$C100  20 E7 FF  JSR   $FFE7
+$C103  A9 00     LDA   #$00
+$C105  85 FE     STA   $FE
+$C107  20 5F C1  JSR   $C15F <e1_send_memory_command_prefix>
+$C10A  A9 57     LDA   #$57
+$C10C  20 DD ED  JSR   $EDDD
+$C10F  A5 FE     LDA   $FE
+$C111  20 DD ED  JSR   $EDDD
+$C114  A9 07     LDA   #$07
+$C116  20 DD ED  JSR   $EDDD
+$C119  A9 20     LDA   #$20
+$C11B  20 DD ED  JSR   $EDDD
+$C11E  A5 FE     LDA   $FE
+$C120  A8        TAY
+$C121  18        CLC
+$C122  69 20     ADC   #$20
+$C124  85 FE     STA   $FE
+$C126  B9 00 C0  LDA   $C000,Y
+$C129  20 DD ED  JSR   $EDDD
+$C12C  C8        INY
+$C12D  C4 FE     CPY   $FE
+$C12F  D0 F5     BNE   $C126
+$C131  20 FE ED  JSR   $EDFE
+$C134  A5 FE     LDA   $FE
+$C136  D0 CF     BNE   $C107
+$C138  20 5F C1  JSR   $C15F <e1_send_memory_command_prefix>
+$C13B  A9 45     LDA   #$45
+$C13D  20 DD ED  JSR   $EDDD
+$C140  A9 9F     LDA   #$9F
+$C142  20 DD ED  JSR   $EDDD
+$C145  A9 07     LDA   #$07
+$C147  20 DD ED  JSR   $EDDD
+$C14A  20 FE ED  JSR   $EDFE
+$C14D  78        SEI
+$C14E  A2 FF     LDX   #$FF
+$C150  9A        TXS
+$C151  A0 00     LDY   #$00
+$C153  B9 73 C1  LDA   $C173,Y <e1_client_loader_source>
+$C156  99 00 01  STA   $0100,Y
+$C159  C8        INY
+$C15A  D0 F7     BNE   $C153
+$C15C  4C 00 01  JMP   $0100
+e1_send_memory_command_prefix: ; Send DOS command-channel prefix M-
+$C15F  A5 BA     LDA   $BA
+$C161  20 0C ED  JSR   $ED0C
+$C164  A9 6F     LDA   #$6F
+$C166  20 B9 ED  JSR   $EDB9
+$C169  A9 4D     LDA   #$4D
+$C16B  20 DD ED  JSR   $EDDD
+$C16E  A9 2D     LDA   #$2D
+$C170  4C DD ED  JMP   $EDDD
+
+===== 1541 UPLOAD [$0700-$07FF] =====
+e1_drive_fastloader_base: ; Uploaded to 1541 RAM with M-W
+$0700  A9 06     LDA   #$06
+$0702  85 31     STA   $31
+$0704  AD 00 1C  LDA   $1C00
+$0707  49 08     EOR   #$08
+$0709  8D 00 1C  STA   $1C00
+$070C  20 0A F5  JSR   $F50A
+$070F  50 FE     BVC   $070F
+$0711  B8        CLV
+$0712  AD 01 1C  LDA   $1C01
+$0715  91 30     STA   ($30),Y
+$0717  C8        INY
+$0718  D0 F5     BNE   $070F
+$071A  A0 BA     LDY   #$BA
+$071C  50 FE     BVC   $071C
+$071E  B8        CLV
+$071F  AD 01 1C  LDA   $1C01
+$0722  99 00 01  STA   $0100,Y
+$0725  C8        INY
+$0726  D0 F4     BNE   $071C
+$0728  20 E0 F8  JSR   $F8E0
+$072B  A5 38     LDA   $38
+$072D  C5 47     CMP   $47
+$072F  F0 04     BEQ   $0735
+$0731  A9 04     LDA   #$04
+$0733  D0 5A     BNE   $078F
+$0735  20 E9 F5  JSR   $F5E9
+$0738  C5 3A     CMP   $3A
+$073A  F0 04     BEQ   $0740
+$073C  A9 05     LDA   #$05
+$073E  D0 4F     BNE   $078F
+$0740  B1 30     LDA   ($30),Y
+$0742  D0 03     BNE   $0747
+$0744  EE 01 06  INC   $0601
+$0747  B1 30     LDA   ($30),Y
+e1_drive_send_byte: ; Bit-bang one byte to the C64
+$0749  85 16     STA   $16
+$074B  AD 00 18  LDA   $1800
+$074E  4A        LSR   A
+$074F  90 FA     BCC   $074B
+$0751  A9 08     LDA   #$08
+$0753  8D 00 18  STA   $1800
+$0756  A2 04     LDX   #$04
+$0758  A9 00     LDA   #$00
+$075A  06 16     ASL   $16
+$075C  2A        ROL   A
+$075D  0A        ASL   A
+$075E  06 16     ASL   $16
+$0760  2A        ROL   A
+$0761  0A        ASL   A
+$0762  8D 00 18  STA   $1800
+$0765  CA        DEX
+$0766  D0 F0     BNE   $0758
+$0768  A2 01     LDX   #$01
+$076A  CA        DEX
+$076B  D0 00     BNE   $076D
+$076D  EA        NOP
+$076E  EA        NOP
+$076F  A9 00     LDA   #$00
+$0771  8D 00 18  STA   $1800
+$0774  AD 00 06  LDA   $0600
+$0777  F0 1C     BEQ   $0795
+$0779  C8        INY
+$077A  D0 CB     BNE   $0747
+$077C  A9 05     LDA   #$05
+$077E  85 0C     STA   $0C
+$0780  AD 01 06  LDA   $0601
+$0783  85 0F     STA   $0F
+$0785  B1 30     LDA   ($30),Y
+$0787  C5 0E     CMP   $0E
+$0789  85 0E     STA   $0E
+$078B  F0 05     BEQ   $0792
+$078D  A9 01     LDA   #$01
+$078F  4C 69 F9  JMP   $F969
+$0792  4C 04 07  JMP   $0704
+$0795  C8        INY
+$0796  CC 01 06  CPY   $0601
+$0799  D0 AC     BNE   $0747
+$079B  A9 7F     LDA   #$7F
+$079D  D0 F0     BNE   $078F
+e1_drive_fastloader_entry: ; Started with DOS M-E
+$079F  A9 10     LDA   #$10
+$07A1  8D 05 1C  STA   $1C05
+$07A4  A5 18     LDA   $18
+$07A6  85 0E     STA   $0E
+$07A8  A5 19     LDA   $19
+$07AA  85 0F     STA   $0F
+$07AC  A9 05     LDA   #$05
+$07AE  85 0C     STA   $0C
+$07B0  A9 E0     LDA   #$E0
+$07B2  85 04     STA   $04
+$07B4  A5 04     LDA   $04
+$07B6  30 FC     BMI   $07B4
+$07B8  C9 7F     CMP   #$7F
+$07BA  F0 32     BEQ   $07EE
+$07BC  C9 02     CMP   #$02
+$07BE  90 EC     BCC   $07AC
+$07C0  C6 0C     DEC   $0C
+$07C2  10 EC     BPL   $07B0
+$07C4  A4 0C     LDY   $0C
+$07C6  C8        INY
+$07C7  D0 07     BNE   $07D0
+$07C9  A9 C0     LDA   #$C0
+$07CB  20 8E D5  JSR   $D58E
+$07CE  C6 0C     DEC   $0C
+$07D0  A4 0C     LDY   $0C
+$07D2  C0 FB     CPY   #$FB
+$07D4  B0 DA     BCS   $07B0
+$07D6  A9 60     LDA   #$60
+$07D8  8D 74 07  STA   $0774
+$07DB  A9 FF     LDA   #$FF
+$07DD  20 49 07  JSR   $0749 <e1_drive_send_byte>
+$07E0  A9 3A     LDA   #$3A
+$07E2  8D 05 1C  STA   $1C05
+$07E5  E6 1C     INC   $1C
+$07E7  A5 04     LDA   $04
+$07E9  A2 04     LDX   #$04
+$07EB  4C 0A E6  JMP   $E60A
+$07EE  A9 3A     LDA   #$3A
+$07F0  8D 05 1C  STA   $1C05
+$07F3  E6 1C     INC   $1C
+$07F5  4C 05 D0  JMP   $D005
+$07F8  00        BRK
+$07F9  00        BRK
+$07FA  00        BRK
+$07FB  00        BRK
+$07FC  00        BRK
+$07FD  00        BRK
+$07FE  00        BRK
+$07FF  00        BRK
+
+===== C64 CLIENT FASTLOADER [$0100-$01B5] =====
+e1_client_fastloader_entry: ; Receive destination records from drive
+$0100  A0 FC     LDY   #$FC
+$0102  84 22     STY   $22
+$0104  20 87 01  JSR   $0187 <e1_client_serial_get_byte>
+$0107  C9 FF     CMP   #$FF
+$0109  D0 03     BNE   $010E
+$010B  4C E2 FC  JMP   $FCE2
+$010E  85 23     STA   $23
+$0110  20 87 01  JSR   $0187 <e1_client_serial_get_byte>
+$0113  A8        TAY
+$0114  88        DEY
+$0115  88        DEY
+$0116  88        DEY
+$0117  88        DEY
+$0118  20 87 01  JSR   $0187 <e1_client_serial_get_byte>
+$011B  85 AE     STA   $AE
+$011D  20 87 01  JSR   $0187 <e1_client_serial_get_byte>
+$0120  85 AF     STA   $AF
+$0122  A5 23     LDA   $23
+$0124  D0 02     BNE   $0128
+$0126  84 22     STY   $22
+$0128  A0 00     LDY   #$00
+$012A  20 87 01  JSR   $0187 <e1_client_serial_get_byte>
+$012D  A2 34     LDX   #$34
+$012F  86 01     STX   $01
+$0131  91 AE     STA   ($AE),Y
+$0133  A2 37     LDX   #$37
+$0135  86 01     STX   $01
+$0137  C8        INY
+$0138  C4 22     CPY   $22
+$013A  D0 EE     BNE   $012A
+$013C  A5 AE     LDA   $AE
+$013E  18        CLC
+$013F  65 22     ADC   $22
+$0141  85 AE     STA   $AE
+$0143  90 02     BCC   $0147
+$0145  E6 AF     INC   $AF
+$0147  A5 23     LDA   $23
+$0149  F0 1E     BEQ   $0169
+$014B  A9 FE     LDA   #$FE
+$014D  85 22     STA   $22
+$014F  20 87 01  JSR   $0187 <e1_client_serial_get_byte>
+$0152  C9 FF     CMP   #$FF
+$0154  D0 03     BNE   $0159
+$0156  4C E2 FC  JMP   $FCE2
+$0159  85 23     STA   $23
+$015B  20 87 01  JSR   $0187 <e1_client_serial_get_byte>
+$015E  A8        TAY
+$015F  88        DEY
+$0160  88        DEY
+$0161  A5 23     LDA   $23
+$0163  D0 C3     BNE   $0128
+$0165  84 22     STY   $22
+$0167  F0 BF     BEQ   $0128
+$0169  A9 1B     LDA   #$1B
+$016B  8D 11 D0  STA   $D011
+$016E  A9 97     LDA   #$97
+$0170  8D 00 DD  STA   $DD00
+$0173  20 A9 F5  JSR   $F5A9
+$0176  86 2D     STX   $2D
+$0178  84 2E     STY   $2E
+$017A  20 33 A5  JSR   $A533
+$017D  20 59 A6  JSR   $A659
+$0180  A9 00     LDA   #$00
+$0182  85 9D     STA   $9D
+$0184  4C B1 A7  JMP   $A7B1
+e1_client_serial_get_byte: ; Read one byte from CIA2 serial lines
+$0187  CE 20 D0  DEC   $D020
+$018A  A9 63     LDA   #$63
+$018C  8D 00 DD  STA   $DD00
+$018F  2C 00 DD  BIT   $DD00
+$0192  70 FB     BVS   $018F
+$0194  A9 87     LDA   #$87
+$0196  8D 00 DD  STA   $DD00
+$0199  A2 04     LDX   #$04
+$019B  CA        DEX
+$019C  D0 FD     BNE   $019B
+$019E  A2 04     LDX   #$04
+$01A0  AD 00 DD  LDA   $DD00
+$01A3  0A        ASL   A
+$01A4  2A        ROL   A
+$01A5  26 02     ROL   $02
+$01A7  4A        LSR   A
+$01A8  EA        NOP
+$01A9  26 02     ROL   $02
+$01AB  CA        DEX
+$01AC  D0 F2     BNE   $01A0
+$01AE  A5 02     LDA   $02
+$01B0  49 FF     EOR   #$FF
+$01B2  EE 20 D0  INC   $D020
+$01B5  60        RTS

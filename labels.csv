@@ -1,0 +1,53 @@
+addr,name,comment
+0x02A7,e1_istop_first_hit,Autostart hook reached through overwritten KERNAL STOP vector
+0x02BD,e1_istop_wait_for_c240,Wait for redirected load pointer then transfer to relocated bootstrap
+0x0801,e5_basic_start,Load address of both E5 viewer PRGs
+0x3E00,e1_file_a_start,Load address of E1 file A
+0x00D4,dox_stage3_getbyte,Self-modifying backwards byte reader; uses operand bytes at zero-page E1/E2
+0x00DA,dox_stage3_dcp,DCP zp decrements and compares source-pointer high byte
+0x00E4,dox_stage3_rle,Final backwards RLE expander
+0x0100,dox_lz_depacker,Second-stage backwards LZ-style depacker
+0x03AD,dox_relocated_copy,Installs compressed source and transfers to $0100
+0x0A00,dox_viewer_entry,Final DOX viewer handoff
+0x0D00,dox_page_viewer_main,Fixed-screen document viewer
+0x1000,dox_page_01,First 40x25 screen-code page
+0x3C00,dox_pages_end,Exclusive page-data end from byte $0D06
+0x24BF,dox_first_handoff,Credit delay and third-stage installation
+0x0820,solution_viewer_entry,Initializes colors screen and stream pointer
+0x085A,solution_stream_loop,Fetches the next decoded PETSCII or viewer command byte
+0x086C,solution_command_dispatch,Handles viewer-only commands before KERNAL CHROUT
+0x2800,solution_text_stream,PETSCII/control replay stream start
+0x8DED,solution_text_end_marker,Viewer command $8C terminates solution stream
+0x8DEE,solution_output_end,Exclusive entropy/RLE output end
+0xCDC2,solution_depacker_entry,Relocated solution decoder entry
+0xCE50,solution_entropy_symbol,Entropy symbol decoder translated in decode_e5_solution.py
+0xCF00,solution_symbol_table,256-byte decoded-symbol lookup table
+0x03E7,e1_game_startup,Stable post-crack startup before loading file A and hidden modules
+0x400E,e1_loader_init_drive,File A entry that executes the hidden 1541 block at T18/S02
+0x4011,e1_loader_read_module,File A raw-sector module reader; X/Y are track/sector and FE/FF is destination
+0x4300,e1_runtime_vector_table,55-entry public jump table; first vector enters the game runtime
+0x4836,e1_runtime_main_entry,Initialize the engine and enter the main dispatcher
+0x488D,e1_main_tick_loop,Per-tick room logic input sprite and UI update loop
+0x4B22,e1_runtime_initialize,Install vectors banking and initial engine state
+0x4BEC,e1_side_module_io,Validate requested disk side and read or write a raw-sector module
+0x5036,e1_begin_viewport,Consume inline rectangle data and build viewport drawing state
+0x5293,e1_render_inline_text,Consume an inline string pointer and render bounded text
+0x57B2,e1_push_hit_regions,Push an inline-pointer hit-region set onto the UI context stack
+0x57E7,e1_hit_test_regions,Find the region beneath the current pointer coordinates
+0x5B1E,e1_build_sprite_frame,Depth-sort active actors and construct the VIC-II sprite frame
+0x6158,e1_load_room,Select side modules load the room and install its F000 runtime
+0x62C5,e1_location_id_table,Room IDs that select optional AC80 overlays
+0x62E3,e1_location_track_table,Track array parallel to the location ID table
+0x6301,e1_location_sector_table,Sector array parallel to the location ID table
+0x6429,e1_dispatch_entity_scripts,Dispatch active entity records through their opcode handlers
+0x66B7,e1_select_entity_record,Resolve one eight-byte C400 entity slot and its script pointer
+0x6C8C,e1_set_room_data_root,Save the root pointer for room text and record decoding
+0xF00A,e1_room_init_vector,Room-specific initialization jump vector copied from CA0A
+0xF00D,e1_room_tick_vector,Room-specific per-tick jump vector copied from CA0D
+0xF010,e1_room_teardown_vector,Room-specific teardown jump vector copied from CA10
+0xF0F6,e1_room0_initialize,Initialize room-0 animation and actor values
+0xF10D,e1_room0_teardown,Room-0 teardown hook; currently RTS
+0xF10E,e1_room0_tick,Advance room-0 animation tables and actor values
+0xFE00,e1_room_track_table,Track indexed by room ID while KERNAL ROM is banked out
+0xFE3C,e1_room_sector_table,Sector indexed by room ID while KERNAL ROM is banked out
+0xFE78,e1_room_side_table,ASCII disk-side number indexed by room ID

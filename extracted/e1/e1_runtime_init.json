@@ -1,0 +1,45 @@
+{
+  "source": "extracted/e1/e1_unpacked_memory.bin",
+  "source_sha256": "ff364efe1e15c4b764fb2845fa4e80d71638768a9a6ab51cf795e51deb1e9460",
+  "entry": "0x080D",
+  "runtime_entry": "0x008E",
+  "instructions_executed": 288375,
+  "changed_address_start": "0x0000",
+  "changed_address_end": "0xFFFD",
+  "output_memory_sha256": "66efe6b6eb4f83fe9a5a959e587c1b575f635e0d928b19b84f438caefb792be3",
+  "large_relocation": {
+    "source": "0x0C50-0xE922 (descending overlapping pages)",
+    "destination": "0x232D-0xFFFF (descending overlapping pages)",
+    "delta": "0x16DD"
+  },
+  "low_memory_install": [
+    {
+      "source": "0x0A00-0x0AFF",
+      "destination": "0x0100-0x01FF"
+    },
+    {
+      "source": "0x0900-0x09FF",
+      "destination": "0x0000-0x00FF"
+    }
+  ],
+  "color_initialization": [
+    {
+      "source": "0x0B00-0x0BFF",
+      "destination": "0xD800-0xD8FF"
+    },
+    {
+      "source": "0x0C00-0x0CFF",
+      "destination": "0xD900-0xD9FF"
+    },
+    {
+      "derived_high_nibbles": "0xDA00-0xDBFF"
+    }
+  ],
+  "registers_at_entry": {
+    "A": "0x7F",
+    "X": "0x06",
+    "Y": "0x00",
+    "SP": "0xF9",
+    "P": "0x27"
+  }
+}

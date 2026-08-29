@@ -1,0 +1,23 @@
+{
+  "source": "extracted/e1/e1_stage3_memory.bin",
+  "source_sha256": "844afa29d91d2fd732acc100e9e864c93dd07fa42941293d509f0ded4c1784d6",
+  "entry": "0x020A",
+  "game_entry": "0x03E7",
+  "instructions_executed": 596,
+  "self_erased_range": "0x020A-0x0248",
+  "crafted_stack_frame": {
+    "initial_sp": "0xF9",
+    "pla_value_at_0x01FA": "0xC7",
+    "rti_status_at_0x01FB": "0xE0",
+    "rti_pc_low_at_0x01FC": "0xE7",
+    "rti_pc_high_at_0x01FD": "0x03"
+  },
+  "output_memory_sha256": "f70a7209695636e2032353deb91b7305d5d34d3051518f588017a50afd64e3ca",
+  "registers_at_game_entry": {
+    "A": "0xC7",
+    "X": "0xDB",
+    "Y": "0xCB",
+    "SP": "0xFD",
+    "P": "0xE0"
+  }
+}

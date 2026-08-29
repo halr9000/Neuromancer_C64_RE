@@ -1,0 +1,30 @@
+{
+  "source": "extracted/e1/e1_fastload_0801_cf56.bin",
+  "source_sha256": "3570ffb6d90dc0d2578e4bfe96e3a90248e20d32305ed6441931bcc66e189b9a",
+  "method": "execute the relocated 6502 depacker with the project CPU core",
+  "loaded_range": "0x0801-0xCF56",
+  "bootstrap_entry": "0x080B",
+  "relocated_copy_entry": "0x03AD",
+  "unpacked_entry": "0x080D",
+  "bootstrap_instructions": 1887,
+  "unpack_instructions": 2279075,
+  "instructions_executed": 2280962,
+  "changed_address_start": "0x0001",
+  "changed_address_end": "0xE920",
+  "output_memory_sha256": "ff364efe1e15c4b764fb2845fa4e80d71638768a9a6ab51cf795e51deb1e9460",
+  "registers_at_handoff": {
+    "A": "0x37",
+    "X": "0x02",
+    "Y": "0x07",
+    "SP": "0xFC",
+    "P": "0x21"
+  },
+  "relocation": {
+    "low_source": "0x0831-0x0930",
+    "low_destination": "0x00FA-0x01F9",
+    "workspace_source": "0x0922-0x09CC",
+    "workspace_destination": "0x0333-0x03DD",
+    "packed_shift_source": "0x09B3 in 199 overlapping 256-byte pages",
+    "packed_shift_destination": "0x07E8 in 199 overlapping 256-byte pages"
+  }
+}

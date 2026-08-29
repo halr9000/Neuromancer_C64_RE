@@ -1,0 +1,262 @@
+===== E1 STABLE GAME ENTRY [$03E7] =====
+e1_game_entry: ; Stable entry after all crack/depack stages
+$03E7  78        SEI
+$03E8  A9 36     LDA   #$36
+$03EA  85 01     STA   $01
+$03EC  A0 00     LDY   #$00
+$03EE  98        TYA
+$03EF  99 02 00  STA   $0002,Y
+$03F2  C8        INY
+$03F3  D0 FA     BNE   $03EF
+$03F5  8C 27 D0  STY   $D027
+$03F8  8C 21 D0  STY   $D021
+$03FB  C8        INY
+$03FC  8C 28 D0  STY   $D028
+$03FF  A9 18     LDA   #$18
+$0401  8D 16 D0  STA   $D016
+$0404  A9 38     LDA   #$38
+$0406  8D 18 D0  STA   $D018
+$0409  A9 00     LDA   #$00
+$040B  8D 20 D0  STA   $D020
+$040E  A9 35     LDA   #$35
+$0410  8D 18 03  STA   $0318
+$0413  8D FA FF  STA   $FFFA
+$0416  A9 05     LDA   #$05
+$0418  8D FB FF  STA   $FFFB
+$041B  8D 19 03  STA   $0319
+$041E  EA        NOP
+$041F  AD 00 DD  LDA   $DD00
+$0422  29 FC     AND   #$FC
+$0424  8D 00 DD  STA   $DD00
+$0427  A9 37     LDA   #$37
+$0429  8D 11 D0  STA   $D011
+$042C  AD 34 05  LDA   $0534
+$042F  D0 0E     BNE   $043F
+$0431  20 8E 06  JSR   $068E
+$0434  20 4C 07  JSR   $074C
+$0437  30 FB     BMI   $0434
+$0439  20 8E 06  JSR   $068E
+$043C  4C 42 04  JMP   $0442
+$043F  20 5F 0A  JSR   $0A5F
+$0442  20 36 05  JSR   $0536
+$0445  A9 27     LDA   #$27
+$0447  8D 11 D0  STA   $D011
+$044A  AD 00 DD  LDA   $DD00
+$044D  29 FC     AND   #$FC
+$044F  09 03     ORA   #$03
+$0451  8D 00 DD  STA   $DD00
+$0454  A9 36     LDA   #$36
+$0456  85 01     STA   $01
+$0458  A9 02     LDA   #$02
+$045A  A2 08     LDX   #$08
+$045C  A8        TAY
+$045D  20 BA FF  JSR   $FFBA
+$0460  A9 01     LDA   #$01
+$0462  A2 33     LDX   #$33
+$0464  A0 05     LDY   #$05
+$0466  20 BD FF  JSR   $FFBD
+$0469  A9 00     LDA   #$00
+$046B  20 D5 FF  JSR   $FFD5
+$046E  A9 7F     LDA   #$7F
+$0470  8D 0D DC  STA   $DC0D
+$0473  8D 0D DD  STA   $DD0D
+$0476  AD 0D DC  LDA   $DC0D
+$0479  AD 0D DD  LDA   $DD0D
+$047C  A9 3F     LDA   #$3F
+$047E  8D 02 DD  STA   $DD02
+$0481  20 0E 40  JSR   $400E
+$0484  A2 14     LDX   #$14
+$0486  EC 12 D0  CPX   $D012
+$0489  D0 FB     BNE   $0486
+$048B  CA        DEX
+$048C  D0 F8     BNE   $0486
+$048E  A9 00     LDA   #$00
+$0490  85 FE     STA   $FE
+$0492  A9 43     LDA   #$43
+$0494  85 FF     STA   $FF
+$0496  A2 01     LDX   #$01
+$0498  A0 02     LDY   #$02
+$049A  20 11 40  JSR   $4011
+$049D  A9 00     LDA   #$00
+$049F  85 FE     STA   $FE
+$04A1  A9 FE     LDA   #$FE
+$04A3  85 FF     STA   $FF
+$04A5  A2 06     LDX   #$06
+$04A7  A0 13     LDY   #$13
+$04A9  20 11 40  JSR   $4011
+$04AC  A9 00     LDA   #$00
+$04AE  85 FE     STA   $FE
+$04B0  A9 B8     LDA   #$B8
+$04B2  85 FF     STA   $FF
+$04B4  A2 03     LDX   #$03
+$04B6  A0 0A     LDY   #$0A
+$04B8  20 11 40  JSR   $4011
+$04BB  A9 00     LDA   #$00
+$04BD  85 FE     STA   $FE
+$04BF  A9 C7     LDA   #$C7
+$04C1  85 FF     STA   $FF
+$04C3  A2 03     LDX   #$03
+$04C5  A0 13     LDY   #$13
+$04C7  20 11 40  JSR   $4011
+$04CA  A9 00     LDA   #$00
+$04CC  85 FE     STA   $FE
+$04CE  A9 C1     LDA   #$C1
+$04D0  85 FF     STA   $FF
+$04D2  A2 00     LDX   #$00
+$04D4  BC 2C 05  LDY   $052C,X
+$04D7  BD 27 05  LDA   $0527,X
+$04DA  AA        TAX
+$04DB  20 11 40  JSR   $4011
+$04DE  AD D3 04  LDA   $04D3
+$04E1  D0 0B     BNE   $04EE
+$04E3  A2 08     LDX   #$08
+$04E5  BD 85 06  LDA   $0685,X
+$04E8  9D 20 C3  STA   $C320,X
+$04EB  CA        DEX
+$04EC  10 F7     BPL   $04E5
+$04EE  A9 80     LDA   #$80
+$04F0  85 FE     STA   $FE
+$04F2  A9 03     LDA   #$03
+$04F4  85 FF     STA   $FF
+$04F6  A2 03     LDX   #$03
+$04F8  A0 09     LDY   #$09
+$04FA  20 11 40  JSR   $4011
+$04FD  A9 00     LDA   #$00
+$04FF  85 FE     STA   $FE
+$0501  A9 A4     LDA   #$A4
+$0503  85 FF     STA   $FF
+$0505  A2 0D     LDX   #$0D
+$0507  A0 00     LDY   #$00
+$0509  20 11 40  JSR   $4011
+$050C  A9 00     LDA   #$00
+$050E  85 FE     STA   $FE
+$0510  A9 84     LDA   #$84
+$0512  85 FF     STA   $FF
+$0514  A2 20     LDX   #$20
+$0516  A0 0A     LDY   #$0A
+$0518  20 11 40  JSR   $4011
+$051B  A0 0E     LDY   #$0E
+$051D  8C F8 07  STY   $07F8
+$0520  C8        INY
+$0521  8C F9 07  STY   $07F9
+$0524  4C 00 43  JMP   $4300
+$0527  04        .byte $04 ; undocumented/unclassified opcode
+$0528  04        .byte $04 ; undocumented/unclassified opcode
+$0529  04        .byte $04 ; undocumented/unclassified opcode
+$052A  05 05     ORA   $05
+$052C  01 07     ORA   ($07,X)
+$052E  10 04     BPL   $0534
+$0530  0D 50 53  ORA   $5350
+$0533  41 01     EOR   ($01,X)
+$0535  40        RTI
+$0536  20 CB 05  JSR   $05CB
+$0539  A2 09     LDX   #$09
+$053B  A0 15     LDY   #$15
+$053D  20 A0 06  JSR   $06A0
+$0540  8A        TXA
+$0541  05 20     ORA   $20
+$0543  4C 07 C9  JMP   $C907
+$0546  4F        .byte $4F ; undocumented/unclassified opcode
+$0547  F0 1D     BEQ   $0566
+$0549  C9 4E     CMP   #$4E
+$054B  D0 F5     BNE   $0542
+$054D  20 8E 06  JSR   $068E
+$0550  20 CB 05  JSR   $05CB
+$0553  A2 0C     LDX   #$0C
+$0555  A0 15     LDY   #$15
+$0557  20 A0 06  JSR   $06A0
+$055A  A1 05     LDA   ($05,X)
+$055C  A2 10     LDX   #$10
+$055E  A0 16     LDY   #$16
+$0560  20 0C 06  JSR   $060C
+$0563  B0 D1     BCS   $0536
+$0565  60        RTS
+$0566  20 8E 06  JSR   $068E
+$0569  20 CB 05  JSR   $05CB
+$056C  A2 08     LDX   #$08
+$056E  A0 15     LDY   #$15
+$0570  20 A0 06  JSR   $06A0
+$0573  B2        .byte $B2 ; undocumented/unclassified opcode
+$0574  05 20     ORA   $20
+$0576  4C 07 30  JMP   $3007
+$0579  FB        .byte $FB ; undocumented/unclassified opcode
+$057A  38        SEC
+$057B  E9 31     SBC   #$31
+$057D  C9 04     CMP   #$04
+$057F  B0 B5     BCS   $0536
+$0581  8D D3 04  STA   $04D3
+$0584  EE D3 04  INC   $04D3
+$0587  4C 8E 06  JMP   $068E
+$058A  4F        .byte $4F ; undocumented/unclassified opcode
+$058B  4C 44 20  JMP   $2044
+$058E  4F        .byte $4F ; undocumented/unclassified opcode
+$058F  52        .byte $52 ; undocumented/unclassified opcode
+$0590  20 4E 45  JSR   $454E
+$0593  57        .byte $57 ; undocumented/unclassified opcode
+$0594  20 47 41  JSR   $4147
+$0597  4D 45 3F  EOR   $3F45
+$059A  20 28 4F  JSR   $4F28
+$059D  2F        .byte $2F ; undocumented/unclassified opcode
+$059E  4E 29 00  LSR   $0029
+$05A1  45 4E     EOR   $4E
+$05A3  54        .byte $54 ; undocumented/unclassified opcode
+$05A4  45 52     EOR   $52
+$05A6  20 59 4F  JSR   $4F59
+$05A9  55 52     EOR   $52,X
+$05AB  20 4E 41  JSR   $414E
+$05AE  4D 45 3A  EOR   $3A45
+$05B1  00        BRK
+$05B2  45 4E     EOR   $4E
+$05B4  54        .byte $54 ; undocumented/unclassified opcode
+$05B5  45 52     EOR   $52
+$05B7  20 47 41  JSR   $4147
+$05BA  4D 45 20  EOR   $2045
+$05BD  4E 55 4D  LSR   $4D55
+$05C0  42        .byte $42 ; undocumented/unclassified opcode
+$05C1  45 52     EOR   $52
+$05C3  2E 20 28  ROL   $2820
+$05C6  31 2D     AND   ($2D),Y
+$05C8  34        .byte $34 ; undocumented/unclassified opcode
+$05C9  29 00     AND   #$00
+$05CB  A9 03     LDA   #$03
+$05CD  85 F8     STA   $F8
+$05CF  A0 00     LDY   #$00
+$05D1  A9 C4     LDA   #$C4
+$05D3  05 F8     ORA   $F8
+$05D5  85 FE     STA   $FE
+$05D7  A9 F7     LDA   #$F7
+$05D9  85 FF     STA   $FF
+$05DB  A2 28     LDX   #$28
+$05DD  A9 FF     LDA   #$FF
+$05DF  91 FE     STA   ($FE),Y
+$05E1  18        CLC
+$05E2  A9 08     LDA   #$08
+$05E4  65 FE     ADC   $FE
+$05E6  85 FE     STA   $FE
+$05E8  A9 00     LDA   #$00
+$05EA  65 FF     ADC   $FF
+$05EC  85 FF     STA   $FF
+$05EE  CA        DEX
+$05EF  D0 EC     BNE   $05DD
+$05F1  C6 F8     DEC   $F8
+$05F3  D0 DC     BNE   $05D1
+$05F5  A9 F9     LDA   #$F9
+$05F7  85 FF     STA   $FF
+$05F9  A9 00     LDA   #$00
+$05FB  85 FE     STA   $FE
+$05FD  A2 05     LDX   #$05
+$05FF  A9 FF     LDA   #$FF
+$0601  91 FE     STA   ($FE),Y
+$0603  C8        INY
+$0604  D0 F9     BNE   $05FF
+$0606  E6 FF     INC   $FF
+$0608  CA        DEX
+$0609  D0 F4     BNE   $05FF
+$060B  60        RTS
+$060C  8E 82 06  STX   $0682
+$060F  8C 83 06  STY   $0683
+$0612  A9 00     LDA   #$00
+$0614  8D 84 06  STA   $0684
+$0617  A9 2A     LDA   #$2A
+$0619  AE 82 06  LDX   $0682
+$061C  AC 83 06  LDY   $0683

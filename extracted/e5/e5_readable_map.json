@@ -1,0 +1,150 @@
+{
+  "dox_pages": [
+    {
+      "page": 1,
+      "source_start": "0x1000",
+      "source_end": "0x13E7",
+      "rows": 17
+    },
+    {
+      "page": 2,
+      "source_start": "0x1400",
+      "source_end": "0x17E7",
+      "rows": 21
+    },
+    {
+      "page": 3,
+      "source_start": "0x1800",
+      "source_end": "0x1BE7",
+      "rows": 25
+    },
+    {
+      "page": 4,
+      "source_start": "0x1C00",
+      "source_end": "0x1FE7",
+      "rows": 25
+    },
+    {
+      "page": 5,
+      "source_start": "0x2000",
+      "source_end": "0x23E7",
+      "rows": 25
+    },
+    {
+      "page": 6,
+      "source_start": "0x2400",
+      "source_end": "0x27E7",
+      "rows": 25
+    },
+    {
+      "page": 7,
+      "source_start": "0x2800",
+      "source_end": "0x2BE7",
+      "rows": 24
+    },
+    {
+      "page": 8,
+      "source_start": "0x2C00",
+      "source_end": "0x2FE7",
+      "rows": 25
+    },
+    {
+      "page": 9,
+      "source_start": "0x3000",
+      "source_end": "0x33E7",
+      "rows": 24
+    },
+    {
+      "page": 10,
+      "source_start": "0x3400",
+      "source_end": "0x37E7",
+      "rows": 25
+    },
+    {
+      "page": 11,
+      "source_start": "0x3800",
+      "source_end": "0x3BE7",
+      "rows": 1
+    }
+  ],
+  "solution_stream": {
+    "stream_start": "0x2800",
+    "stream_end_marker": "0x8DED",
+    "bytes_examined": 26094,
+    "captured_sections": 11,
+    "section_lines": [
+      17,
+      134,
+      115,
+      15,
+      48,
+      10,
+      29,
+      27,
+      16,
+      413,
+      17
+    ],
+    "control_counts": {
+      "display_$81": 1,
+      "display_$95": 1,
+      "display_$96": 5,
+      "display_$97": 123,
+      "display_$98": 116,
+      "display_$99": 8,
+      "display_$9A": 2,
+      "display_$9B": 23,
+      "display_$1E": 9,
+      "down": 403,
+      "right": 2155,
+      "left": 1339,
+      "insert": 124,
+      "return": 927,
+      "display_$1C": 6,
+      "delete": 1143,
+      "viewer_$8B": 18,
+      "up": 382,
+      "display_$05": 30,
+      "display_$9C": 3,
+      "ignored_$DD": 3,
+      "viewer_$87": 21,
+      "display_$89": 53,
+      "clear": 10,
+      "home": 9,
+      "display_$12": 7,
+      "display_$92": 7,
+      "display_$9E": 4,
+      "display_$9F": 2,
+      "display_$1F": 1,
+      "end": 1
+    },
+    "terminal_replay_sha256": "7e76a629dd631ff438f8e048b2a924158ae5a6dc52454d20edf08166be59cf13",
+    "readable_sha256": "90eb11914835833866aea745d87ce1f2a46eb2f39f24ff764324a766376c4d2b",
+    "editorial_repairs": [
+      {
+        "label": "title card",
+        "basis": "characters and values present in decoded stream"
+      },
+      {
+        "label": "COMLINK 4 overwritten line",
+        "basis": "characters and values present in decoded stream"
+      },
+      {
+        "label": "useful numbers table",
+        "basis": "characters and values present in decoded stream"
+      },
+      {
+        "label": "section 7 initial",
+        "basis": "characters and values present in decoded stream"
+      },
+      {
+        "label": "closing text",
+        "basis": "characters and values present in decoded stream"
+      },
+      {
+        "label": "closing sign-off",
+        "basis": "characters and values present in decoded stream"
+      }
+    ]
+  }
+}

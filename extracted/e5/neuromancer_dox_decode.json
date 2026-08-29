@@ -1,0 +1,38 @@
+{
+  "source_prg": "extracted/e5/neuromancer_dox.prg",
+  "source_sha256": "912fc7a88771f662f8ba3527fc85549893182e5246f34d6b118cf72143eb00bc",
+  "method": "execute relocated 6502 depacker with documented opcodes plus verified DCP zp",
+  "entry": "0x03AD",
+  "first_handoff": "0x24BF",
+  "final_handoff": "0x0A00",
+  "first_stage_instructions": 314526,
+  "instructions_executed": 1119310,
+  "changed_address_start": "0x0001",
+  "changed_address_end": "0xD030",
+  "output_memory_sha256": "ac9e395139b611cb829dc8b0114f5af6476f43b712019bca7c8897b044a7583d",
+  "registers_at_handoff": {
+    "A": "0x37",
+    "X": "0x00",
+    "Y": "0x00",
+    "SP": "0xFA",
+    "P": "0x21"
+  },
+  "relocation": {
+    "source": "extracted/e5/neuromancer_dox.prg",
+    "load_address": "0x0801",
+    "loaded_end_exclusive": "0x1DC8",
+    "stage1_source": "0x088F with 248 overlapping absolute-X pages",
+    "stage1_destination": "0x080B with 248 overlapping absolute-X pages",
+    "stage2_ranges": [
+      {
+        "source": "0x0831-0x0930",
+        "destination": "0x00FA-0x01F9"
+      },
+      {
+        "source": "0x0922-0x09CC",
+        "destination": "0x0333-0x03DD"
+      }
+    ],
+    "depacker_entry": "0x03AD"
+  }
+}

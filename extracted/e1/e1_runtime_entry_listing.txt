@@ -1,0 +1,222 @@
+===== E1 RUNTIME ENTRY [$008E] =====
+e1_runtime_entry: ; Entry after unpacking and hardware setup
+$008E  06 DF     ASL   $DF
+$0090  90 04     BCC   $0096
+$0092  26 DF     ROL   $DF
+$0094  C6 97     DEC   $97
+$0096  46 FF     LSR   $FF
+$0098  90 E1     BCC   $007B
+$009A  20 60 00  JSR   $0060
+$009D  91 DC     STA   ($DC),Y
+$009F  C8        INY
+$00A0  D0 F8     BNE   $009A
+$00A2  E6 DD     INC   $DD
+$00A4  D0 E8     BNE   $008E <e1_runtime_entry>
+$00A6  E6 01     INC   $01
+$00A8  AD 12 D0  LDA   $D012
+$00AB  C9 80     CMP   #$80
+$00AD  D0 F9     BNE   $00A8
+$00AF  AD 08 DC  LDA   $DC08
+$00B2  AD 08 DC  LDA   $DC08
+$00B5  AD 08 DD  LDA   $DD08
+$00B8  AD 08 DD  LDA   $DD08
+$00BB  EA        NOP
+$00BC  EA        NOP
+$00BD  EA        NOP
+$00BE  EA        NOP
+$00BF  EA        NOP
+$00C0  C6 01     DEC   $01
+$00C2  A9 00     LDA   #$00
+$00C4  8D 60 00  STA   $0060
+$00C7  A9 00     LDA   #$00
+$00C9  8D 60 00  STA   $0060
+$00CC  A2 0A     LDX   #$0A
+$00CE  4C 11 00  JMP   $0011
+$00D1  78        SEI
+$00D2  86 92     STX   $92
+$00D4  A9 7B     LDA   #$7B
+$00D6  8D 11 D0  STA   $D011
+$00D9  E6 01     INC   $01
+$00DB  84 00     STY   $00
+$00DD  02        .byte $02 ; undocumented/unclassified opcode
+$00DE  84 02     STY   $02
+$00E0  C0 00     CPY   #$00
+$00E2  00        BRK
+$00E3  00        BRK
+$00E4  00        BRK
+$00E5  00        BRK
+$00E6  04        .byte $04 ; undocumented/unclassified opcode
+$00E7  40        RTI
+$00E8  60        RTS
+$00E9  02        .byte $02 ; undocumented/unclassified opcode
+$00EA  00        BRK
+$00EB  33        .byte $33 ; undocumented/unclassified opcode
+$00EC  CE 36 03  DEC   $0336
+$00EF  F2        .byte $F2 ; undocumented/unclassified opcode
+$00F0  E3        .byte $E3 ; undocumented/unclassified opcode
+$00F1  6D F9 40  ADC   $40F9
+$00F4  02        .byte $02 ; undocumented/unclassified opcode
+$00F5  41 C8     EOR   ($C8,X)
+$00F7  00        BRK
+$00F8  00        BRK
+$00F9  00        BRK
+$00FA  01 05     ORA   ($05,X)
+$00FC  36 18     ROL   $18,X
+$00FE  00        BRK
+$00FF  0C        .byte $0C ; undocumented/unclassified opcode
+$0100  B1 2F     LDA   ($2F),Y
+$0102  2A        ROL   A
+$0103  2A        ROL   A
+$0104  2A        ROL   A
+$0105  2A        ROL   A
+$0106  29 07     AND   #$07
+$0108  AA        TAX
+$0109  BD 1A 01  LDA   $011A,X
+$010C  8D 18 01  STA   $0118
+$010F  B1 2F     LDA   ($2F),Y
+$0111  29 1F     AND   #$1F
+$0113  AA        TAX
+$0114  20 22 01  JSR   $0122
+$0117  4C A4 01  JMP   $01A4
+$011A  A4 43     LDY   $43
+$011C  AB        .byte $AB ; undocumented/unclassified opcode
+$011D  79 58 3B  ADC   $3B58,Y
+$0120  3F        .byte $3F ; undocumented/unclassified opcode
+$0121  29 E6     AND   #$E6
+$0123  2F        .byte $2F ; undocumented/unclassified opcode
+$0124  D0 02     BNE   $0128
+$0126  E6 30     INC   $30
+$0128  60        RTS
+$0129  B1 2F     LDA   ($2F),Y
+$012B  20 22 01  JSR   $0122
+$012E  91 2D     STA   ($2D),Y
+$0130  E6 2D     INC   $2D
+$0132  D0 02     BNE   $0136
+$0134  E6 2E     INC   $2E
+$0136  CA        DEX
+$0137  D0 F5     BNE   $012E
+$0139  F0 C5     BEQ   $0100
+$013B  A9 00     LDA   #$00
+$013D  F0 EF     BEQ   $012E
+$013F  A9 FF     LDA   #$FF
+$0141  D0 EB     BNE   $012E
+$0143  B1 2F     LDA   ($2F),Y
+$0145  91 2D     STA   ($2D),Y
+$0147  E6 2F     INC   $2F
+$0149  D0 02     BNE   $014D
+$014B  E6 30     INC   $30
+$014D  E6 2D     INC   $2D
+$014F  D0 02     BNE   $0153
+$0151  E6 2E     INC   $2E
+$0153  CA        DEX
+$0154  D0 ED     BNE   $0143
+$0156  F0 A8     BEQ   $0100
+$0158  20 71 01  JSR   $0171
+$015B  B1 2F     LDA   ($2F),Y
+$015D  20 22 01  JSR   $0122
+$0160  91 2D     STA   ($2D),Y
+$0162  E6 2D     INC   $2D
+$0164  D0 02     BNE   $0168
+$0166  E6 2E     INC   $2E
+$0168  CA        DEX
+$0169  D0 F5     BNE   $0160
+$016B  C6 39     DEC   $39
+$016D  10 F1     BPL   $0160
+$016F  30 8F     BMI   $0100
+$0171  86 39     STX   $39
+$0173  B1 2F     LDA   ($2F),Y
+$0175  AA        TAX
+$0176  4C 22 01  JMP   $0122
+$0179  20 71 01  JSR   $0171
+$017C  B1 2F     LDA   ($2F),Y
+$017E  91 2D     STA   ($2D),Y
+$0180  E6 2F     INC   $2F
+$0182  D0 02     BNE   $0186
+$0184  E6 30     INC   $30
+$0186  E6 2D     INC   $2D
+$0188  D0 02     BNE   $018C
+$018A  E6 2E     INC   $2E
+$018C  CA        DEX
+$018D  D0 ED     BNE   $017C
+$018F  C6 39     DEC   $39
+$0191  10 E9     BPL   $017C
+$0193  4C 00 01  JMP   $0100
+$0196  2C DA 01  BIT   $01DA
+$0199  A9 37     LDA   #$37
+$019B  85 01     STA   $01
+$019D  58        CLI
+$019E  20 20 08  JSR   $0820
+$01A1  4C AE A7  JMP   $A7AE
+$01A4  E0 00     CPX   #$00
+$01A6  F0 EE     BEQ   $0196
+$01A8  A9 03     LDA   #$03
+$01AA  2C A9 08  BIT   $08A9
+$01AD  85 FF     STA   $FF
+$01AF  B1 2F     LDA   ($2F),Y
+$01B1  91 2D     STA   ($2D),Y
+$01B3  C8        INY
+$01B4  C4 FF     CPY   $FF
+$01B6  D0 F7     BNE   $01AF
+$01B8  18        CLC
+$01B9  A5 2D     LDA   $2D
+$01BB  65 FF     ADC   $FF
+$01BD  85 2D     STA   $2D
+$01BF  A5 2E     LDA   $2E
+$01C1  69 00     ADC   #$00
+$01C3  85 2E     STA   $2E
+$01C5  A0 00     LDY   #$00
+$01C7  CA        DEX
+$01C8  D0 E5     BNE   $01AF
+$01CA  18        CLC
+$01CB  A5 2F     LDA   $2F
+$01CD  65 FF     ADC   $FF
+$01CF  85 2F     STA   $2F
+$01D1  A5 30     LDA   $30
+$01D3  69 00     ADC   #$00
+$01D5  85 30     STA   $30
+$01D7  4C 00 01  JMP   $0100
+$01DA  B9 00 EF  LDA   $EF00,Y
+$01DD  99 00 FF  STA   $FF00,Y
+$01E0  C8        INY
+$01E1  D0 F7     BNE   $01DA
+$01E3  CE DC 01  DEC   $01DC
+$01E6  99 0A 02  STA   $020A,Y
+$01E9  88        DEY
+$01EA  10 FA     BPL   $01E6
+$01EC  8C 19 D0  STY   $D019
+$01EF  EA        NOP
+$01F0  86 01     STX   $01
+$01F2  A2 DB     LDX   #$DB
+$01F4  A0 CB     LDY   #$CB
+$01F6  68        PLA
+$01F7  40        RTI
+$01F8  08        PHP
+$01F9  08        PHP
+$01FA  C7 E0     DCP   $E0
+$01FC  E7        .byte $E7 ; undocumented/unclassified opcode
+$01FD  03        .byte $03 ; undocumented/unclassified opcode
+$01FE  A0 01     LDY   #$01
+$0200  00        BRK
+$0201  00        BRK
+$0202  00        BRK
+$0203  00        BRK
+$0204  00        BRK
+$0205  00        BRK
+$0206  00        BRK
+$0207  00        BRK
+$0208  00        BRK
+$0209  00        BRK
+$020A  00        BRK
+$020B  00        BRK
+$020C  00        BRK
+$020D  00        BRK
+$020E  00        BRK
+$020F  00        BRK
+$0210  00        BRK
+$0211  00        BRK
+$0212  00        BRK
+$0213  00        BRK
+$0214  00        BRK
+$0215  00        BRK
+$0216  00        BRK
+$0217  00        BRK

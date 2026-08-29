@@ -1,0 +1,159 @@
+===== ROOM RUNTIME VECTORS [$F000] =====
+$F000  8B        .byte $8B ; undocumented/unclassified opcode
+$F001  D2        .byte $D2 ; undocumented/unclassified opcode
+$F002  48        PHA
+$F003  F2        .byte $F2 ; undocumented/unclassified opcode
+$F004  29 F0     AND   #$F0
+$F006  00        BRK
+$F007  00        BRK
+$F008  00        BRK
+$F009  00        BRK
+e1_room_init_vector: ; Room-specific initialization jump vector copied from CA0A
+$F00A  4C F6 F0  JMP   $F0F6 <e1_room0_initialize>
+e1_room_tick_vector: ; Room-specific per-tick jump vector copied from CA0D
+$F00D  4C 0E F1  JMP   $F10E <e1_room0_tick>
+e1_room_teardown_vector: ; Room-specific teardown jump vector copied from CA10
+$F010  4C 0D F1  JMP   $F10D <e1_room0_teardown>
+$F013  24 8C     BIT   $8C
+$F015  38        SEC
+$F016  3C        .byte $3C ; undocumented/unclassified opcode
+$F017  3C        .byte $3C ; undocumented/unclassified opcode
+$F018  2E 00 00  ROL   $0000
+$F01B  FF        .byte $FF ; undocumented/unclassified opcode
+$F01C  FF        .byte $FF ; undocumented/unclassified opcode
+$F01D  00        BRK
+$F01E  00        BRK
+$F01F  70 38     BVS   $F059
+$F021  20 01 FF  JSR   $FF01
+$F024  FF        .byte $FF ; undocumented/unclassified opcode
+$F025  00        BRK
+$F026  00        BRK
+$F027  01 00     ORA   ($00,X)
+$F029  2D F0 79  AND   $79F0
+
+===== ROOM TICK/STATE ROUTINES [$F0F6] =====
+e1_room0_initialize: ; Initialize room-0 animation and actor values
+$F0F6  A9 22     LDA   #$22
+$F0F8  85 03     STA   $03
+$F0FA  A9 24     LDA   #$24
+$F0FC  85 07     STA   $07
+$F0FE  A9 42     LDA   #$42
+$F100  85 18     STA   $18
+$F102  A9 33     LDA   #$33
+$F104  85 14     STA   $14
+$F106  A9 00     LDA   #$00
+$F108  85 0C     STA   $0C
+$F10A  85 10     STA   $10
+$F10C  60        RTS
+e1_room0_teardown: ; Room-0 teardown hook; currently RTS
+$F10D  60        RTS
+e1_room0_tick: ; Advance room-0 animation tables and actor values
+$F10E  CE 7E F1  DEC   $F17E
+$F111  D0 1A     BNE   $F12D
+$F113  AC 7B F1  LDY   $F17B
+$F116  B9 84 F1  LDA   $F184,Y
+$F119  8D 7E F1  STA   $F17E
+$F11C  B9 81 F1  LDA   $F181,Y
+$F11F  85 03     STA   $03
+$F121  EE 7B F1  INC   $F17B
+$F124  C8        INY
+$F125  B9 81 F1  LDA   $F181,Y
+$F128  D0 03     BNE   $F12D
+$F12A  8D 7B F1  STA   $F17B
+$F12D  CE 7F F1  DEC   $F17F
+$F130  D0 1A     BNE   $F14C
+$F132  AC 7C F1  LDY   $F17C
+$F135  B9 8D F1  LDA   $F18D,Y
+$F138  8D 7F F1  STA   $F17F
+$F13B  B9 86 F1  LDA   $F186,Y
+$F13E  85 07     STA   $07
+$F140  EE 7C F1  INC   $F17C
+$F143  C8        INY
+$F144  B9 86 F1  LDA   $F186,Y
+$F147  D0 03     BNE   $F14C
+$F149  8D 7C F1  STA   $F17C
+$F14C  CE 80 F1  DEC   $F180
+$F14F  D0 29     BNE   $F17A
+$F151  AC 7D F1  LDY   $F17D
+$F154  B9 24 F2  LDA   $F224,Y
+$F157  8D 80 F1  STA   $F180
+$F15A  B9 93 F1  LDA   $F193,Y
+$F15D  85 04     STA   $04
+$F15F  B9 B8 F1  LDA   $F1B8,Y
+$F162  85 08     STA   $08
+$F164  B9 DC F1  LDA   $F1DC,Y
+$F167  85 0C     STA   $0C
+$F169  B9 00 F2  LDA   $F200,Y
+$F16C  85 10     STA   $10
+$F16E  EE 7D F1  INC   $F17D
+$F171  C8        INY
+$F172  B9 93 F1  LDA   $F193,Y
+$F175  D0 03     BNE   $F17A
+$F177  8D 7D F1  STA   $F17D
+$F17A  60        RTS
+$F17B  00        BRK
+$F17C  00        BRK
+$F17D  00        BRK
+$F17E  01 01     ORA   ($01,X)
+$F180  01 22     ORA   ($22,X)
+$F182  23        .byte $23 ; undocumented/unclassified opcode
+$F183  00        BRK
+$F184  14        .byte $14 ; undocumented/unclassified opcode
+$F185  14        .byte $14 ; undocumented/unclassified opcode
+$F186  24 25     BIT   $25
+$F188  26 27     ROL   $27
+$F18A  26 25     ROL   $25
+$F18C  00        BRK
+$F18D  05 02     ORA   $02
+$F18F  02        .byte $02 ; undocumented/unclassified opcode
+$F190  05 02     ORA   $02
+
+===== ROOM DATA ROOT [$F248] =====
+$F248  20 65 74  JSR   $7465
+$F24B  6F        .byte $6F ; undocumented/unclassified opcode
+$F24C  61 69     ADC   ($69,X)
+$F24E  6E 73 72  ROR   $7273
+$F251  68        PLA
+$F252  75 79     ADC   $79,X
+$F254  6C 64 2E  JMP   ($2E64)
+$F257  66 77     ROR   $77
+$F259  62        .byte $62 ; undocumented/unclassified opcode
+$F25A  63        .byte $63 ; undocumented/unclassified opcode
+$F25B  70 00     BVS   $F25D
+$F25D  67        .byte $67 ; undocumented/unclassified opcode
+$F25E  0D 6D 27  ORA   $276D
+$F261  6B        .byte $6B ; undocumented/unclassified opcode
+$F262  2C 7A 3F  BIT   $3F7A
+$F265  76 78     ROR   $78,X
+$F267  6A        ROR   A
+$F268  36 34     ROL   $34,X
+$F26A  2D 03 35  AND   $3503
+$F26D  21 7F     AND   ($7F,X)
+$F26F  7F        .byte $7F ; undocumented/unclassified opcode
+$F270  7F        .byte $7F ; undocumented/unclassified opcode
+$F271  7F        .byte $7F ; undocumented/unclassified opcode
+$F272  7F        .byte $7F ; undocumented/unclassified opcode
+$F273  7F        .byte $7F ; undocumented/unclassified opcode
+$F274  7F        .byte $7F ; undocumented/unclassified opcode
+$F275  7F        .byte $7F ; undocumented/unclassified opcode
+$F276  7F        .byte $7F ; undocumented/unclassified opcode
+$F277  7F        .byte $7F ; undocumented/unclassified opcode
+$F278  7F        .byte $7F ; undocumented/unclassified opcode
+$F279  7F        .byte $7F ; undocumented/unclassified opcode
+$F27A  7F        .byte $7F ; undocumented/unclassified opcode
+$F27B  7F        .byte $7F ; undocumented/unclassified opcode
+$F27C  7F        .byte $7F ; undocumented/unclassified opcode
+$F27D  7F        .byte $7F ; undocumented/unclassified opcode
+$F27E  7F        .byte $7F ; undocumented/unclassified opcode
+$F27F  7F        .byte $7F ; undocumented/unclassified opcode
+$F280  7F        .byte $7F ; undocumented/unclassified opcode
+$F281  7F        .byte $7F ; undocumented/unclassified opcode
+$F282  7F        .byte $7F ; undocumented/unclassified opcode
+$F283  7F        .byte $7F ; undocumented/unclassified opcode
+$F284  12        .byte $12 ; undocumented/unclassified opcode
+$F285  00        BRK
+$F286  85 01     STA   $01
+$F288  1F        .byte $1F ; undocumented/unclassified opcode
+$F289  02        .byte $02 ; undocumented/unclassified opcode
+$F28A  01 03     ORA   ($03,X)
+$F28C  59 03 F0  EOR   $F003,Y

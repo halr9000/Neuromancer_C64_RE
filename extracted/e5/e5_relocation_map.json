@@ -1,0 +1,34 @@
+{
+  "dox": {
+    "source": "extracted/e5/neuromancer_dox.prg",
+    "load_address": "0x0801",
+    "loaded_end_exclusive": "0x1DC8",
+    "stage1_source": "0x088F with 248 overlapping absolute-X pages",
+    "stage1_destination": "0x080B with 248 overlapping absolute-X pages",
+    "stage2_ranges": [
+      {
+        "source": "0x0831-0x0930",
+        "destination": "0x00FA-0x01F9"
+      },
+      {
+        "source": "0x0922-0x09CC",
+        "destination": "0x0333-0x03DD"
+      }
+    ],
+    "depacker_entry": "0x03AD"
+  },
+  "solution": {
+    "source": "extracted/e5/neuromancer_sol.prg",
+    "load_address": "0x0801",
+    "loaded_end_exclusive": "0x607E",
+    "code_relocation": {
+      "source": "0x0769-0x0A68",
+      "destination": "0xCD00-0xCFFF"
+    },
+    "compressed_source": "0x0A5B-0x607D",
+    "compressed_destination": "0x70DD-0xC6FF",
+    "compressed_bytes": 22051,
+    "depacker_entry": "0xCDC2",
+    "get_symbol_entry": "0xCE50"
+  }
+}

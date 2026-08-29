@@ -1,0 +1,138 @@
+{
+  "new_game_snapshot": "extracted/e1/e1_new_game_ready_memory.bin",
+  "new_game_snapshot_sha256": "a2972b228a6305475f84aa82f7c18cf25d7c3fb144d14b9adbe5b2d9bbd03e1a",
+  "room_id": 0,
+  "table_derivation": {
+    "room_logic": {
+      "side_table": "0xFE78",
+      "track_table": "0xFE00",
+      "sector_table": "0xFE3C",
+      "selected_side": "2",
+      "selected_track": 6,
+      "selected_sector": 0
+    },
+    "room_overlay": {
+      "room_id_table": "0x62C5",
+      "track_table": "0x62E3",
+      "sector_table": "0x6301",
+      "selected_index": 0,
+      "selected_side": 2,
+      "selected_track": 1,
+      "selected_sector": 17
+    }
+  },
+  "modules": [
+    {
+      "name": "side1_frontend_ca00",
+      "role": "side-1 location/graphics payload loaded during first-time initialization",
+      "start": "T06/S06",
+      "sectors": [
+        "T06/S06",
+        "T06/S07",
+        "T06/S08",
+        "T06/S09",
+        "T06/S10",
+        "T06/S11",
+        "T06/S12",
+        "T06/S13",
+        "T06/S14",
+        "T06/S15",
+        "T06/S16",
+        "T06/S17",
+        "T06/S18"
+      ],
+      "sector_count": 13,
+      "encoded_length": 3264,
+      "destination": "0xCA00",
+      "end_exclusive": "0xD6C0",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xCA00-0xD6BF"
+      ],
+      "sha256": "aab8121aff2430bb050f5e0b6ea79a105956dd5da7e0130401966caf23f35b84",
+      "source_image_sha256": "a3deff9c8206173489afdd8c33b537a168ecd16a52a960b94b3cdd4e8f6dc5ad",
+      "output_file": "e1_side1_frontend_ca00.bin"
+    },
+    {
+      "name": "side2_room0_overlay_ac80",
+      "role": "room-0 overlay selected by the core room-ID table",
+      "start": "T01/S17",
+      "sectors": [
+        "T01/S17",
+        "T01/S18",
+        "T01/S19",
+        "T01/S20",
+        "T02/S00",
+        "T02/S01",
+        "T02/S02",
+        "T02/S03"
+      ],
+      "sector_count": 8,
+      "encoded_length": 1856,
+      "destination": "0xAC80",
+      "end_exclusive": "0xB3C0",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xAC80-0xB3BF"
+      ],
+      "sha256": "774af0a906e953d352e637889eb1dc48a03be95ca4c05ccfb70f98f4c8d52dce",
+      "source_image_sha256": "6bf683b9c688e3c999ec46657d18bbcc7268c5538d22440a8280110dcb1c30d0",
+      "output_file": "e1_side2_room0_overlay_ac80.bin"
+    },
+    {
+      "name": "side2_room0_logic_ca00",
+      "role": "room-0 logic/data selected by the tables at $FE00/$FE3C/$FE78",
+      "start": "T06/S00",
+      "sectors": [
+        "T06/S00",
+        "T06/S01",
+        "T06/S02",
+        "T06/S03",
+        "T06/S04",
+        "T06/S05",
+        "T06/S06",
+        "T06/S07",
+        "T06/S08",
+        "T06/S09",
+        "T06/S10",
+        "T06/S11",
+        "T06/S12",
+        "T06/S13",
+        "T06/S14",
+        "T06/S15",
+        "T06/S16",
+        "T06/S17",
+        "T06/S18",
+        "T06/S19",
+        "T06/S20"
+      ],
+      "sector_count": 21,
+      "encoded_length": 5174,
+      "destination": "0xCA00",
+      "end_exclusive": "0xDE36",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xCA00-0xDE35"
+      ],
+      "sha256": "e0b974a828ba62a90c8ce1faa54b8a8335184218291e8bc2d268016a6eb870b0",
+      "source_image_sha256": "6bf683b9c688e3c999ec46657d18bbcc7268c5538d22440a8280110dcb1c30d0",
+      "output_file": "e1_side2_room0_logic_ca00.bin"
+    }
+  ],
+  "runtime_copy": {
+    "source": "0xCA00-0xD5FF",
+    "destination": "0xF000-0xFBFF",
+    "bytes": 3072,
+    "sha256": "c00597020894c107914a3a11d7170262431cf7f4304365200fd3bfbe3c19bfeb",
+    "jump_vectors": {
+      "0xF00A": "0xF0F6",
+      "0xF00D": "0xF10E",
+      "0xF010": "0xF10D"
+    }
+  },
+  "room0_ready_snapshot": {
+    "file": "e1_room0_ready_memory.bin",
+    "sha256": "66316f2f3b0ccb2b03dfba6314978afbe665b470290cd51290db2f9837c32089"
+  },
+  "listing": "e1_room0_runtime_listing.txt"
+}

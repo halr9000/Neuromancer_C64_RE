@@ -1,0 +1,20 @@
+{
+  "source": "extracted/e1/e1_runtime_memory.bin",
+  "source_sha256": "66efe6b6eb4f83fe9a5a959e587c1b575f635e0d928b19b84f438caefb792be3",
+  "method": "execute zero-page stream decoder; supply VIC-II raster $80 at the post-decode wait",
+  "entry": "0x008E",
+  "handoff": "0x020A",
+  "instructions_executed": 558474,
+  "changed_address_start": "0x0018",
+  "changed_address_end": "0xFFFF",
+  "output_memory_sha256": "844afa29d91d2fd732acc100e9e864c93dd07fa42941293d509f0ded4c1784d6",
+  "stream_source_initial": "0x242D (self-modifying LDA at $0060)",
+  "runtime_entry_installed": true,
+  "registers_at_handoff": {
+    "A": "0x00",
+    "X": "0x00",
+    "Y": "0xFF",
+    "SP": "0xF9",
+    "P": "0x27"
+  }
+}

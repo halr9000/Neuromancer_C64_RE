@@ -1,0 +1,242 @@
+===== E1 POST-STAGE3 ENTRY [$020A] =====
+e1_stage3_handoff: ; Entry after zero-page stream decoder
+$020A  E6 01     INC   $01
+$020C  A2 02     LDX   #$02
+$020E  B5 2D     LDA   $2D,X
+$0210  9D 0D DD  STA   $DD0D,X
+$0213  B5 30     LDA   $30,X
+$0215  9D 0D DC  STA   $DC0D,X
+$0218  CA        DEX
+$0219  EA        NOP
+$021A  EA        NOP
+$021B  10 F1     BPL   $020E
+$021D  A2 03     LDX   #$03
+$021F  B5 33     LDA   $33,X
+$0221  9D 04 DD  STA   $DD04,X
+$0224  B5 37     LDA   $37,X
+$0226  9D 04 DC  STA   $DC04,X
+$0229  CA        DEX
+$022A  10 F3     BPL   $021F
+$022C  C6 01     DEC   $01
+$022E  A2 38     LDX   #$38
+$0230  BD A7 02  LDA   $02A7,X
+$0233  95 02     STA   $02,X
+$0235  A9 00     LDA   #$00
+$0237  9D A7 02  STA   $02A7,X
+$023A  CA        DEX
+$023B  10 F3     BPL   $0230
+$023D  E6 01     INC   $01
+$023F  A9 00     LDA   #$00
+$0241  A0 3E     LDY   #$3E
+$0243  A2 37     LDX   #$37
+$0245  4C E6 01  JMP   $01E6
+$0248  3B        .byte $3B ; undocumented/unclassified opcode
+$0249  00        BRK
+$024A  00        BRK
+$024B  00        BRK
+$024C  00        BRK
+$024D  00        BRK
+$024E  00        BRK
+$024F  00        BRK
+$0250  00        BRK
+$0251  00        BRK
+$0252  00        BRK
+$0253  00        BRK
+$0254  00        BRK
+$0255  00        BRK
+$0256  00        BRK
+$0257  00        BRK
+$0258  00        BRK
+$0259  00        BRK
+$025A  00        BRK
+$025B  00        BRK
+$025C  00        BRK
+$025D  00        BRK
+$025E  00        BRK
+$025F  00        BRK
+$0260  00        BRK
+$0261  00        BRK
+$0262  00        BRK
+$0263  00        BRK
+$0264  00        BRK
+$0265  00        BRK
+$0266  00        BRK
+$0267  00        BRK
+$0268  00        BRK
+$0269  00        BRK
+$026A  00        BRK
+$026B  00        BRK
+$026C  00        BRK
+$026D  00        BRK
+$026E  00        BRK
+$026F  00        BRK
+$0270  00        BRK
+$0271  00        BRK
+$0272  00        BRK
+$0273  00        BRK
+$0274  00        BRK
+$0275  00        BRK
+$0276  00        BRK
+$0277  20 00 00  JSR   $0000
+$027A  00        BRK
+$027B  00        BRK
+$027C  00        BRK
+$027D  00        BRK
+$027E  00        BRK
+$027F  00        BRK
+$0280  00        BRK
+$0281  00        BRK
+$0282  08        PHP
+$0283  00        BRK
+$0284  A0 00     LDY   #$00
+$0286  07        .byte $07 ; undocumented/unclassified opcode
+$0287  9E        .byte $9E ; undocumented/unclassified opcode
+$0288  04        .byte $04 ; undocumented/unclassified opcode
+$0289  0A        ASL   A
+$028A  00        BRK
+$028B  04        .byte $04 ; undocumented/unclassified opcode
+$028C  10 00     BPL   $028E
+$028E  00        BRK
+$028F  48        PHA
+$0290  EB        .byte $EB ; undocumented/unclassified opcode
+$0291  00        BRK
+$0292  00        BRK
+$0293  00        BRK
+$0294  00        BRK
+$0295  00        BRK
+$0296  00        BRK
+$0297  00        BRK
+$0298  00        BRK
+$0299  00        BRK
+$029A  00        BRK
+$029B  00        BRK
+$029C  00        BRK
+$029D  00        BRK
+$029E  00        BRK
+$029F  00        BRK
+$02A0  00        BRK
+$02A1  00        BRK
+$02A2  00        BRK
+$02A3  00        BRK
+$02A4  00        BRK
+$02A5  00        BRK
+$02A6  01 00     ORA   ($00,X)
+$02A8  AA        TAX
+$02A9  B1 91     LDA   ($91),Y
+$02AB  B3        .byte $B3 ; undocumented/unclassified opcode
+$02AC  22        .byte $22 ; undocumented/unclassified opcode
+$02AD  00        BRK
+$02AE  00        BRK
+$02AF  00        BRK
+$02B0  4C 00 00  JMP   $0000
+$02B3  00        BRK
+$02B4  04        .byte $04 ; undocumented/unclassified opcode
+$02B5  00        BRK
+$02B6  00        BRK
+$02B7  00        BRK
+$02B8  00        BRK
+$02B9  10 08     BPL   $02C3
+$02BB  19 16 00  ORA   $0016,Y
+$02BE  0A        ASL   A
+$02BF  76 A3     ROR   $A3,X
+$02C1  00        BRK
+$02C2  00        BRK
+$02C3  00        BRK
+$02C4  00        BRK
+$02C5  00        BRK
+$02C6  00        BRK
+$02C7  40        RTI
+$02C8  08        PHP
+$02C9  B3        .byte $B3 ; undocumented/unclassified opcode
+$02CA  BD 00 00  LDA   $0000,X
+$02CD  00        BRK
+$02CE  00        BRK
+$02CF  00        BRK
+$02D0  01 08     ORA   ($08,X)
+$02D2  00        BRK
+$02D3  0D FF FF  ORA   $FFFF
+$02D6  2F        .byte $2F ; undocumented/unclassified opcode
+$02D7  08        PHP
+$02D8  00        BRK
+$02D9  A0 00     LDY   #$00
+$02DB  A0 00     LDY   #$00
+$02DD  A0 FF     LDY   #$FF
+$02DF  07        .byte $07 ; undocumented/unclassified opcode
+$02E0  00        BRK
+$02E1  00        BRK
+$02E2  00        BRK
+$02E3  00        BRK
+$02E4  00        BRK
+$02E5  00        BRK
+$02E6  00        BRK
+$02E7  00        BRK
+$02E8  00        BRK
+$02E9  00        BRK
+$02EA  00        BRK
+$02EB  00        BRK
+$02EC  00        BRK
+$02ED  00        BRK
+$02EE  00        BRK
+$02EF  00        BRK
+$02F0  00        BRK
+$02F1  00        BRK
+$02F2  00        BRK
+$02F3  00        BRK
+$02F4  00        BRK
+$02F5  00        BRK
+$02F6  00        BRK
+$02F7  00        BRK
+$02F8  00        BRK
+$02F9  00        BRK
+$02FA  00        BRK
+$02FB  00        BRK
+$02FC  00        BRK
+$02FD  00        BRK
+$02FE  00        BRK
+$02FF  00        BRK
+$0300  34        .byte $34 ; undocumented/unclassified opcode
+$0301  03        .byte $03 ; undocumented/unclassified opcode
+$0302  34        .byte $34 ; undocumented/unclassified opcode
+$0303  03        .byte $03 ; undocumented/unclassified opcode
+$0304  7C        .byte $7C ; undocumented/unclassified opcode
+$0305  A5 1A     LDA   $1A
+$0307  A7        .byte $A7 ; undocumented/unclassified opcode
+$0308  E4 A7     CPX   $A7
+$030A  86 AE     STX   $AE
+$030C  00        BRK
+$030D  00        BRK
+$030E  00        BRK
+$030F  00        BRK
+$0310  4C 48 B2  JMP   $B248
+$0313  00        BRK
+$0314  31 EA     AND   ($EA),Y
+$0316  FF        .byte $FF ; undocumented/unclassified opcode
+$0317  97        .byte $97 ; undocumented/unclassified opcode
+$0318  47        .byte $47 ; undocumented/unclassified opcode
+$0319  FE 4A F3  INC   $F34A,X
+$031C  91 F2     STA   ($F2),Y
+$031E  0E F2 50  ASL   $50F2
+$0321  F2        .byte $F2 ; undocumented/unclassified opcode
+$0322  33        .byte $33 ; undocumented/unclassified opcode
+$0323  F3        .byte $F3 ; undocumented/unclassified opcode
+$0324  57        .byte $57 ; undocumented/unclassified opcode
+$0325  F1 CA     SBC   ($CA),Y
+$0327  F1 ED     SBC   ($ED),Y
+$0329  F6 3E     INC   $3E,X
+$032B  F1 2F     SBC   ($2F),Y
+$032D  F3        .byte $F3 ; undocumented/unclassified opcode
+$032E  66 FE     ROR   $FE
+$0330  A5 F4     LDA   $F4
+$0332  ED F5 00  SBC   $00F5
+$0335  00        BRK
+$0336  00        BRK
+$0337  00        BRK
+$0338  00        BRK
+$0339  00        BRK
+$033A  00        BRK
+$033B  00        BRK
+$033C  00        BRK
+$033D  00        BRK
+$033E  00        BRK
+$033F  00        BRK
+$0340  00        BRK

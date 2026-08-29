@@ -1,0 +1,35 @@
+{
+  "source_prg": "extracted/e5/neuromancer_sol.prg",
+  "source_sha256": "c6eeb3149b548cf40b90d4945dacc91151a1b12683df4349085f2f1f0cb3367e",
+  "algorithm": "$CE50 entropy decoder followed by $F3 RLE, translated from the relocated 6510 depacker",
+  "compressed_source_address": "0x0A5B",
+  "compressed_source_file_offset": 604,
+  "compressed_bytes_available": 22051,
+  "relocated_stream_start": "0x70DD",
+  "relocated_stream_last_read": "0xC6FF",
+  "entropy_symbols_decoded": 28603,
+  "entropy_input_bytes_read": 22051,
+  "output_start": "0x0801",
+  "output_end_exclusive": "0x8DEE",
+  "output_bytes": 34285,
+  "output_sha256": "9ed31ff35ac9cd69182fc8b5a88b987e7a545aaa39ccd85336e4233e32fb8446",
+  "basic_lines": 0,
+  "basic_parse_error": "line 20550 at $0801 points to $452E, but its terminator implies $081B",
+  "relocation": {
+    "source": "extracted/e5/neuromancer_sol.prg",
+    "load_address": "0x0801",
+    "loaded_end_exclusive": "0x607E",
+    "code_relocation": {
+      "source": "0x0769-0x0A68",
+      "destination": "0xCD00-0xCFFF"
+    },
+    "compressed_source": "0x0A5B-0x607D",
+    "compressed_destination": "0x70DD-0xC6FF",
+    "compressed_bytes": 22051,
+    "depacker_entry": "0xCDC2",
+    "get_symbol_entry": "0xCE50"
+  },
+  "literal_records": 26628,
+  "run_records": 662,
+  "escaped_marker_records": 11
+}

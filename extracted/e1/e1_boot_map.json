@@ -1,0 +1,40 @@
+{
+  "source_prg": "extracted/e1/neuromancer_e1.prg",
+  "source_sha256": "feee8bd37d8faca645c2cac22214f2b130c2dedc9bf7004b65a1c6aee74fd5f0",
+  "autostart": {
+    "load_address": "0x02A7",
+    "istop_vector": "0x0328-0x0329",
+    "first_vector_value": "0x02A7",
+    "steady_vector_value": "0x02BD",
+    "load_pointer": "0x00AE-0x00AF",
+    "redirected_to": "0xC000",
+    "trigger_value": "0xC240",
+    "transfer": "JSR $FD15; JMP $C100"
+  },
+  "redirected_stage": {
+    "file_source": "0x032A-0x0569",
+    "runtime_destination": "0xC000-0xC23F",
+    "bytes": 576,
+    "sha256": "e866772ef159403b7096f419e36a897c9a877899e9b2b2b8d2e8b4b29b32f76e",
+    "entry": "0xC100",
+    "entry_file_source": "0x042A"
+  },
+  "drive_fastloader": {
+    "runtime_source": "0xC000-0xC0FF",
+    "drive_destination": "0x0700-0x07FF",
+    "bytes": 256,
+    "sha256": "d58507aefce4f89fce7d3980deeead9fb3234f5b2b56b50f2e71b57bef47c6f9",
+    "upload_command": "M-W in eight 32-byte blocks",
+    "execute_command": "M-E $079F",
+    "entry": "0x079F"
+  },
+  "client_fastloader": {
+    "runtime_source_code": "0xC173-0xC228",
+    "c64_destination_code": "0x0100-0x01B5",
+    "bytes": 182,
+    "sha256": "c1dd9d129ea028f25d465455f6bc6b3ce7711a944b5eb2276b6509c0343a7912",
+    "copy_loop": "0xC173-0xC272 -> 0x0100-0x01FF; bytes after code are padding",
+    "entry": "0x0100",
+    "serial_get_byte": "0x0187"
+  }
+}
