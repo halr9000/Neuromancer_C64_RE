@@ -231,8 +231,8 @@ python3 -m unittest tools.test_e1_boot tools.test_e1_fastload tools.test_e1_deco
 - Capture a complete room background/screen frame in VICE and correlate it with
   the now-confirmed entity/VIC fields.
 - Catalog every room/module tuple across E2-E4, including write/save paths.
-- Decode the `$F248` room record tree and its text compression precisely.
-- Identify graphics/sprite packing and produce the first pixel-checked asset set.
+- Decode the remaining non-text records rooted near `$F248` and map their script operations.
+- Extend pixel-checked graphics extraction beyond the initial cursor and `$A400` sprite sets.
 - Map side changes and end-to-end state transitions beyond room 0.
 
 ## External address references

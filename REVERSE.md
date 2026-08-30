@@ -79,6 +79,7 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 - **Verified:** the E1 room table contains 60 slots: 56 valid room modules and four empty entries (`42`, `47`, `58`, and `59`). Valid room modules select 29 E2 records and 27 E3 records; the table-order side runs are E2 rooms `0-19`, E3 `20-21`, E2 `22-28`, E3 `29`, E2 `30-31`, and E3 `32-57`.
 - **Verified:** the E1 location table contains 30 overlay tuples. Indices `$00-$12` select 19 E2 overlays and `$13-$1D` select 11 E3 overlays. E4's side marker is valid, but E1's room and location tables select no E4 module in this catalog.
 - **Verified:** `docs/architecture_exe.md` records the executable architecture, complete initial module map, first-room reconstruction, and current core-function labels.
+- **Decision:** `docs/architecture_web.md` maps verified executable boundaries to a headless-testable browser runtime. The first implementation target is a vertically integrated room-0 slice; planned UI, save, game-over, and audio behavior remains explicitly provisional until traced.
 - **Environment finding (2026-08-29):** VICE 3.10 GTK3 is installed through Winget (`VICE-Team.VICE.GTK3`), including `x64sc`, `c1541`, and `petcat`. The first scripted hardware-accurate room-vector capture is checked in at `extracted/e1/e1_vice_room0_probe.log`; tick/dispatcher tracing remains open.
 - **Verified (first sprite assets):** the 127-byte module loaded at `$0380-$03FE` contains two 63-byte, MSB-first, high-resolution VIC-II sprites plus one padding byte. Startup writes pointers `$0E/$0F` to `$07F8/$07F9`; `tools/extract_e1_assets.py` reproducibly exports both 24x21 masks and their combined sheet under `extracted/e1/assets/`. The shapes are complementary pointer-arrow sprites with 58 and 53 set pixels.
 - **Verified (sprite bank and VICE pixel check):** `e1_module_a400.bin` is 34 contiguous 64-byte sprite slots. Its contact sheet resolves humanoid standing/movement frames; VICE 3.10 renders the first five unchanged slots at native 24x21 high-resolution geometry with pixels matching the extractor masks. See `docs/e1_sprite_assets.md` and `extracted/e1/assets/vice_a400_sprites.png`. The apparent `$07F8-$07FF` pointers in the pre-frame room snapshot were rejected after their targets decoded as unrelated code/data.
@@ -198,6 +199,6 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 ### Documentation
 
 - [x] Create `docs/architecture_exe.md` once the resident architecture is mapped
-- [ ] Create `docs/architecture_web.md` before implementation of the web port
+- [x] Create `docs/architecture_web.md` before implementation of the web port
 
 SESSION_SUMMARY: E5 is fully readable; E1 is reconstructed from LOAD through stable startup `$03E7`, hidden module assembly, engine `$4836`, the E2-E4 room/location catalog, and the first cross-side room runtime at `$F000`.
