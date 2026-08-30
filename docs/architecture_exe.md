@@ -173,9 +173,11 @@ alone:
 The exact report is `extracted/e1/e1_room0_vector_trace.json`; its final memory
 hash after init, 64 ticks, and teardown is
 `f1006c2fa4c38ca6b6836d8a547f55b2779dc84c7ef65ddd077fcc912eff9387`.
-VICE 3.10 captures now confirm initialize, 64 tick calls, and teardown against
-the same reconstructed snapshot. Live main-loop and entity-dispatch captures
-remain required before promoting entity-field names beyond the current evidence.
+VICE 3.10 captures confirm initialize, 64 tick calls, teardown, the bounded
+main-loop-to-dispatch edge, room-0 entity initialization, sprite-frame building,
+and the IRQ transfer into VIC-II registers. The entity parallel-array field names
+are therefore promoted; final room composition still requires a complete live
+background/screen capture.
 
 ### Bounded entity-dispatcher evidence
 
@@ -226,7 +228,8 @@ python3 -m unittest tools.test_e1_boot tools.test_e1_fastload tools.test_e1_deco
 
 ## Remaining unknowns
 
-- Confirm the named runtime functions and entity fields with a live VICE trace.
+- Capture a complete room background/screen frame in VICE and correlate it with
+  the now-confirmed entity/VIC fields.
 - Catalog every room/module tuple across E2-E4, including write/save paths.
 - Decode the `$F248` room record tree and its text compression precisely.
 - Identify graphics/sprite packing and produce the first pixel-checked asset set.

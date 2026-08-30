@@ -43,15 +43,32 @@ live-frame dependency and higher-level semantics remain open.
 ## Sprite-frame evidence
 
 `$5B1E` copies six parallel four-slot arrays into `$5E01-$5E18`, depth-sorts the
-records using the `$0E`-derived field, and builds VIC-II-facing fields at
-`$5E19-$5E34`. In the VICE room-0 capture, the active record's `$14/$22/$29`
-values survive into this workspace and produce emitted coordinate/color-related
-bytes. The routine reaches the synthetic return in 13,772 VICE cycles.
+records using the `$0E` field, and builds VIC-II-facing fields at
+`$5E19-$5E34`. The complete post-overlay path reaches its first initialized
+frame in 192,477 VICE cycles. Applying that frame through the real IRQ transfer
+loop `$4D46-$4D7E` produces this hardware state:
+
+| Sprite | Enabled | X | Y | Pointer | Color |
+|---:|:---:|---:|---:|---:|---:|
+| 1 | yes | 64 | 88 | `$21` | `$9` |
+| 2 | yes | 64 | 109 | `$22` | `$2` |
+
+That transfer confirms the parallel-array meanings:
+
+| Array | Confirmed meaning |
+|---:|---|
+| `$02-$05` | primary sprite-frame source |
+| `$06-$09` | secondary sprite-frame source |
+| `$0A-$0D` | logical X; rendered as `(X+$0C)*2` with carry in `$D010` |
+| `$0E-$11` | logical Y; rendered as `Y+$36` |
+| `$12-$15` | packed primary/secondary color nibbles |
+| `$16-$19` | packed enable, composition, priority, expansion, and multicolor flags |
 
 The captures are reproducible with `tools/vice_entity_dispatch_probe.mon` and
 `tools/vice_entity_sprite_frame_probe.mon`. They intentionally distinguish
-verified byte flow from tentative gameplay names; final X/Y/color names require
-a screenshot paired with a genuinely live main-loop frame.
+verified byte flow from higher-level gameplay interpretation. The checked-in
+VICE screenshot includes incomplete background/screen RAM, so it proves sprite
+register transfer and field names rather than final room composition.
 
 `tools/vice_main_loop_entry_probe.mon` additionally enters `$488D`, verifies
 that transient fields `$90/$CB` are cleared, and reaches `$6429` in 25 VICE
