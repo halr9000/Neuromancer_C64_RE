@@ -24,13 +24,21 @@ bytes 6-7. In room 0, only `$C400` activates:
 The other three records shown in the bounded capture retain `$FF` at byte 5 and
 null script pointers.
 
+The valid table terminates at the first negative room-ID byte, `$C518=$FF`
+(record index 35). `$C400` is the only room-ID-0 record before that sentinel.
+Faithful isolated execution must first reproduce the room loader's
+`$9D-$A0=$FF` reset so only slot 1 (`$9E`) becomes active.
+
 ## Dispatcher evidence
 
-`$6429` resolves active slot 0 to record `$C400` and script pointer `$F02D`.
+`$6429` resolves active slot 1 to record `$C400` and script pointer `$F02D`.
 Opcode `$01` selects handler `$64B5`. The dispatcher advances bytes 6-7 by the
 handler's returned record length after a handler completes. The opcode-1 handler
-calls UI/input routines and does not complete in the isolated pre-frame harness,
-so its higher-level semantics remain open.
+first completes `$6CBC` and `$BCDC`, then enters input-release handshake `$5933`.
+Its alternate `$3D!=0` path clears the flag and returns. `$BCDC` derives
+`$BEF8/$BEF9 = $28/$05` before the final `$BE89` screen/sprite rebuild. The
+isolated VICE process does not reach the checkpoint after `$BE89`, so its missing
+live-frame dependency and higher-level semantics remain open.
 
 ## Sprite-frame evidence
 

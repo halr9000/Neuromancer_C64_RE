@@ -1,44 +1,18 @@
 Setting default device to `Computer'
 Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
-Stopwatch reset to 0.
-UNTIL: 1  C:$6429  (Stop on exec)
-#1 (Stop on  exec 6429)    0/$000,  55/$37
-.C:6429  AE 02 F0    LDX $F002      - A:00 X:00 Y:00 SP:fd ..-...Z.         49
->C:0064  08 10 00 00                                          
-  ADDR A  X  Y  SP 00 01 NV-BDIZC LIN CYC  STOPWATCH
-.;6429 00 00 00 fd 2f 35 00100010 000 055         49
-Setting default device to `Computer'
-Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
-Stopwatch reset to 0.
-UNTIL: 1  C:$6452  (Stop on exec)
-#1 (Stop on  exec 6452)    3/$003,  13/$0d
-.C:6452  20 BE A9    JSR $A9BE      - A:A9 X:5E Y:00 SP:fd N.-.....        196
->C:0064  00 c4 00 00                                          Ä
-  ADDR A  X  Y  SP 00 01 NV-BDIZC LIN CYC  STOPWATCH
-.;6452 a9 5e 00 fd 2f 35 10100000 003 013        196
-Setting default device to `Computer'
-Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
 UNTIL: 1  C:$628c  (Stop on exec)
 #1 (Stop on  exec 628c)   28/$01c,  42/$2a
 .C:628c  20 EC 59    JSR $59EC      - A:FF X:02 Y:00 SP:ff N.-.....       1806
->C:009d  00 00 00 00                                          
->C:c400  00 c1 14 22  29 00 2d f0  01 e9 14 24  55 ff 00 00   Á")-ðé$Uÿ
->C:c410  02 01 10 00  39 ff 00 00  02 02 43 31  bb ff 00 00   9ÿC1»ÿ
-Setting default device to `Computer'
-Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
-UNTIL: 1  C:$628c  (Stop on exec)
-#1 (Stop on  exec 628c)   28/$01c,  42/$2a
-.C:628c  20 EC 59    JSR $59EC      - A:FF X:02 Y:00 SP:ff N.-.....       1806
->C:009d  00 00 00 00                                          
+>C:009d  ff 00 ff ff                                          ÿÿÿ
 >C:c400  00 c1 14 22  29 00 2d f0  01 e9 14 24  55 ff 00 00   Á")-ðé$Uÿ
 >C:c410  02 01 10 00  39 ff 00 00  02 02 43 31  bb ff 00 00   9ÿC1»ÿ
 Stopwatch reset to 0.
-UNTIL: 1  C:$6452  (Stop on exec)
-#1 (Stop on  exec 6452)   31/$01f,   6/$06
-.C:6452  20 B5 64    JSR $64B5      - A:64 X:02 Y:00 SP:fd ..-.....        153
+UNTIL: 1  C:$64c2  (Stop on exec)
+#1 (Stop on  exec 64c2)  247/$0f7,  10/$0a
+.C:64c2  20 33 59    JSR $5933      - A:28 X:FF Y:FF SP:fb N.-....C     406885
 >C:0064  00 c4 2d f0                                          Ä-ð
->C:009d  00 00 00 00                                          
+>C:009d  ff 00 ff ff                                          ÿÿÿ
 >C:c400  00 c1 14 22  29 00 2d f0  01 e9 14 24  55 ff 00 00   Á")-ðé$Uÿ
 >C:c410  02 01 10 00  39 ff 00 00  02 02 43 31  bb ff 00 00   9ÿC1»ÿ
   ADDR A  X  Y  SP 00 01 NV-BDIZC LIN CYC  STOPWATCH
-.;6452 64 02 00 fd 2f 35 00100000 031 006        153
+.;64c2 28 ff ff fb 2f 35 10100001 247 010     406885
