@@ -10,6 +10,9 @@ __pycache__/
 venv/
 env/
 
+# Supplied disk images and intake metadata are local, immutable inputs
+intake/
+
 # Editor and operating-system files
 .vscode/
 .idea/

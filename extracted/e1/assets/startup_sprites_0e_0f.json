@@ -1,0 +1,27 @@
+{
+  "source": "extracted\\e1\\e1_module_0380.bin",
+  "source_sha256": "9c0c37ce1a402ae4b78002bf21c40880bd219069e4a7a866c4117fe9e38474e0",
+  "format": "VIC-II high-resolution sprite, 24x21, MSB first",
+  "module_layout": "two 63-byte sprites followed by one padding byte",
+  "runtime_evidence": "$051B-$0521 stores pointers $0E/$0F at $07F8/$07F9",
+  "rendering": "white RGBA mask on transparent background; nearest-neighbor scaling",
+  "sheet": "startup_sprites_0e_0f.png",
+  "sprites": [
+    {
+      "index": 0,
+      "pointer": "0x0E",
+      "address": "0x0380",
+      "source_offset": "0x00",
+      "foreground_pixel_count": 58,
+      "png": "startup_sprite_0e.png"
+    },
+    {
+      "index": 1,
+      "pointer": "0x0F",
+      "address": "0x03C0",
+      "source_offset": "0x3F",
+      "foreground_pixel_count": 53,
+      "png": "startup_sprite_0f.png"
+    }
+  ]
+}

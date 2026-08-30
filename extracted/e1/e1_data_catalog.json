@@ -1,0 +1,2530 @@
+{
+  "snapshot_sha256": "a2972b228a6305475f84aa82f7c18cf25d7c3fb144d14b9adbe5b2d9bbd03e1a",
+  "source_sides": {
+    "2": {
+      "label": "E2",
+      "marker": "2",
+      "image_sha256": "6bf683b9c688e3c999ec46657d18bbcc7268c5538d22440a8280110dcb1c30d0",
+      "room_modules": 29,
+      "overlay_modules": 19
+    },
+    "3": {
+      "label": "E3",
+      "marker": "3",
+      "image_sha256": "80dbc6e5cba61c2aa8a92196a3b679ef10248d2ba33877461b70a24d9d7c1f51",
+      "room_modules": 27,
+      "overlay_modules": 11
+    },
+    "4": {
+      "label": "E4",
+      "marker": "4",
+      "image_sha256": "5a2fe7886aafe8dc61e28ff43d56821854bd8c8aa46b37c6f4c635c894e27a1e",
+      "room_modules": 0,
+      "overlay_modules": 0
+    }
+  },
+  "room_table": {
+    "track_table": "0xFE00",
+    "sector_table": "0xFE3C",
+    "side_table": "0xFE78",
+    "entry_count": 60,
+    "valid_count": 56,
+    "invalid_entries": [
+      42,
+      47,
+      58,
+      59
+    ],
+    "entries": [
+      {
+        "room_id": 0,
+        "tuple": {
+          "side": 2,
+          "track": 6,
+          "sector": 0
+        },
+        "start": "T06/S00",
+        "encoded_length": 5174,
+        "sector_count": 21,
+        "sectors": [
+          "T06/S00",
+          "T06/S01",
+          "T06/S02",
+          "T06/S03",
+          "T06/S04",
+          "T06/S05",
+          "T06/S06",
+          "T06/S07",
+          "T06/S08",
+          "T06/S09",
+          "T06/S10",
+          "T06/S11",
+          "T06/S12",
+          "T06/S13",
+          "T06/S14",
+          "T06/S15",
+          "T06/S16",
+          "T06/S17",
+          "T06/S18",
+          "T06/S19",
+          "T06/S20"
+        ],
+        "sha256": "e0b974a828ba62a90c8ce1faa54b8a8335184218291e8bc2d268016a6eb870b0"
+      },
+      {
+        "room_id": 1,
+        "tuple": {
+          "side": 2,
+          "track": 7,
+          "sector": 0
+        },
+        "start": "T07/S00",
+        "encoded_length": 4025,
+        "sector_count": 16,
+        "sectors": [
+          "T07/S00",
+          "T07/S01",
+          "T07/S02",
+          "T07/S03",
+          "T07/S04",
+          "T07/S05",
+          "T07/S06",
+          "T07/S07",
+          "T07/S08",
+          "T07/S09",
+          "T07/S10",
+          "T07/S11",
+          "T07/S12",
+          "T07/S13",
+          "T07/S14",
+          "T07/S15"
+        ],
+        "sha256": "f7dde4970d0cbe8c09ffcaf1669a53c622187bca5f807d5cfe6f945492e40960"
+      },
+      {
+        "room_id": 2,
+        "tuple": {
+          "side": 2,
+          "track": 7,
+          "sector": 16
+        },
+        "start": "T07/S16",
+        "encoded_length": 6083,
+        "sector_count": 24,
+        "sectors": [
+          "T07/S16",
+          "T07/S17",
+          "T07/S18",
+          "T07/S19",
+          "T07/S20",
+          "T08/S00",
+          "T08/S01",
+          "T08/S02",
+          "T08/S03",
+          "T08/S04",
+          "T08/S05",
+          "T08/S06",
+          "T08/S07",
+          "T08/S08",
+          "T08/S09",
+          "T08/S10",
+          "T08/S11",
+          "T08/S12",
+          "T08/S13",
+          "T08/S14",
+          "T08/S15",
+          "T08/S16",
+          "T08/S17",
+          "T08/S18"
+        ],
+        "sha256": "a87d440452d642afe0a6ecfdd2bda95bcbc87b96261cd12a1d7e36726dcfa98f"
+      },
+      {
+        "room_id": 3,
+        "tuple": {
+          "side": 2,
+          "track": 8,
+          "sector": 19
+        },
+        "start": "T08/S19",
+        "encoded_length": 5022,
+        "sector_count": 20,
+        "sectors": [
+          "T08/S19",
+          "T08/S20",
+          "T09/S00",
+          "T09/S01",
+          "T09/S02",
+          "T09/S03",
+          "T09/S04",
+          "T09/S05",
+          "T09/S06",
+          "T09/S07",
+          "T09/S08",
+          "T09/S09",
+          "T09/S10",
+          "T09/S11",
+          "T09/S12",
+          "T09/S13",
+          "T09/S14",
+          "T09/S15",
+          "T09/S16",
+          "T09/S17"
+        ],
+        "sha256": "1dfb57cb6722afb1e84c3ed5c84ef2caaa4276b0ff91381a6ec323b6d4618029"
+      },
+      {
+        "room_id": 4,
+        "tuple": {
+          "side": 2,
+          "track": 9,
+          "sector": 18
+        },
+        "start": "T09/S18",
+        "encoded_length": 4014,
+        "sector_count": 16,
+        "sectors": [
+          "T09/S18",
+          "T09/S19",
+          "T09/S20",
+          "T10/S00",
+          "T10/S01",
+          "T10/S02",
+          "T10/S03",
+          "T10/S04",
+          "T10/S05",
+          "T10/S06",
+          "T10/S07",
+          "T10/S08",
+          "T10/S09",
+          "T10/S10",
+          "T10/S11",
+          "T10/S12"
+        ],
+        "sha256": "e980b982885b1e402893e7e7aaa1072dff1da7478afa01852e7d987d49cc3870"
+      },
+      {
+        "room_id": 5,
+        "tuple": {
+          "side": 2,
+          "track": 10,
+          "sector": 13
+        },
+        "start": "T10/S13",
+        "encoded_length": 5382,
+        "sector_count": 22,
+        "sectors": [
+          "T10/S13",
+          "T10/S14",
+          "T10/S15",
+          "T10/S16",
+          "T10/S17",
+          "T10/S18",
+          "T10/S19",
+          "T10/S20",
+          "T11/S00",
+          "T11/S01",
+          "T11/S02",
+          "T11/S03",
+          "T11/S04",
+          "T11/S05",
+          "T11/S06",
+          "T11/S07",
+          "T11/S08",
+          "T11/S09",
+          "T11/S10",
+          "T11/S11",
+          "T11/S12",
+          "T11/S13"
+        ],
+        "sha256": "1e8ee1ff959ba4bca85f742deb228ec8e2f1e9889831f596cb630835bcd10c1f"
+      },
+      {
+        "room_id": 6,
+        "tuple": {
+          "side": 2,
+          "track": 11,
+          "sector": 14
+        },
+        "start": "T11/S14",
+        "encoded_length": 4045,
+        "sector_count": 16,
+        "sectors": [
+          "T11/S14",
+          "T11/S15",
+          "T11/S16",
+          "T11/S17",
+          "T11/S18",
+          "T11/S19",
+          "T11/S20",
+          "T12/S00",
+          "T12/S01",
+          "T12/S02",
+          "T12/S03",
+          "T12/S04",
+          "T12/S05",
+          "T12/S06",
+          "T12/S07",
+          "T12/S08"
+        ],
+        "sha256": "81b9263440aa2bd8da6a1260f9272955cf0368609f439f2f7beb017f8b902746"
+      },
+      {
+        "room_id": 7,
+        "tuple": {
+          "side": 2,
+          "track": 12,
+          "sector": 9
+        },
+        "start": "T12/S09",
+        "encoded_length": 6094,
+        "sector_count": 24,
+        "sectors": [
+          "T12/S09",
+          "T12/S10",
+          "T12/S11",
+          "T12/S12",
+          "T12/S13",
+          "T12/S14",
+          "T12/S15",
+          "T12/S16",
+          "T12/S17",
+          "T12/S18",
+          "T12/S19",
+          "T12/S20",
+          "T13/S00",
+          "T13/S01",
+          "T13/S02",
+          "T13/S03",
+          "T13/S04",
+          "T13/S05",
+          "T13/S06",
+          "T13/S07",
+          "T13/S08",
+          "T13/S09",
+          "T13/S10",
+          "T13/S11"
+        ],
+        "sha256": "93546da6c67d5484625b3a77f33838c60e17c47fdffc7f81bd4f46d240961f0d"
+      },
+      {
+        "room_id": 8,
+        "tuple": {
+          "side": 2,
+          "track": 13,
+          "sector": 12
+        },
+        "start": "T13/S12",
+        "encoded_length": 4700,
+        "sector_count": 19,
+        "sectors": [
+          "T13/S12",
+          "T13/S13",
+          "T13/S14",
+          "T13/S15",
+          "T13/S16",
+          "T13/S17",
+          "T13/S18",
+          "T13/S19",
+          "T13/S20",
+          "T14/S00",
+          "T14/S01",
+          "T14/S02",
+          "T14/S03",
+          "T14/S04",
+          "T14/S05",
+          "T14/S06",
+          "T14/S07",
+          "T14/S08",
+          "T14/S09"
+        ],
+        "sha256": "b759eb859abbba08a03b3b81de3c163762f729ed80567ad43eb0cc4997d02ab8"
+      },
+      {
+        "room_id": 9,
+        "tuple": {
+          "side": 2,
+          "track": 14,
+          "sector": 10
+        },
+        "start": "T14/S10",
+        "encoded_length": 5059,
+        "sector_count": 20,
+        "sectors": [
+          "T14/S10",
+          "T14/S11",
+          "T14/S12",
+          "T14/S13",
+          "T14/S14",
+          "T14/S15",
+          "T14/S16",
+          "T14/S17",
+          "T14/S18",
+          "T14/S19",
+          "T14/S20",
+          "T15/S00",
+          "T15/S01",
+          "T15/S02",
+          "T15/S03",
+          "T15/S04",
+          "T15/S05",
+          "T15/S06",
+          "T15/S07",
+          "T15/S08"
+        ],
+        "sha256": "952cfa26d7e7c619dd284fc57d69a823b4c090a3a47042cefc9c6d7ba8bb96df"
+      },
+      {
+        "room_id": 10,
+        "tuple": {
+          "side": 2,
+          "track": 15,
+          "sector": 9
+        },
+        "start": "T15/S09",
+        "encoded_length": 5790,
+        "sector_count": 23,
+        "sectors": [
+          "T15/S09",
+          "T15/S10",
+          "T15/S11",
+          "T15/S12",
+          "T15/S13",
+          "T15/S14",
+          "T15/S15",
+          "T15/S16",
+          "T15/S17",
+          "T15/S18",
+          "T15/S19",
+          "T15/S20",
+          "T16/S00",
+          "T16/S01",
+          "T16/S02",
+          "T16/S03",
+          "T16/S04",
+          "T16/S05",
+          "T16/S06",
+          "T16/S07",
+          "T16/S08",
+          "T16/S09",
+          "T16/S10"
+        ],
+        "sha256": "8dfc90946088455f4e672fc928c1da8d2a8de1bf4a8b19e71f9cae18578a1fcf"
+      },
+      {
+        "room_id": 11,
+        "tuple": {
+          "side": 2,
+          "track": 16,
+          "sector": 11
+        },
+        "start": "T16/S11",
+        "encoded_length": 6140,
+        "sector_count": 24,
+        "sectors": [
+          "T16/S11",
+          "T16/S12",
+          "T16/S13",
+          "T16/S14",
+          "T16/S15",
+          "T16/S16",
+          "T16/S17",
+          "T16/S18",
+          "T16/S19",
+          "T16/S20",
+          "T17/S00",
+          "T17/S01",
+          "T17/S02",
+          "T17/S03",
+          "T17/S04",
+          "T17/S05",
+          "T17/S06",
+          "T17/S07",
+          "T17/S08",
+          "T17/S09",
+          "T17/S10",
+          "T17/S11",
+          "T17/S12",
+          "T17/S13"
+        ],
+        "sha256": "6d8ca2d61f83b0a8497797474ff2476664a66c96bf3d3cfe8af4907130fd86c6"
+      },
+      {
+        "room_id": 12,
+        "tuple": {
+          "side": 2,
+          "track": 17,
+          "sector": 14
+        },
+        "start": "T17/S14",
+        "encoded_length": 4015,
+        "sector_count": 16,
+        "sectors": [
+          "T17/S14",
+          "T17/S15",
+          "T17/S16",
+          "T17/S17",
+          "T17/S18",
+          "T17/S19",
+          "T17/S20",
+          "T18/S01",
+          "T18/S02",
+          "T18/S03",
+          "T18/S04",
+          "T18/S05",
+          "T18/S06",
+          "T18/S07",
+          "T18/S08",
+          "T18/S09"
+        ],
+        "sha256": "dda405579b1734b5b59d2c08c6d4250e66bc1077a9e940be48d8a870f8c1c0eb"
+      },
+      {
+        "room_id": 13,
+        "tuple": {
+          "side": 2,
+          "track": 18,
+          "sector": 10
+        },
+        "start": "T18/S10",
+        "encoded_length": 4147,
+        "sector_count": 17,
+        "sectors": [
+          "T18/S10",
+          "T18/S11",
+          "T18/S12",
+          "T18/S13",
+          "T18/S14",
+          "T18/S15",
+          "T18/S16",
+          "T18/S17",
+          "T18/S18",
+          "T19/S00",
+          "T19/S01",
+          "T19/S02",
+          "T19/S03",
+          "T19/S04",
+          "T19/S05",
+          "T19/S06",
+          "T19/S07"
+        ],
+        "sha256": "f7fbbffb83c2e5a79774a673631f45b570a75a5c56ea0600a05c9c7933792bd6"
+      },
+      {
+        "room_id": 14,
+        "tuple": {
+          "side": 2,
+          "track": 19,
+          "sector": 8
+        },
+        "start": "T19/S08",
+        "encoded_length": 3941,
+        "sector_count": 16,
+        "sectors": [
+          "T19/S08",
+          "T19/S09",
+          "T19/S10",
+          "T19/S11",
+          "T19/S12",
+          "T19/S13",
+          "T19/S14",
+          "T19/S15",
+          "T19/S16",
+          "T19/S17",
+          "T19/S18",
+          "T20/S00",
+          "T20/S01",
+          "T20/S02",
+          "T20/S03",
+          "T20/S04"
+        ],
+        "sha256": "1b356a42d0aac74b1ea0d213755ff20871ff19dbf5d059f6e53e69d5af1c0620"
+      },
+      {
+        "room_id": 15,
+        "tuple": {
+          "side": 2,
+          "track": 20,
+          "sector": 5
+        },
+        "start": "T20/S05",
+        "encoded_length": 4319,
+        "sector_count": 17,
+        "sectors": [
+          "T20/S05",
+          "T20/S06",
+          "T20/S07",
+          "T20/S08",
+          "T20/S09",
+          "T20/S10",
+          "T20/S11",
+          "T20/S12",
+          "T20/S13",
+          "T20/S14",
+          "T20/S15",
+          "T20/S16",
+          "T20/S17",
+          "T20/S18",
+          "T21/S00",
+          "T21/S01",
+          "T21/S02"
+        ],
+        "sha256": "b7dc1b7162a78102f293f714f7dc48635c7e430b15aa500014d78a93a4828ad5"
+      },
+      {
+        "room_id": 16,
+        "tuple": {
+          "side": 2,
+          "track": 21,
+          "sector": 3
+        },
+        "start": "T21/S03",
+        "encoded_length": 4204,
+        "sector_count": 17,
+        "sectors": [
+          "T21/S03",
+          "T21/S04",
+          "T21/S05",
+          "T21/S06",
+          "T21/S07",
+          "T21/S08",
+          "T21/S09",
+          "T21/S10",
+          "T21/S11",
+          "T21/S12",
+          "T21/S13",
+          "T21/S14",
+          "T21/S15",
+          "T21/S16",
+          "T21/S17",
+          "T21/S18",
+          "T22/S00"
+        ],
+        "sha256": "994845c5b9bdf97310ce4c97df55f466c2f0723ce2f65f7d97ef9a51ed44bbc2"
+      },
+      {
+        "room_id": 17,
+        "tuple": {
+          "side": 2,
+          "track": 22,
+          "sector": 1
+        },
+        "start": "T22/S01",
+        "encoded_length": 3751,
+        "sector_count": 15,
+        "sectors": [
+          "T22/S01",
+          "T22/S02",
+          "T22/S03",
+          "T22/S04",
+          "T22/S05",
+          "T22/S06",
+          "T22/S07",
+          "T22/S08",
+          "T22/S09",
+          "T22/S10",
+          "T22/S11",
+          "T22/S12",
+          "T22/S13",
+          "T22/S14",
+          "T22/S15"
+        ],
+        "sha256": "813f158839b9bf9c3c89b5e9beaa4e742b73a055aa608602a90e315d1f043241"
+      },
+      {
+        "room_id": 18,
+        "tuple": {
+          "side": 2,
+          "track": 22,
+          "sector": 16
+        },
+        "start": "T22/S16",
+        "encoded_length": 4810,
+        "sector_count": 19,
+        "sectors": [
+          "T22/S16",
+          "T22/S17",
+          "T22/S18",
+          "T23/S00",
+          "T23/S01",
+          "T23/S02",
+          "T23/S03",
+          "T23/S04",
+          "T23/S05",
+          "T23/S06",
+          "T23/S07",
+          "T23/S08",
+          "T23/S09",
+          "T23/S10",
+          "T23/S11",
+          "T23/S12",
+          "T23/S13",
+          "T23/S14",
+          "T23/S15"
+        ],
+        "sha256": "221ed3c264aee06450407bdf9005962cf39297e0d11cbec51d5fb118edbe7c22"
+      },
+      {
+        "room_id": 19,
+        "tuple": {
+          "side": 2,
+          "track": 23,
+          "sector": 16
+        },
+        "start": "T23/S16",
+        "encoded_length": 5682,
+        "sector_count": 23,
+        "sectors": [
+          "T23/S16",
+          "T23/S17",
+          "T23/S18",
+          "T24/S00",
+          "T24/S01",
+          "T24/S02",
+          "T24/S03",
+          "T24/S04",
+          "T24/S05",
+          "T24/S06",
+          "T24/S07",
+          "T24/S08",
+          "T24/S09",
+          "T24/S10",
+          "T24/S11",
+          "T24/S12",
+          "T24/S13",
+          "T24/S14",
+          "T24/S15",
+          "T24/S16",
+          "T24/S17",
+          "T24/S18",
+          "T25/S00"
+        ],
+        "sha256": "cc4e62f4c46fe4bc028ce6901fe6b0f6ee80e4abff84b565ecff85832f51c7da"
+      },
+      {
+        "room_id": 20,
+        "tuple": {
+          "side": 3,
+          "track": 24,
+          "sector": 6
+        },
+        "start": "T24/S06",
+        "encoded_length": 3886,
+        "sector_count": 16,
+        "sectors": [
+          "T24/S06",
+          "T24/S07",
+          "T24/S08",
+          "T24/S09",
+          "T24/S10",
+          "T24/S11",
+          "T24/S12",
+          "T24/S13",
+          "T24/S14",
+          "T24/S15",
+          "T24/S16",
+          "T24/S17",
+          "T24/S18",
+          "T25/S00",
+          "T25/S01",
+          "T25/S02"
+        ],
+        "sha256": "ff1e834ce3650e55ade9dec08fc474c2508a39a7fec0a388d763e7832c959f46"
+      },
+      {
+        "room_id": 21,
+        "tuple": {
+          "side": 3,
+          "track": 25,
+          "sector": 3
+        },
+        "start": "T25/S03",
+        "encoded_length": 4227,
+        "sector_count": 17,
+        "sectors": [
+          "T25/S03",
+          "T25/S04",
+          "T25/S05",
+          "T25/S06",
+          "T25/S07",
+          "T25/S08",
+          "T25/S09",
+          "T25/S10",
+          "T25/S11",
+          "T25/S12",
+          "T25/S13",
+          "T25/S14",
+          "T25/S15",
+          "T25/S16",
+          "T25/S17",
+          "T26/S00",
+          "T26/S01"
+        ],
+        "sha256": "beb1181f28996308eb78cbbdb4c37aff15b74f86f2ae3f5e4e26f0c01b6f3c4b"
+      },
+      {
+        "room_id": 22,
+        "tuple": {
+          "side": 2,
+          "track": 25,
+          "sector": 1
+        },
+        "start": "T25/S01",
+        "encoded_length": 6535,
+        "sector_count": 26,
+        "sectors": [
+          "T25/S01",
+          "T25/S02",
+          "T25/S03",
+          "T25/S04",
+          "T25/S05",
+          "T25/S06",
+          "T25/S07",
+          "T25/S08",
+          "T25/S09",
+          "T25/S10",
+          "T25/S11",
+          "T25/S12",
+          "T25/S13",
+          "T25/S14",
+          "T25/S15",
+          "T25/S16",
+          "T25/S17",
+          "T26/S00",
+          "T26/S01",
+          "T26/S02",
+          "T26/S03",
+          "T26/S04",
+          "T26/S05",
+          "T26/S06",
+          "T26/S07",
+          "T26/S08"
+        ],
+        "sha256": "a74512b4760455babc99546e64723a8624469fd749c46058fba5aa1f1be19b10"
+      },
+      {
+        "room_id": 23,
+        "tuple": {
+          "side": 2,
+          "track": 26,
+          "sector": 9
+        },
+        "start": "T26/S09",
+        "encoded_length": 5162,
+        "sector_count": 21,
+        "sectors": [
+          "T26/S09",
+          "T26/S10",
+          "T26/S11",
+          "T26/S12",
+          "T26/S13",
+          "T26/S14",
+          "T26/S15",
+          "T26/S16",
+          "T26/S17",
+          "T27/S00",
+          "T27/S01",
+          "T27/S02",
+          "T27/S03",
+          "T27/S04",
+          "T27/S05",
+          "T27/S06",
+          "T27/S07",
+          "T27/S08",
+          "T27/S09",
+          "T27/S10",
+          "T27/S11"
+        ],
+        "sha256": "1fd40c9e3e78f189416f9b07c2dc1b8bc6f93a8fed334a4d5aae255136567b42"
+      },
+      {
+        "room_id": 24,
+        "tuple": {
+          "side": 2,
+          "track": 27,
+          "sector": 12
+        },
+        "start": "T27/S12",
+        "encoded_length": 3364,
+        "sector_count": 14,
+        "sectors": [
+          "T27/S12",
+          "T27/S13",
+          "T27/S14",
+          "T27/S15",
+          "T27/S16",
+          "T27/S17",
+          "T28/S00",
+          "T28/S01",
+          "T28/S02",
+          "T28/S03",
+          "T28/S04",
+          "T28/S05",
+          "T28/S06",
+          "T28/S07"
+        ],
+        "sha256": "5b0409c534c97a90d02abbeffc3647f2dd56363bcb9db1c0dc21f5014a22933d"
+      },
+      {
+        "room_id": 25,
+        "tuple": {
+          "side": 2,
+          "track": 28,
+          "sector": 8
+        },
+        "start": "T28/S08",
+        "encoded_length": 5684,
+        "sector_count": 23,
+        "sectors": [
+          "T28/S08",
+          "T28/S09",
+          "T28/S10",
+          "T28/S11",
+          "T28/S12",
+          "T28/S13",
+          "T28/S14",
+          "T28/S15",
+          "T28/S16",
+          "T28/S17",
+          "T29/S00",
+          "T29/S01",
+          "T29/S02",
+          "T29/S03",
+          "T29/S04",
+          "T29/S05",
+          "T29/S06",
+          "T29/S07",
+          "T29/S08",
+          "T29/S09",
+          "T29/S10",
+          "T29/S11",
+          "T29/S12"
+        ],
+        "sha256": "58f59a921aba5def4b776824c8b5a27013fed880444ca4577dfa838c89a1ca16"
+      },
+      {
+        "room_id": 26,
+        "tuple": {
+          "side": 2,
+          "track": 29,
+          "sector": 13
+        },
+        "start": "T29/S13",
+        "encoded_length": 5795,
+        "sector_count": 23,
+        "sectors": [
+          "T29/S13",
+          "T29/S14",
+          "T29/S15",
+          "T29/S16",
+          "T29/S17",
+          "T30/S00",
+          "T30/S01",
+          "T30/S02",
+          "T30/S03",
+          "T30/S04",
+          "T30/S05",
+          "T30/S06",
+          "T30/S07",
+          "T30/S08",
+          "T30/S09",
+          "T30/S10",
+          "T30/S11",
+          "T30/S12",
+          "T30/S13",
+          "T30/S14",
+          "T30/S15",
+          "T30/S16",
+          "T30/S17"
+        ],
+        "sha256": "09b0186a9419bfa86b6e28ba93615ea629df2aec9f38d1b679abb9664ba331a9"
+      },
+      {
+        "room_id": 27,
+        "tuple": {
+          "side": 2,
+          "track": 14,
+          "sector": 10
+        },
+        "start": "T14/S10",
+        "encoded_length": 5059,
+        "sector_count": 20,
+        "sectors": [
+          "T14/S10",
+          "T14/S11",
+          "T14/S12",
+          "T14/S13",
+          "T14/S14",
+          "T14/S15",
+          "T14/S16",
+          "T14/S17",
+          "T14/S18",
+          "T14/S19",
+          "T14/S20",
+          "T15/S00",
+          "T15/S01",
+          "T15/S02",
+          "T15/S03",
+          "T15/S04",
+          "T15/S05",
+          "T15/S06",
+          "T15/S07",
+          "T15/S08"
+        ],
+        "sha256": "952cfa26d7e7c619dd284fc57d69a823b4c090a3a47042cefc9c6d7ba8bb96df"
+      },
+      {
+        "room_id": 28,
+        "tuple": {
+          "side": 2,
+          "track": 31,
+          "sector": 0
+        },
+        "start": "T31/S00",
+        "encoded_length": 4608,
+        "sector_count": 19,
+        "sectors": [
+          "T31/S00",
+          "T31/S01",
+          "T31/S02",
+          "T31/S03",
+          "T31/S04",
+          "T31/S05",
+          "T31/S06",
+          "T31/S07",
+          "T31/S08",
+          "T31/S09",
+          "T31/S10",
+          "T31/S11",
+          "T31/S12",
+          "T31/S13",
+          "T31/S14",
+          "T31/S15",
+          "T31/S16",
+          "T32/S00",
+          "T32/S01"
+        ],
+        "sha256": "15f05581a9c48a232c06eec3444839b7129d29c0efd54e0d097aea313dbe85ce"
+      },
+      {
+        "room_id": 29,
+        "tuple": {
+          "side": 3,
+          "track": 4,
+          "sector": 0
+        },
+        "start": "T04/S00",
+        "encoded_length": 3815,
+        "sector_count": 15,
+        "sectors": [
+          "T04/S00",
+          "T04/S01",
+          "T04/S02",
+          "T04/S03",
+          "T04/S04",
+          "T04/S05",
+          "T04/S06",
+          "T04/S07",
+          "T04/S08",
+          "T04/S09",
+          "T04/S10",
+          "T04/S11",
+          "T04/S12",
+          "T04/S13",
+          "T04/S14"
+        ],
+        "sha256": "79bb14d864c5f3bf4810a7c0c2a984efb67d8a14e34dbed25cb65178f7ca9ad7"
+      },
+      {
+        "room_id": 30,
+        "tuple": {
+          "side": 2,
+          "track": 32,
+          "sector": 2
+        },
+        "start": "T32/S02",
+        "encoded_length": 3523,
+        "sector_count": 14,
+        "sectors": [
+          "T32/S02",
+          "T32/S03",
+          "T32/S04",
+          "T32/S05",
+          "T32/S06",
+          "T32/S07",
+          "T32/S08",
+          "T32/S09",
+          "T32/S10",
+          "T32/S11",
+          "T32/S12",
+          "T32/S13",
+          "T32/S14",
+          "T32/S15"
+        ],
+        "sha256": "b73ca42a79e5d0e0a3b690a7b7462b70553848bc015cc38cb74863f4a737fbde"
+      },
+      {
+        "room_id": 31,
+        "tuple": {
+          "side": 2,
+          "track": 32,
+          "sector": 16
+        },
+        "start": "T32/S16",
+        "encoded_length": 5177,
+        "sector_count": 21,
+        "sectors": [
+          "T32/S16",
+          "T33/S00",
+          "T33/S01",
+          "T33/S02",
+          "T33/S03",
+          "T33/S04",
+          "T33/S05",
+          "T33/S06",
+          "T33/S07",
+          "T33/S08",
+          "T33/S09",
+          "T33/S10",
+          "T33/S11",
+          "T33/S12",
+          "T33/S13",
+          "T33/S14",
+          "T33/S15",
+          "T33/S16",
+          "T34/S00",
+          "T34/S01",
+          "T34/S02"
+        ],
+        "sha256": "2b13c296f8d7bca379bf4b8eb068efde7de0f0bec7310ff9b73dbdfe9aa2a415"
+      },
+      {
+        "room_id": 32,
+        "tuple": {
+          "side": 3,
+          "track": 4,
+          "sector": 15
+        },
+        "start": "T04/S15",
+        "encoded_length": 3860,
+        "sector_count": 16,
+        "sectors": [
+          "T04/S15",
+          "T04/S16",
+          "T04/S17",
+          "T04/S18",
+          "T04/S19",
+          "T04/S20",
+          "T05/S00",
+          "T05/S01",
+          "T05/S02",
+          "T05/S03",
+          "T05/S04",
+          "T05/S05",
+          "T05/S06",
+          "T05/S07",
+          "T05/S08",
+          "T05/S09"
+        ],
+        "sha256": "7da70f8fb2baa1d0135d052c548d6ee6ff2202e7ab7b018409fa6ea8b53b20a7"
+      },
+      {
+        "room_id": 33,
+        "tuple": {
+          "side": 3,
+          "track": 5,
+          "sector": 10
+        },
+        "start": "T05/S10",
+        "encoded_length": 4463,
+        "sector_count": 18,
+        "sectors": [
+          "T05/S10",
+          "T05/S11",
+          "T05/S12",
+          "T05/S13",
+          "T05/S14",
+          "T05/S15",
+          "T05/S16",
+          "T05/S17",
+          "T05/S18",
+          "T05/S19",
+          "T05/S20",
+          "T06/S00",
+          "T06/S01",
+          "T06/S02",
+          "T06/S03",
+          "T06/S04",
+          "T06/S05",
+          "T06/S06"
+        ],
+        "sha256": "cc4add4f1f0815aa8a0e2c302592a1c1c3ab50a3fa2c1ca57aa9d141d8ee989d"
+      },
+      {
+        "room_id": 34,
+        "tuple": {
+          "side": 3,
+          "track": 6,
+          "sector": 7
+        },
+        "start": "T06/S07",
+        "encoded_length": 2924,
+        "sector_count": 12,
+        "sectors": [
+          "T06/S07",
+          "T06/S08",
+          "T06/S09",
+          "T06/S10",
+          "T06/S11",
+          "T06/S12",
+          "T06/S13",
+          "T06/S14",
+          "T06/S15",
+          "T06/S16",
+          "T06/S17",
+          "T06/S18"
+        ],
+        "sha256": "32147781e93e7fc86a6fd39177daf73c52df3bbc844f7af7bb643227e4a320e5"
+      },
+      {
+        "room_id": 35,
+        "tuple": {
+          "side": 3,
+          "track": 6,
+          "sector": 19
+        },
+        "start": "T06/S19",
+        "encoded_length": 4676,
+        "sector_count": 19,
+        "sectors": [
+          "T06/S19",
+          "T06/S20",
+          "T07/S00",
+          "T07/S01",
+          "T07/S02",
+          "T07/S03",
+          "T07/S04",
+          "T07/S05",
+          "T07/S06",
+          "T07/S07",
+          "T07/S08",
+          "T07/S09",
+          "T07/S10",
+          "T07/S11",
+          "T07/S12",
+          "T07/S13",
+          "T07/S14",
+          "T07/S15",
+          "T07/S16"
+        ],
+        "sha256": "735a5ce825e43d2a63b8c30538ba41150c99bb150eb46f76b2e2c6c4058ad5f7"
+      },
+      {
+        "room_id": 36,
+        "tuple": {
+          "side": 3,
+          "track": 7,
+          "sector": 17
+        },
+        "start": "T07/S17",
+        "encoded_length": 4019,
+        "sector_count": 16,
+        "sectors": [
+          "T07/S17",
+          "T07/S18",
+          "T07/S19",
+          "T07/S20",
+          "T08/S00",
+          "T08/S01",
+          "T08/S02",
+          "T08/S03",
+          "T08/S04",
+          "T08/S05",
+          "T08/S06",
+          "T08/S07",
+          "T08/S08",
+          "T08/S09",
+          "T08/S10",
+          "T08/S11"
+        ],
+        "sha256": "6e10d091d7377b09ee11a56569af3817fc9f81dc1956953e07476ba427cfbe3c"
+      },
+      {
+        "room_id": 37,
+        "tuple": {
+          "side": 3,
+          "track": 8,
+          "sector": 12
+        },
+        "start": "T08/S12",
+        "encoded_length": 3775,
+        "sector_count": 15,
+        "sectors": [
+          "T08/S12",
+          "T08/S13",
+          "T08/S14",
+          "T08/S15",
+          "T08/S16",
+          "T08/S17",
+          "T08/S18",
+          "T08/S19",
+          "T08/S20",
+          "T09/S00",
+          "T09/S01",
+          "T09/S02",
+          "T09/S03",
+          "T09/S04",
+          "T09/S05"
+        ],
+        "sha256": "5805dc394b1f082382240d8f54a7b97fbcec2ad02c1cccae8622f6b760aaf9e9"
+      },
+      {
+        "room_id": 38,
+        "tuple": {
+          "side": 3,
+          "track": 9,
+          "sector": 6
+        },
+        "start": "T09/S06",
+        "encoded_length": 3553,
+        "sector_count": 14,
+        "sectors": [
+          "T09/S06",
+          "T09/S07",
+          "T09/S08",
+          "T09/S09",
+          "T09/S10",
+          "T09/S11",
+          "T09/S12",
+          "T09/S13",
+          "T09/S14",
+          "T09/S15",
+          "T09/S16",
+          "T09/S17",
+          "T09/S18",
+          "T09/S19"
+        ],
+        "sha256": "5ff4db574f3f4f11f6237f9b79dadfa39fa9a860c3d67ec105f4e55135fa783d"
+      },
+      {
+        "room_id": 39,
+        "tuple": {
+          "side": 3,
+          "track": 9,
+          "sector": 20
+        },
+        "start": "T09/S20",
+        "encoded_length": 5128,
+        "sector_count": 21,
+        "sectors": [
+          "T09/S20",
+          "T10/S00",
+          "T10/S01",
+          "T10/S02",
+          "T10/S03",
+          "T10/S04",
+          "T10/S05",
+          "T10/S06",
+          "T10/S07",
+          "T10/S08",
+          "T10/S09",
+          "T10/S10",
+          "T10/S11",
+          "T10/S12",
+          "T10/S13",
+          "T10/S14",
+          "T10/S15",
+          "T10/S16",
+          "T10/S17",
+          "T10/S18",
+          "T10/S19"
+        ],
+        "sha256": "cf7ecb4d14e80da00e936f534a37ca99fcc77cfd71ae47a4d6fc9abee4c8c4a7"
+      },
+      {
+        "room_id": 40,
+        "tuple": {
+          "side": 3,
+          "track": 10,
+          "sector": 20
+        },
+        "start": "T10/S20",
+        "encoded_length": 4217,
+        "sector_count": 17,
+        "sectors": [
+          "T10/S20",
+          "T11/S00",
+          "T11/S01",
+          "T11/S02",
+          "T11/S03",
+          "T11/S04",
+          "T11/S05",
+          "T11/S06",
+          "T11/S07",
+          "T11/S08",
+          "T11/S09",
+          "T11/S10",
+          "T11/S11",
+          "T11/S12",
+          "T11/S13",
+          "T11/S14",
+          "T11/S15"
+        ],
+        "sha256": "c8befff816e51a88a2bcf77de2b2d5f5f0b3956cb1e7a835e0a240d1fa65acbf"
+      },
+      {
+        "room_id": 41,
+        "tuple": {
+          "side": 3,
+          "track": 11,
+          "sector": 16
+        },
+        "start": "T11/S16",
+        "encoded_length": 4224,
+        "sector_count": 17,
+        "sectors": [
+          "T11/S16",
+          "T11/S17",
+          "T11/S18",
+          "T11/S19",
+          "T11/S20",
+          "T12/S00",
+          "T12/S01",
+          "T12/S02",
+          "T12/S03",
+          "T12/S04",
+          "T12/S05",
+          "T12/S06",
+          "T12/S07",
+          "T12/S08",
+          "T12/S09",
+          "T12/S10",
+          "T12/S11"
+        ],
+        "sha256": "81f4e32f515d243864083af11a5042c433d7c57213cc71301968126ce0cb80c6"
+      },
+      {
+        "room_id": 43,
+        "tuple": {
+          "side": 3,
+          "track": 12,
+          "sector": 12
+        },
+        "start": "T12/S12",
+        "encoded_length": 4788,
+        "sector_count": 19,
+        "sectors": [
+          "T12/S12",
+          "T12/S13",
+          "T12/S14",
+          "T12/S15",
+          "T12/S16",
+          "T12/S17",
+          "T12/S18",
+          "T12/S19",
+          "T12/S20",
+          "T13/S00",
+          "T13/S01",
+          "T13/S02",
+          "T13/S03",
+          "T13/S04",
+          "T13/S05",
+          "T13/S06",
+          "T13/S07",
+          "T13/S08",
+          "T13/S09"
+        ],
+        "sha256": "5b79ea5bfbb7b3287fb75fe85cf3bf4395d0ecf4553a27ff5ad9913998164462"
+      },
+      {
+        "room_id": 44,
+        "tuple": {
+          "side": 3,
+          "track": 13,
+          "sector": 10
+        },
+        "start": "T13/S10",
+        "encoded_length": 4055,
+        "sector_count": 16,
+        "sectors": [
+          "T13/S10",
+          "T13/S11",
+          "T13/S12",
+          "T13/S13",
+          "T13/S14",
+          "T13/S15",
+          "T13/S16",
+          "T13/S17",
+          "T13/S18",
+          "T13/S19",
+          "T13/S20",
+          "T14/S00",
+          "T14/S01",
+          "T14/S02",
+          "T14/S03",
+          "T14/S04"
+        ],
+        "sha256": "ab1fb9b0f71e16b9411789cb19b7e612ea34d43e4cd66310ebfe9a0bf89d6ad1"
+      },
+      {
+        "room_id": 45,
+        "tuple": {
+          "side": 3,
+          "track": 14,
+          "sector": 5
+        },
+        "start": "T14/S05",
+        "encoded_length": 6082,
+        "sector_count": 24,
+        "sectors": [
+          "T14/S05",
+          "T14/S06",
+          "T14/S07",
+          "T14/S08",
+          "T14/S09",
+          "T14/S10",
+          "T14/S11",
+          "T14/S12",
+          "T14/S13",
+          "T14/S14",
+          "T14/S15",
+          "T14/S16",
+          "T14/S17",
+          "T14/S18",
+          "T14/S19",
+          "T14/S20",
+          "T15/S00",
+          "T15/S01",
+          "T15/S02",
+          "T15/S03",
+          "T15/S04",
+          "T15/S05",
+          "T15/S06",
+          "T15/S07"
+        ],
+        "sha256": "218e818f7dec3d42941b4d5cbe78298c002efa69526af528bd0fc36d643ddfc3"
+      },
+      {
+        "room_id": 46,
+        "tuple": {
+          "side": 3,
+          "track": 15,
+          "sector": 8
+        },
+        "start": "T15/S08",
+        "encoded_length": 3563,
+        "sector_count": 14,
+        "sectors": [
+          "T15/S08",
+          "T15/S09",
+          "T15/S10",
+          "T15/S11",
+          "T15/S12",
+          "T15/S13",
+          "T15/S14",
+          "T15/S15",
+          "T15/S16",
+          "T15/S17",
+          "T15/S18",
+          "T15/S19",
+          "T15/S20",
+          "T16/S00"
+        ],
+        "sha256": "9c07e0b6a5df18bee5a9bca0799a665a17d063d6ca071516e3f0e8266f1e33e5"
+      },
+      {
+        "room_id": 48,
+        "tuple": {
+          "side": 3,
+          "track": 16,
+          "sector": 1
+        },
+        "start": "T16/S01",
+        "encoded_length": 3861,
+        "sector_count": 16,
+        "sectors": [
+          "T16/S01",
+          "T16/S02",
+          "T16/S03",
+          "T16/S04",
+          "T16/S05",
+          "T16/S06",
+          "T16/S07",
+          "T16/S08",
+          "T16/S09",
+          "T16/S10",
+          "T16/S11",
+          "T16/S12",
+          "T16/S13",
+          "T16/S14",
+          "T16/S15",
+          "T16/S16"
+        ],
+        "sha256": "d3530a8b077315a1ba85a50570ef7e1fd9602c1baaa443605a3c1432bf23cb35"
+      },
+      {
+        "room_id": 49,
+        "tuple": {
+          "side": 3,
+          "track": 16,
+          "sector": 17
+        },
+        "start": "T16/S17",
+        "encoded_length": 4893,
+        "sector_count": 20,
+        "sectors": [
+          "T16/S17",
+          "T16/S18",
+          "T16/S19",
+          "T16/S20",
+          "T17/S00",
+          "T17/S01",
+          "T17/S02",
+          "T17/S03",
+          "T17/S04",
+          "T17/S05",
+          "T17/S06",
+          "T17/S07",
+          "T17/S08",
+          "T17/S09",
+          "T17/S10",
+          "T17/S11",
+          "T17/S12",
+          "T17/S13",
+          "T17/S14",
+          "T17/S15"
+        ],
+        "sha256": "0fc277c2f08b12139a38b0e462eb5867336451511bceaa546b959f2290e0e987"
+      },
+      {
+        "room_id": 50,
+        "tuple": {
+          "side": 3,
+          "track": 17,
+          "sector": 16
+        },
+        "start": "T17/S16",
+        "encoded_length": 2859,
+        "sector_count": 12,
+        "sectors": [
+          "T17/S16",
+          "T17/S17",
+          "T17/S18",
+          "T17/S19",
+          "T17/S20",
+          "T18/S01",
+          "T18/S02",
+          "T18/S03",
+          "T18/S04",
+          "T18/S05",
+          "T18/S06",
+          "T18/S07"
+        ],
+        "sha256": "916aa935ed9e606bb168d1abceddea48368d0f46014958b015b6097d0e73448e"
+      },
+      {
+        "room_id": 51,
+        "tuple": {
+          "side": 3,
+          "track": 18,
+          "sector": 8
+        },
+        "start": "T18/S08",
+        "encoded_length": 5448,
+        "sector_count": 22,
+        "sectors": [
+          "T18/S08",
+          "T18/S09",
+          "T18/S10",
+          "T18/S11",
+          "T18/S12",
+          "T18/S13",
+          "T18/S14",
+          "T18/S15",
+          "T18/S16",
+          "T18/S17",
+          "T18/S18",
+          "T19/S00",
+          "T19/S01",
+          "T19/S02",
+          "T19/S03",
+          "T19/S04",
+          "T19/S05",
+          "T19/S06",
+          "T19/S07",
+          "T19/S08",
+          "T19/S09",
+          "T19/S10"
+        ],
+        "sha256": "26b134374fc66ac907b5e6aed661da75320e7d2c1c1e5d70dbe5e46fc76620dd"
+      },
+      {
+        "room_id": 52,
+        "tuple": {
+          "side": 3,
+          "track": 19,
+          "sector": 11
+        },
+        "start": "T19/S11",
+        "encoded_length": 3346,
+        "sector_count": 14,
+        "sectors": [
+          "T19/S11",
+          "T19/S12",
+          "T19/S13",
+          "T19/S14",
+          "T19/S15",
+          "T19/S16",
+          "T19/S17",
+          "T19/S18",
+          "T20/S00",
+          "T20/S01",
+          "T20/S02",
+          "T20/S03",
+          "T20/S04",
+          "T20/S05"
+        ],
+        "sha256": "ea0dd68916cbf127e5dbfadab5b03097baaa09ff93e586ffbcd7d16f2086265d"
+      },
+      {
+        "room_id": 53,
+        "tuple": {
+          "side": 3,
+          "track": 20,
+          "sector": 6
+        },
+        "start": "T20/S06",
+        "encoded_length": 3495,
+        "sector_count": 14,
+        "sectors": [
+          "T20/S06",
+          "T20/S07",
+          "T20/S08",
+          "T20/S09",
+          "T20/S10",
+          "T20/S11",
+          "T20/S12",
+          "T20/S13",
+          "T20/S14",
+          "T20/S15",
+          "T20/S16",
+          "T20/S17",
+          "T20/S18",
+          "T21/S00"
+        ],
+        "sha256": "eac7edf82233127928c285067add11b9f1001c6c91f92ef47aba12816f14b239"
+      },
+      {
+        "room_id": 54,
+        "tuple": {
+          "side": 3,
+          "track": 21,
+          "sector": 1
+        },
+        "start": "T21/S01",
+        "encoded_length": 3903,
+        "sector_count": 16,
+        "sectors": [
+          "T21/S01",
+          "T21/S02",
+          "T21/S03",
+          "T21/S04",
+          "T21/S05",
+          "T21/S06",
+          "T21/S07",
+          "T21/S08",
+          "T21/S09",
+          "T21/S10",
+          "T21/S11",
+          "T21/S12",
+          "T21/S13",
+          "T21/S14",
+          "T21/S15",
+          "T21/S16"
+        ],
+        "sha256": "d3483458b055b661b702938ed516d2c2aedd54ae0ae92702ad18b26657b2ea3f"
+      },
+      {
+        "room_id": 55,
+        "tuple": {
+          "side": 3,
+          "track": 21,
+          "sector": 17
+        },
+        "start": "T21/S17",
+        "encoded_length": 4104,
+        "sector_count": 17,
+        "sectors": [
+          "T21/S17",
+          "T21/S18",
+          "T22/S00",
+          "T22/S01",
+          "T22/S02",
+          "T22/S03",
+          "T22/S04",
+          "T22/S05",
+          "T22/S06",
+          "T22/S07",
+          "T22/S08",
+          "T22/S09",
+          "T22/S10",
+          "T22/S11",
+          "T22/S12",
+          "T22/S13",
+          "T22/S14"
+        ],
+        "sha256": "9f0d78bfc8f817d9d5df3bef5197e59b391d343509c8d51a20086581b01e7c89"
+      },
+      {
+        "room_id": 56,
+        "tuple": {
+          "side": 3,
+          "track": 22,
+          "sector": 15
+        },
+        "start": "T22/S15",
+        "encoded_length": 4060,
+        "sector_count": 16,
+        "sectors": [
+          "T22/S15",
+          "T22/S16",
+          "T22/S17",
+          "T22/S18",
+          "T23/S00",
+          "T23/S01",
+          "T23/S02",
+          "T23/S03",
+          "T23/S04",
+          "T23/S05",
+          "T23/S06",
+          "T23/S07",
+          "T23/S08",
+          "T23/S09",
+          "T23/S10",
+          "T23/S11"
+        ],
+        "sha256": "4ebace2adb42af8ca66d11a801bc2be22991ae44d89c31c7459d9dfbe66d2980"
+      },
+      {
+        "room_id": 57,
+        "tuple": {
+          "side": 3,
+          "track": 23,
+          "sector": 12
+        },
+        "start": "T23/S12",
+        "encoded_length": 3115,
+        "sector_count": 13,
+        "sectors": [
+          "T23/S12",
+          "T23/S13",
+          "T23/S14",
+          "T23/S15",
+          "T23/S16",
+          "T23/S17",
+          "T23/S18",
+          "T24/S00",
+          "T24/S01",
+          "T24/S02",
+          "T24/S03",
+          "T24/S04",
+          "T24/S05"
+        ],
+        "sha256": "bdfc9395d0c4c73341b210da227cca714fd5aafd1c17ccc7fcc73f4a3892fd76"
+      }
+    ],
+    "side_runs": [
+      {
+        "side": 2,
+        "first_room": 0,
+        "last_room": 19,
+        "count": 20,
+        "rooms": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      {
+        "side": 3,
+        "first_room": 20,
+        "last_room": 21,
+        "count": 2,
+        "rooms": [
+          20,
+          21
+        ]
+      },
+      {
+        "side": 2,
+        "first_room": 22,
+        "last_room": 28,
+        "count": 7,
+        "rooms": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ]
+      },
+      {
+        "side": 3,
+        "first_room": 29,
+        "last_room": 29,
+        "count": 1,
+        "rooms": [
+          29
+        ]
+      },
+      {
+        "side": 2,
+        "first_room": 30,
+        "last_room": 31,
+        "count": 2,
+        "rooms": [
+          30,
+          31
+        ]
+      },
+      {
+        "side": 3,
+        "first_room": 32,
+        "last_room": 57,
+        "count": 24,
+        "rooms": [
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          43,
+          44,
+          45,
+          46,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ]
+      }
+    ],
+    "side_transitions": [
+      {
+        "from_side": 2,
+        "to_side": 3,
+        "at_room": 20
+      },
+      {
+        "from_side": 3,
+        "to_side": 2,
+        "at_room": 22
+      },
+      {
+        "from_side": 2,
+        "to_side": 3,
+        "at_room": 29
+      },
+      {
+        "from_side": 3,
+        "to_side": 2,
+        "at_room": 30
+      },
+      {
+        "from_side": 2,
+        "to_side": 3,
+        "at_room": 32
+      }
+    ]
+  },
+  "location_overlays": {
+    "room_id_table": "0x62C5",
+    "track_table": "0x62E3",
+    "sector_table": "0x6301",
+    "entry_count": 30,
+    "side_rule": "indices 0x00-0x12 use E2; indices 0x13-0x1D use E3",
+    "side_counts": {
+      "2": 19,
+      "3": 11
+    },
+    "entries": [
+      {
+        "location_index": 0,
+        "room_id": 0,
+        "tuple": {
+          "side": 2,
+          "track": 1,
+          "sector": 17
+        },
+        "start": "T01/S17",
+        "encoded_length": 1856,
+        "sector_count": 8,
+        "sectors": [
+          "T01/S17",
+          "T01/S18",
+          "T01/S19",
+          "T01/S20",
+          "T02/S00",
+          "T02/S01",
+          "T02/S02",
+          "T02/S03"
+        ],
+        "sha256": "774af0a906e953d352e637889eb1dc48a03be95ca4c05ccfb70f98f4c8d52dce"
+      },
+      {
+        "location_index": 1,
+        "room_id": 1,
+        "tuple": {
+          "side": 2,
+          "track": 2,
+          "sector": 4
+        },
+        "start": "T02/S04",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S04",
+          "T02/S05",
+          "T02/S06"
+        ],
+        "sha256": "a0cd83f7e472f0fe9aeb6d067ae25544f6ed3bc661d6e6662089d89b26ca4c57"
+      },
+      {
+        "location_index": 2,
+        "room_id": 2,
+        "tuple": {
+          "side": 2,
+          "track": 4,
+          "sector": 7
+        },
+        "start": "T04/S07",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T04/S07",
+          "T04/S08",
+          "T04/S09"
+        ],
+        "sha256": "8564b2a9075180ebbae89431ec2cc68baa42fbd61c999058eb89b6180a3cf398"
+      },
+      {
+        "location_index": 3,
+        "room_id": 3,
+        "tuple": {
+          "side": 2,
+          "track": 2,
+          "sector": 7
+        },
+        "start": "T02/S07",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S07",
+          "T02/S08",
+          "T02/S09"
+        ],
+        "sha256": "cbede5a669c049d2ac3154d82db70477d567be52fee47804ac8648a32b3b1a19"
+      },
+      {
+        "location_index": 4,
+        "room_id": 5,
+        "tuple": {
+          "side": 2,
+          "track": 2,
+          "sector": 16
+        },
+        "start": "T02/S16",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S16",
+          "T02/S17",
+          "T02/S18"
+        ],
+        "sha256": "8ff33df347cd4a7fac6757486ee2db1a271ad8d4a525ddb189014b42c62fbf41"
+      },
+      {
+        "location_index": 5,
+        "room_id": 7,
+        "tuple": {
+          "side": 2,
+          "track": 3,
+          "sector": 16
+        },
+        "start": "T03/S16",
+        "encoded_length": 576,
+        "sector_count": 3,
+        "sectors": [
+          "T03/S16",
+          "T03/S17",
+          "T03/S18"
+        ],
+        "sha256": "6e061e8484241ddc5d581dc8fec3d48f4337af815e4831d46663d42cca1673d5"
+      },
+      {
+        "location_index": 6,
+        "room_id": 9,
+        "tuple": {
+          "side": 2,
+          "track": 2,
+          "sector": 19
+        },
+        "start": "T02/S19",
+        "encoded_length": 704,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S19",
+          "T02/S20",
+          "T03/S00"
+        ],
+        "sha256": "753a402febac2d082a5c0eab9359f388122d3b2a79b3c2426514ad45ec3becf6"
+      },
+      {
+        "location_index": 7,
+        "room_id": 10,
+        "tuple": {
+          "side": 2,
+          "track": 3,
+          "sector": 4
+        },
+        "start": "T03/S04",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T03/S04",
+          "T03/S05",
+          "T03/S06"
+        ],
+        "sha256": "f5628db08364cdf8c32452905735e47561104a5f5def91756821b782cbe2f1a5"
+      },
+      {
+        "location_index": 8,
+        "room_id": 11,
+        "tuple": {
+          "side": 2,
+          "track": 2,
+          "sector": 13
+        },
+        "start": "T02/S13",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S13",
+          "T02/S14",
+          "T02/S15"
+        ],
+        "sha256": "5707d8c56d968e986c6c5d6f27d99dec9bd5f911ed921e42f2ab160b012edde0"
+      },
+      {
+        "location_index": 9,
+        "room_id": 18,
+        "tuple": {
+          "side": 2,
+          "track": 5,
+          "sector": 16
+        },
+        "start": "T05/S16",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T05/S16",
+          "T05/S17",
+          "T05/S18"
+        ],
+        "sha256": "0d7d939bb81f30aba641523d07354f9a749a4cd56639236bd5f2552bbc067145"
+      },
+      {
+        "location_index": 10,
+        "room_id": 19,
+        "tuple": {
+          "side": 2,
+          "track": 3,
+          "sector": 1
+        },
+        "start": "T03/S01",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T03/S01",
+          "T03/S02",
+          "T03/S03"
+        ],
+        "sha256": "1d48d672e198680ad2f1a7eef06bc2e31f5a7054549d62d51d205f93a970c6ac"
+      },
+      {
+        "location_index": 11,
+        "room_id": 22,
+        "tuple": {
+          "side": 2,
+          "track": 3,
+          "sector": 10
+        },
+        "start": "T03/S10",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T03/S10",
+          "T03/S11",
+          "T03/S12"
+        ],
+        "sha256": "424141fd7241e9ce862fb61d59c0ee97abe8728b0d24f3f69cfdabc4659eb8fb"
+      },
+      {
+        "location_index": 12,
+        "room_id": 23,
+        "tuple": {
+          "side": 2,
+          "track": 3,
+          "sector": 7
+        },
+        "start": "T03/S07",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T03/S07",
+          "T03/S08",
+          "T03/S09"
+        ],
+        "sha256": "804e777cc2045a210b4af8c13693a6380058981b8b8c40abcda85105359b7a45"
+      },
+      {
+        "location_index": 13,
+        "room_id": 24,
+        "tuple": {
+          "side": 2,
+          "track": 4,
+          "sector": 4
+        },
+        "start": "T04/S04",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T04/S04",
+          "T04/S05",
+          "T04/S06"
+        ],
+        "sha256": "9447378d82867520fc4aabf052fa51acb93e30e3ef7c21e25c6232c45d2d86e8"
+      },
+      {
+        "location_index": 14,
+        "room_id": 25,
+        "tuple": {
+          "side": 2,
+          "track": 3,
+          "sector": 13
+        },
+        "start": "T03/S13",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T03/S13",
+          "T03/S14",
+          "T03/S15"
+        ],
+        "sha256": "37bb287e0d036319f24cd6b5c8e6b3cd9e078efd6375d8a434059e83c16cc087"
+      },
+      {
+        "location_index": 15,
+        "room_id": 26,
+        "tuple": {
+          "side": 2,
+          "track": 4,
+          "sector": 1
+        },
+        "start": "T04/S01",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T04/S01",
+          "T04/S02",
+          "T04/S03"
+        ],
+        "sha256": "515abbddd709c81b5b03ae60b57b99e8b8519196a878fe61eb6f871df6cfa6bc"
+      },
+      {
+        "location_index": 16,
+        "room_id": 27,
+        "tuple": {
+          "side": 2,
+          "track": 2,
+          "sector": 19
+        },
+        "start": "T02/S19",
+        "encoded_length": 704,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S19",
+          "T02/S20",
+          "T03/S00"
+        ],
+        "sha256": "753a402febac2d082a5c0eab9359f388122d3b2a79b3c2426514ad45ec3becf6"
+      },
+      {
+        "location_index": 17,
+        "room_id": 28,
+        "tuple": {
+          "side": 2,
+          "track": 5,
+          "sector": 16
+        },
+        "start": "T05/S16",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T05/S16",
+          "T05/S17",
+          "T05/S18"
+        ],
+        "sha256": "0d7d939bb81f30aba641523d07354f9a749a4cd56639236bd5f2552bbc067145"
+      },
+      {
+        "location_index": 18,
+        "room_id": 31,
+        "tuple": {
+          "side": 2,
+          "track": 3,
+          "sector": 19
+        },
+        "start": "T03/S19",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T03/S19",
+          "T03/S20",
+          "T04/S00"
+        ],
+        "sha256": "5644ac2ed4c5d8ff6b2131c0fcb53ad3fa83aa3b6e18d05ebff1ab818e65209c"
+      },
+      {
+        "location_index": 19,
+        "room_id": 21,
+        "tuple": {
+          "side": 3,
+          "track": 2,
+          "sector": 17
+        },
+        "start": "T02/S17",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S17",
+          "T02/S18",
+          "T02/S19"
+        ],
+        "sha256": "e2a222124dc84da576b347411ab740ff74453034f3faaadad455e72b5bcf7f43"
+      },
+      {
+        "location_index": 20,
+        "room_id": 33,
+        "tuple": {
+          "side": 3,
+          "track": 2,
+          "sector": 11
+        },
+        "start": "T02/S11",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S11",
+          "T02/S12",
+          "T02/S13"
+        ],
+        "sha256": "776be7ef11e655c8330135f4afda47da569aa9e0da5eeb900dd19ff06f92ea70"
+      },
+      {
+        "location_index": 21,
+        "room_id": 35,
+        "tuple": {
+          "side": 3,
+          "track": 2,
+          "sector": 8
+        },
+        "start": "T02/S08",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S08",
+          "T02/S09",
+          "T02/S10"
+        ],
+        "sha256": "6056e310cf440250549fd74f7892b283f6ab3b0fd88176bf79ecbb5d13b6e6f2"
+      },
+      {
+        "location_index": 22,
+        "room_id": 39,
+        "tuple": {
+          "side": 3,
+          "track": 2,
+          "sector": 14
+        },
+        "start": "T02/S14",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S14",
+          "T02/S15",
+          "T02/S16"
+        ],
+        "sha256": "9ed4e756c79c21708010fcb3515d9cda46b2f5257dbf7e384a61bd23092a7058"
+      },
+      {
+        "location_index": 23,
+        "room_id": 43,
+        "tuple": {
+          "side": 3,
+          "track": 1,
+          "sector": 20
+        },
+        "start": "T01/S20",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T01/S20",
+          "T02/S00",
+          "T02/S01"
+        ],
+        "sha256": "d7ce2412d682aeda479e0f3291c55c220b2ffabf3982632c358a7bfb24def3eb"
+      },
+      {
+        "location_index": 24,
+        "room_id": 44,
+        "tuple": {
+          "side": 3,
+          "track": 2,
+          "sector": 20
+        },
+        "start": "T02/S20",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T02/S20",
+          "T03/S00",
+          "T03/S01"
+        ],
+        "sha256": "a0cd83f7e472f0fe9aeb6d067ae25544f6ed3bc661d6e6662089d89b26ca4c57"
+      },
+      {
+        "location_index": 25,
+        "room_id": 45,
+        "tuple": {
+          "side": 3,
+          "track": 2,
+          "sector": 2
+        },
+        "start": "T02/S02",
+        "encoded_length": 1024,
+        "sector_count": 5,
+        "sectors": [
+          "T02/S02",
+          "T02/S03",
+          "T02/S04",
+          "T02/S05",
+          "T02/S06"
+        ],
+        "sha256": "ee0f5e2f361d0cfa52c3282b853c0ced1b805d20c12366609b3bfd3436f42580"
+      },
+      {
+        "location_index": 26,
+        "room_id": 51,
+        "tuple": {
+          "side": 3,
+          "track": 1,
+          "sector": 17
+        },
+        "start": "T01/S17",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T01/S17",
+          "T01/S18",
+          "T01/S19"
+        ],
+        "sha256": "06bae66903d3b71e7959b1f7b464761619ea2785df1cdd963619936824849a95"
+      },
+      {
+        "location_index": 27,
+        "room_id": 52,
+        "tuple": {
+          "side": 3,
+          "track": 3,
+          "sector": 2
+        },
+        "start": "T03/S02",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T03/S02",
+          "T03/S03",
+          "T03/S04"
+        ],
+        "sha256": "9907e463d0e8bed97a06932dd7b9600f80cf87e66716a6eb52e6e84c59956eb0"
+      },
+      {
+        "location_index": 28,
+        "room_id": 40,
+        "tuple": {
+          "side": 3,
+          "track": 1,
+          "sector": 17
+        },
+        "start": "T01/S17",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T01/S17",
+          "T01/S18",
+          "T01/S19"
+        ],
+        "sha256": "06bae66903d3b71e7959b1f7b464761619ea2785df1cdd963619936824849a95"
+      },
+      {
+        "location_index": 29,
+        "room_id": 49,
+        "tuple": {
+          "side": 3,
+          "track": 3,
+          "sector": 5
+        },
+        "start": "T03/S05",
+        "encoded_length": 512,
+        "sector_count": 3,
+        "sectors": [
+          "T03/S05",
+          "T03/S06",
+          "T03/S07"
+        ],
+        "sha256": "9a3ffacaae6a0714590c23a566a4437287d411da2fd7bce0b426fedca123eacc"
+      }
+    ]
+  }
+}

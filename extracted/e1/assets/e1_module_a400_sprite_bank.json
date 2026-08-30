@@ -1,0 +1,214 @@
+{
+  "source": "extracted\\e1\\e1_module_a400.bin",
+  "source_sha256": "a98d897796a1b0cfe5981ed5f58a1942aea966f4af410a2430ead51bee30ebc2",
+  "slot_count": 34,
+  "slot_layout": "63 bytes of MSB-first high-resolution pixels plus one padding byte",
+  "interpretation": "candidate sprite bank; visual and runtime-reference checks required",
+  "sheet": "e1_module_a400_sprite_bank.png",
+  "sprites": [
+    {
+      "index": 0,
+      "source_offset": "0x00",
+      "foreground_pixel_count": 132,
+      "png": "e1_module_a400_sprite_00.png"
+    },
+    {
+      "index": 1,
+      "source_offset": "0x40",
+      "foreground_pixel_count": 124,
+      "png": "e1_module_a400_sprite_01.png"
+    },
+    {
+      "index": 2,
+      "source_offset": "0x80",
+      "foreground_pixel_count": 143,
+      "png": "e1_module_a400_sprite_02.png"
+    },
+    {
+      "index": 3,
+      "source_offset": "0xC0",
+      "foreground_pixel_count": 137,
+      "png": "e1_module_a400_sprite_03.png"
+    },
+    {
+      "index": 4,
+      "source_offset": "0x100",
+      "foreground_pixel_count": 179,
+      "png": "e1_module_a400_sprite_04.png"
+    },
+    {
+      "index": 5,
+      "source_offset": "0x140",
+      "foreground_pixel_count": 170,
+      "png": "e1_module_a400_sprite_05.png"
+    },
+    {
+      "index": 6,
+      "source_offset": "0x180",
+      "foreground_pixel_count": 144,
+      "png": "e1_module_a400_sprite_06.png"
+    },
+    {
+      "index": 7,
+      "source_offset": "0x1C0",
+      "foreground_pixel_count": 167,
+      "png": "e1_module_a400_sprite_07.png"
+    },
+    {
+      "index": 8,
+      "source_offset": "0x200",
+      "foreground_pixel_count": 193,
+      "png": "e1_module_a400_sprite_08.png"
+    },
+    {
+      "index": 9,
+      "source_offset": "0x240",
+      "foreground_pixel_count": 177,
+      "png": "e1_module_a400_sprite_09.png"
+    },
+    {
+      "index": 10,
+      "source_offset": "0x280",
+      "foreground_pixel_count": 155,
+      "png": "e1_module_a400_sprite_10.png"
+    },
+    {
+      "index": 11,
+      "source_offset": "0x2C0",
+      "foreground_pixel_count": 154,
+      "png": "e1_module_a400_sprite_11.png"
+    },
+    {
+      "index": 12,
+      "source_offset": "0x300",
+      "foreground_pixel_count": 143,
+      "png": "e1_module_a400_sprite_12.png"
+    },
+    {
+      "index": 13,
+      "source_offset": "0x340",
+      "foreground_pixel_count": 137,
+      "png": "e1_module_a400_sprite_13.png"
+    },
+    {
+      "index": 14,
+      "source_offset": "0x380",
+      "foreground_pixel_count": 179,
+      "png": "e1_module_a400_sprite_14.png"
+    },
+    {
+      "index": 15,
+      "source_offset": "0x3C0",
+      "foreground_pixel_count": 170,
+      "png": "e1_module_a400_sprite_15.png"
+    },
+    {
+      "index": 16,
+      "source_offset": "0x400",
+      "foreground_pixel_count": 144,
+      "png": "e1_module_a400_sprite_16.png"
+    },
+    {
+      "index": 17,
+      "source_offset": "0x440",
+      "foreground_pixel_count": 167,
+      "png": "e1_module_a400_sprite_17.png"
+    },
+    {
+      "index": 18,
+      "source_offset": "0x480",
+      "foreground_pixel_count": 193,
+      "png": "e1_module_a400_sprite_18.png"
+    },
+    {
+      "index": 19,
+      "source_offset": "0x4C0",
+      "foreground_pixel_count": 177,
+      "png": "e1_module_a400_sprite_19.png"
+    },
+    {
+      "index": 20,
+      "source_offset": "0x500",
+      "foreground_pixel_count": 155,
+      "png": "e1_module_a400_sprite_20.png"
+    },
+    {
+      "index": 21,
+      "source_offset": "0x540",
+      "foreground_pixel_count": 154,
+      "png": "e1_module_a400_sprite_21.png"
+    },
+    {
+      "index": 22,
+      "source_offset": "0x580",
+      "foreground_pixel_count": 130,
+      "png": "e1_module_a400_sprite_22.png"
+    },
+    {
+      "index": 23,
+      "source_offset": "0x5C0",
+      "foreground_pixel_count": 135,
+      "png": "e1_module_a400_sprite_23.png"
+    },
+    {
+      "index": 24,
+      "source_offset": "0x600",
+      "foreground_pixel_count": 196,
+      "png": "e1_module_a400_sprite_24.png"
+    },
+    {
+      "index": 25,
+      "source_offset": "0x640",
+      "foreground_pixel_count": 213,
+      "png": "e1_module_a400_sprite_25.png"
+    },
+    {
+      "index": 26,
+      "source_offset": "0x680",
+      "foreground_pixel_count": 196,
+      "png": "e1_module_a400_sprite_26.png"
+    },
+    {
+      "index": 27,
+      "source_offset": "0x6C0",
+      "foreground_pixel_count": 211,
+      "png": "e1_module_a400_sprite_27.png"
+    },
+    {
+      "index": 28,
+      "source_offset": "0x700",
+      "foreground_pixel_count": 114,
+      "png": "e1_module_a400_sprite_28.png"
+    },
+    {
+      "index": 29,
+      "source_offset": "0x740",
+      "foreground_pixel_count": 119,
+      "png": "e1_module_a400_sprite_29.png"
+    },
+    {
+      "index": 30,
+      "source_offset": "0x780",
+      "foreground_pixel_count": 196,
+      "png": "e1_module_a400_sprite_30.png"
+    },
+    {
+      "index": 31,
+      "source_offset": "0x7C0",
+      "foreground_pixel_count": 211,
+      "png": "e1_module_a400_sprite_31.png"
+    },
+    {
+      "index": 32,
+      "source_offset": "0x800",
+      "foreground_pixel_count": 198,
+      "png": "e1_module_a400_sprite_32.png"
+    },
+    {
+      "index": 33,
+      "source_offset": "0x840",
+      "foreground_pixel_count": 207,
+      "png": "e1_module_a400_sprite_33.png"
+    }
+  ]
+}

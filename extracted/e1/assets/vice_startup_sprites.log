@@ -1,0 +1,12 @@
+Setting default device to `Computer'
+Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
+Setting default device to `Computer'
+Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
+Setting default device to `Computer'
+Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
+Stepping through the next 20000 instruction(s).
+.C:0200  EA          NOP            - A:00 X:00 Y:00 SP:00 ..-..IZ.      53543
+Setting default device to `Computer'
+Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
+Stepping through the next 20000 instruction(s).
+.C:0200  EA          NOP            - A:00 X:00 Y:00 SP:00 ..-..IZ.      53543

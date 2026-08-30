@@ -67,8 +67,13 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 - **Verified:** room 0 exposes initialize/tick/teardown vectors at `$F00A/$F00D/$F010`; the recurring engine loop begins at `$488D`.
 - **Verified (deterministic 6510 trace):** the reconstructed room-0 snapshot executes `$F00A -> $F0F6` in 13 instructions, changing `$03/$07/$14/$18` to `$22/$24/$33/$42`; 64 calls through `$F00D -> $F10E` execute 1,276 instructions and exercise the counter-driven tick branches; `$F010 -> $F10D` returns in two instructions. The checked final memory hash is `f1006c2fa4c38ca6b6836d8a547f55b2779dc84c7ef65ddd077fcc912eff9387`.
 - **Verified (bounded dispatcher trace):** `$6429` first saves room-data root `$F248` through `$6C8C`, then uses a self-modified `LDX #$03` operand at `$6438` to inspect four status bytes `$9D-$A0`; a controlled all-`$FF` high-bit-inactive run returns in 24 instructions without entering any script handler. The supplied room snapshot has all four corresponding status bytes clear, so its real scripts still require hardware-accurate tracing before their field semantics are claimed.
+- **Verified (VICE 3.10):** `tools/vice_room0_probe.mon` loads the reconstructed snapshot into the RAM bank, restores processor-port DDR `$00=$2F`, selects RAM-under-ROM with `$01=$35`, and executes `$F00A` to a synthetic `$0400` return. The hardware-accurate core changes `$03/$07/$14/$18` to `$22/$24/$33/$42`, exactly matching the deterministic project-6510 trace; the VICE monitor reports 43 cycles at the return. Restoring `$00` is essential because setting `$01` alone leaves the reset-time input pins effective and executes KERNAL ROM instead.
+- **Verified:** the E1 room table contains 60 slots: 56 valid room modules and four empty entries (`42`, `47`, `58`, and `59`). Valid room modules select 29 E2 records and 27 E3 records; the table-order side runs are E2 rooms `0-19`, E3 `20-21`, E2 `22-28`, E3 `29`, E2 `30-31`, and E3 `32-57`.
+- **Verified:** the E1 location table contains 30 overlay tuples. Indices `$00-$12` select 19 E2 overlays and `$13-$1D` select 11 E3 overlays. E4's side marker is valid, but E1's room and location tables select no E4 module in this catalog.
 - **Verified:** `docs/architecture_exe.md` records the executable architecture, complete initial module map, first-room reconstruction, and current core-function labels.
-- **Environment finding:** no VICE/x64 executable is present in this workspace. The next checkpoint uses the project 6510 core against the reconstructed room-0 snapshot; it is deterministic execution evidence, but does not replace a future hardware-accurate VICE capture.
+- **Environment finding (2026-08-29):** VICE 3.10 GTK3 is installed through Winget (`VICE-Team.VICE.GTK3`), including `x64sc`, `c1541`, and `petcat`. The first scripted hardware-accurate room-vector capture is checked in at `extracted/e1/e1_vice_room0_probe.log`; tick/dispatcher tracing remains open.
+- **Verified (first sprite assets):** the 127-byte module loaded at `$0380-$03FE` contains two 63-byte, MSB-first, high-resolution VIC-II sprites plus one padding byte. Startup writes pointers `$0E/$0F` to `$07F8/$07F9`; `tools/extract_e1_assets.py` reproducibly exports both 24x21 masks and their combined sheet under `extracted/e1/assets/`. The shapes are complementary pointer-arrow sprites with 58 and 53 set pixels.
+- **Verified (sprite bank and VICE pixel check):** `e1_module_a400.bin` is 34 contiguous 64-byte sprite slots. Its contact sheet resolves humanoid standing/movement frames; VICE 3.10 renders the first five unchanged slots at native 24x21 high-resolution geometry with pixels matching the extractor masks. See `docs/e1_sprite_assets.md` and `extracted/e1/assets/vice_a400_sprites.png`. The apparent `$07F8-$07FF` pointers in the pre-frame room snapshot were rejected after their targets decoded as unrelated code/data.
 - **Decision:** after the E5 documentation spike, proceed with option 1: faithfully analyze and document this exact Frontline build with a web port as the long-term target.
 
 ### E5 Documentation Disk
@@ -131,6 +136,7 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 | `extracted/e1/e1_room0_runtime_listing.txt` | Labeled room vectors, animation tick, and room-data root |
 | `extracted/e1/e1_room0_vector_trace.json` | Machine-readable 64-tick deterministic execution report |
 | `extracted/e1/e1_room0_vector_trace.md` | Readable room-vector state-change timeline |
+| `extracted/e1/e1_data_catalog.json` | All E1-selected room and location-overlay tuples across E2-E4, with decoded lengths, sector chains, hashes, and side runs |
 | `docs/architecture_exe.md` | Executable architecture from `LOAD` through first-room runtime |
 | `extracted/e5/manifest.json` | E5 source hash, PRG hashes, and complete sector-chain provenance |
 | `extracted/e5/neuromancer_dox.prg` | Raw extracted DOX PRG |
@@ -146,8 +152,8 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 ## Verification Checklist
 
 - [x] Ph3: execute and regression-test room-0 initialize, tick, and teardown vectors with the project 6510 core
-- [ ] Ph3: cross-check the three room-vector traces against a hardware-accurate VICE capture
-- [ ] Ph4: 5+ sprites/tiles extracted and visually compared to emulator
+- [ ] Ph3: cross-check the three room-vector traces against a hardware-accurate VICE capture (initialize complete; tick/teardown pending)
+- [x] Ph4: 5+ sprites/tiles extracted and visually compared to emulator
 - [ ] Ph5: key data struct confirmed in emulator memory dump, all fields match
 - [ ] Ph6: full game session played, no major logic gaps found
 - [ ] Ph7: web port pixel-compared against emulator screenshots
@@ -175,9 +181,9 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 - [x] Ph3: locate the final game entry point and identify the first major runtime modules
 - [x] Ph3: identify E1 disk-sector I/O and E1-E4 side-validation routines
 - [x] Ph3: deterministically execute room-0 initialize, tick, and teardown vectors
+- [x] Ph3: catalog E1-selected room/module tuples and side transitions across E2-E4
 - [ ] Ph3: live-trace the named main-loop routines and confirm entity fields in VICE
-- [ ] Ph3: catalog all E2-E4 room/module tuples and side transitions
-- [ ] Ph4: extract and pixel-check the first sprite/tile set
+- [x] Ph4: extract and pixel-check the first sprite/tile set
 
 ### Web Port Fixes
 
@@ -186,4 +192,4 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 - [x] Create `docs/architecture_exe.md` once the resident architecture is mapped
 - [ ] Create `docs/architecture_web.md` before implementation of the web port
 
-SESSION_SUMMARY: E5 is fully readable; E1 is reconstructed from LOAD through stable startup `$03E7`, hidden module assembly, engine `$4836`, and the first cross-side room runtime at `$F000`.
+SESSION_SUMMARY: E5 is fully readable; E1 is reconstructed from LOAD through stable startup `$03E7`, hidden module assembly, engine `$4836`, the E2-E4 room/location catalog, and the first cross-side room runtime at `$F000`.

@@ -1,0 +1,31 @@
+logname "extracted/e1/assets/vice_startup_sprites.log"
+log on
+device c:
+bank ram
+bload "extracted/e1/e1_room0_ready_memory.bin" 0 $0000
+bank cpu
+> $0000 $2f
+> $0001 $37
+> $dd02 $3f
+> $dd00 $03
+> $d011 $1b
+> $d016 $08
+> $d018 $14
+> $d020 $06
+> $d021 $06
+f $0400 $07e7 $20
+f $d800 $dbff $06
+> $07f8 $0e $0f
+> $d000 $70 $70 $b0 $70
+> $d010 $00
+> $d015 $03
+> $d01c $00
+> $d01d $00
+> $d017 $00
+> $d027 $01 $07
+> $0200 $ea $4c $00 $02
+r pc=$0200
+radix d
+step 20000
+screenshot "extracted/e1/assets/vice_startup_sprites" 2
+q

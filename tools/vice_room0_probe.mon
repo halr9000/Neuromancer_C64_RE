@@ -1,0 +1,17 @@
+logname "extracted/e1/e1_vice_room0_probe.log"
+log on
+device c:
+bank ram
+bload "extracted/e1/e1_room0_ready_memory.bin" 0 $0000
+m $0000 $0007
+m $f00a $f012
+bank cpu
+> $0000 $2f
+> $0001 $35
+> $01fe $ff $03
+r pc=$f00a, a=$00, x=$00, y=$00, sp=$fd, fl=$20
+until $0400
+radix h
+m $0003 $0018
+r
+q
