@@ -18,3 +18,7 @@ intake/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Browser-port dependencies and build products
+node_modules/
+dist/

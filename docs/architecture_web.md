@@ -2,10 +2,11 @@
 
 ## Status and design rule
 
-This document defines the intended browser implementation boundary. It is a
-design, not evidence that a web runtime already exists. The port should model
-verified game behavior directly and keep C64-specific decoding in an import
-layer; it should not ship a 6510 emulator as the game runtime.
+This document defines the browser implementation boundary. The first headless
+system now exists at `web/systems/room0.ts`; the wider graph remains a design,
+not evidence that rendering or a playable browser shell exists. The port models
+verified game behavior directly and keeps C64-specific decoding in an import
+layer; it does not ship a 6510 emulator as the game runtime.
 
 The first implementation target is one vertically integrated Chatsubo slice:
 load room 0, run its deterministic update logic, display its verified actors

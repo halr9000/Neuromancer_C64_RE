@@ -7,13 +7,17 @@ The target is the supplied English Frontline/GameBase build: a cracked/crunched 
 ## What is here
 
 - `tools/` — Python 3 extraction, decoding, disassembly, and a small 6510 emulator.
+- `web/` — headless TypeScript game systems, beginning with the verified room-0 lifecycle.
 - `docs/` — boot-chain, executable-architecture, and E5 documentation-format notes.
 - `extracted/e1/` — reconstructed boot/runtime layers and the first-room snapshot.
 - `extracted/e5/` — decoded documentation and solution-disk exports.
 - `REVERSE.md` — consolidated findings, memory maps, evidence, and open work.
 - `Neuromancer_C64_RE_Intake.md` — source identity, hashes, disk roles, and provenance.
 
-The current repository is the reverse-engineering foundation: it reaches stable game startup and deterministic room-0 vector traces, but does not yet contain the browser runtime. Live VICE comparison, complete room/data cataloging, runtime implementation, and a full playable session remain open work.
+The repository now bridges its reverse-engineering foundation into a headless
+browser runtime: stable game startup and room-0 traces are reconstructed, and
+the first TypeScript room hook reproduces the verified 64-tick state. Rendering,
+input, complete room/data cataloging, and a full playable session remain open.
 
 ## Port roadmap
 
@@ -43,6 +47,14 @@ python tools/extract_e5.py intake/NEUROMA4.D64 extracted/e5
 ```
 
 The test suite uses Python’s standard `unittest` library. Extraction commands regenerate derived artifacts; review their hashes and update the relevant documentation when interpretations change.
+
+The headless browser-port checks use Node.js and TypeScript:
+
+```text
+npm install
+npm run typecheck
+npm run test:web
+```
 
 ## Contributing
 

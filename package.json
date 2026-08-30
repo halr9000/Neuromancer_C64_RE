@@ -1,0 +1,13 @@
+{
+  "name": "neuromancer-c64-web-port",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:web": "node --experimental-strip-types --test web/**/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "typescript": "^5.9.2"
+  }
+}
