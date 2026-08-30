@@ -52,6 +52,7 @@ The headless browser-port checks use Node.js and TypeScript:
 
 ```text
 npm install
+npm run build:data
 npm run typecheck
 npm run test:web
 ```

@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:data": "python tools/build_web_data.py extracted/e1/e1_room0_ready_memory.bin extracted/e1/e1_room0_text.json web/generated/room0.json",
     "test:web": "node --experimental-strip-types --test web/**/*.test.ts",
     "typecheck": "tsc --noEmit"
   },

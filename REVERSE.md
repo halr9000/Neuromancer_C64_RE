@@ -81,6 +81,7 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 - **Verified:** `docs/architecture_exe.md` records the executable architecture, complete initial module map, first-room reconstruction, and current core-function labels.
 - **Decision:** `docs/architecture_web.md` maps verified executable boundaries to a headless-testable browser runtime. The first implementation target is a vertically integrated room-0 slice; planned UI, save, game-over, and audio behavior remains explicitly provisional until traced.
 - **Verified (first web runtime):** `web/systems/room0.ts` ports `$F0F6/$F10E` as typed, table-driven room hooks rather than emulating 6510 instructions. Its headless golden test starts from the reconstructed snapshot values and matches the verified post-init and 64-tick entity fields and animation counters exactly.
+- **Verified (web data boundary):** `tools/build_web_data.py` deterministically converts the checked room-0 snapshot and text report into schema-versioned `web/generated/room0.json`. `web/data/game-data.ts` validates the schema and byte ranges before exposing all 33 strings and the `$C400` entity record, retaining its original bytes beside promoted slot, position, color, and flag fields.
 - **Environment finding (2026-08-29):** VICE 3.10 GTK3 is installed through Winget (`VICE-Team.VICE.GTK3`), including `x64sc`, `c1541`, and `petcat`. The first scripted hardware-accurate room-vector capture is checked in at `extracted/e1/e1_vice_room0_probe.log`; tick/dispatcher tracing remains open.
 - **Verified (first sprite assets):** the 127-byte module loaded at `$0380-$03FE` contains two 63-byte, MSB-first, high-resolution VIC-II sprites plus one padding byte. Startup writes pointers `$0E/$0F` to `$07F8/$07F9`; `tools/extract_e1_assets.py` reproducibly exports both 24x21 masks and their combined sheet under `extracted/e1/assets/`. The shapes are complementary pointer-arrow sprites with 58 and 53 set pixels.
 - **Verified (sprite bank and VICE pixel check):** `e1_module_a400.bin` is 34 contiguous 64-byte sprite slots. Its contact sheet resolves humanoid standing/movement frames; VICE 3.10 renders the first five unchanged slots at native 24x21 high-resolution geometry with pixels matching the extractor masks. See `docs/e1_sprite_assets.md` and `extracted/e1/assets/vice_a400_sprites.png`. The apparent `$07F8-$07FF` pointers in the pre-frame room snapshot were rejected after their targets decoded as unrelated code/data.
@@ -205,7 +206,7 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 ### Web port
 
 - [x] Port the room-0 initialize and tick hooks and match the 64-tick trace
-- [ ] Load decoded room-0 text and entity data through a versioned game-data boundary
+- [x] Load decoded room-0 text and entity data through a versioned game-data boundary
 - [ ] Render the verified room-0 actor frame at native 320x200 coordinates
 
 SESSION_SUMMARY: E5 is fully readable; E1 is reconstructed from LOAD through stable startup `$03E7`, hidden module assembly, engine `$4836`, the E2-E4 room/location catalog, and the first cross-side room runtime at `$F000`.

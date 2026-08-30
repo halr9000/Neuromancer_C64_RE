@@ -39,7 +39,7 @@ main.ts
 | `app/runtime.ts` | `Runtime` | Owns lifecycle and coordinates loop, state, room, renderer, input, audio, and saves. |
 | `core/game-state.ts` | `GameState`, `ActorState`, `UiState`, `createNewGame()` | Typed, serializable canonical state. It must not depend on DOM or rendering. |
 | `core/game-loop.ts` | `FixedStepLoop`, `TickResult` | Fixed-step updates with rendering interpolation; invokes systems in verified `$488D` order where known. |
-| `data/game-data.ts` | `GameData`, `loadGameData()` | Loads versioned generated JSON/binary assets and validates schema/source hashes. |
+| `data/game-data.ts` | `GameData`, `parseGameData()` | Validates versioned generated room text/entity JSON before exposing typed runtime data. Room 0 is implemented. |
 | `data/room-text.ts` | `RoomTextTable`, `getRoomString()` | Consumes predecoded strings; the build-time extractor retains the `$6CBC` codec. |
 | `data/room-records.ts` | `RoomDefinition`, `EntityDefinition` | Converts verified room/entity records into stable runtime data. Unknown fields remain explicitly named. |
 | `data/assets.ts` | `SpriteAtlas`, `Palette` | Loads pixel-checked sprites and later room graphics without embedding VIC memory layout in game logic. |
@@ -134,6 +134,11 @@ Generated web data should be deterministic and carry:
 Disk images stay immutable under `intake/`. Browser-consumable artifacts should
 be generated from the existing Python tools, then checked by hash and semantic
 fixtures. Runtime code never parses a D64 or performs emulated disk I/O.
+
+`npm run build:data` currently runs `tools/build_web_data.py` against the
+verified room-0 snapshot and text report. It writes `web/generated/room0.json`
+with schema version 1, source provenance, all 33 strings, and the promoted
+`$C400` entity fields while retaining the original eight source bytes.
 
 ## Verification gates
 

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "snapshotSha256": "66316f2f3b0ccb2b03dfba6314978afbe665b470290cd51290db2f9837c32089",
+    "roomTextRoot": "0xF248"
+  },
+  "room": {
+    "id": 0,
+    "text": [
+      "You've just spent the night sleeping face-down in a plate of synth-spaghetti in a bar called the Chatsubo. After rubbing the sauce out of your eyes, you can see Chiba sky through the window, the color of television tuned to a dead channel.\r\rA PAX booth is on the wall. Ratz's prosthetic Russian arm whines as he wipes the bar.  His teeth are a webwork of East European steel and brown decay.",
+      "In the Chatsubo Bar.",
+      "I don't care if you eat that spaghettior sleep in it, you still gotta pay\rfor it.  46 credits.",
+      "Sorry, Ratz. I can't afford it. Want\rme to give it back?",
+      "How about if I owe it to you?  You cantrust me.",
+      "I'm ready for dessert. Have you got\rany pudding for me to sleep in?",
+      "I'd like to sleep on it some more,\rif that's okay with you, Ratz.",
+      "Pay up, cyberscum. Use the PAX if you\rneed money.",
+      "You been sleepin' in that stuff all\rnight. Now pay up or I call a lawbot.",
+      "I'll give ya 5 minutes to pay up, or\ryou're outta here.  Use the PAX.",
+      "Time's up, lowlife.  Nobody stiffs me\rand gets away with it!  I'm callin'\rthe lawbot.",
+      "Thanks, friend artiste. Shin came by,\rbut he didn't want to interrupt your\rbeauty sleep. He still has your deck.",
+      "Who you calling an artiste?",
+      "What deck does Shin have?",
+      "Anything else come up?",
+      "You are the artiste of the slightly\rfunny deal, Herr \u0003.",
+      "Your Yamamitsu UXB, Herr \u0003.\rShin says you pawned it at his shop.",
+      "Somebody's gotta be funny around here.\rSure the fuck isn't you.",
+      "Oh.  THAT deck.",
+      "One of Lonny Zone's girls was looking\rfor you too. You got biz with Zone?",
+      "First Shin and now this. What kinda\rcreepjoint you running here, Ratz?",
+      "Zone's a friend of mine, but I don't\rknow why you let him run his biz here.",
+      "Zone shows a percentage. You I let\rwork here for entertainment value.",
+      "Did I hear something about the Health\rDepartment closing this place?",
+      "Anything else you want to tell me?",
+      "A minor problem, friend artiste. I'll\rbe back in business within the week.",
+      "Better find a way to pay your bill at\rCheap Hotel, or they'll start asking\ryou to sell your body parts.",
+      "So I sell a kidney or two.  Why don't\ryou get off my case, Ratz?",
+      "That's it.  I'm leaving.",
+      "You should have fear, artiste. It may\rbe your friend. Now get out of here\rbefore the lawbot arrives.",
+      "Good luck, artiste. You're going to\rneed it.",
+      "I said 46 credits, buckwheat. Are you\rdeaf?",
+      "\r\rRatz refuses to take your credits."
+    ],
+    "entities": [
+      {
+        "sourceAddress": "0xC400",
+        "sourceBytes": [
+          0,
+          193,
+          20,
+          34,
+          41,
+          255,
+          0,
+          0
+        ],
+        "roomId": 0,
+        "slot": 1,
+        "packedRenderFlags": 193,
+        "logicalX": 20,
+        "logicalY": 34,
+        "packedColors": 41,
+        "activationState": 255,
+        "scriptAddress": 0
+      }
+    ]
+  }
+}
