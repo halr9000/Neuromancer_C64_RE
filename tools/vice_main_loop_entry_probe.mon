@@ -1,0 +1,21 @@
+logname "extracted/e1/e1_vice_main_loop_entry_probe.log"
+log on
+device c:
+bank ram
+bload "extracted/e1/e1_room0_ready_memory.bin" 0 $0000
+bank cpu
+> $0000 $2f
+> $0001 $35
+; Initialize room entity records, then enter one real main-loop iteration.
+r pc=$621b, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $628c
+> $0090 $ff
+> $00cb $ff
+r pc=$488d, a=$ff, x=$00, y=$00, sp=$ff, fl=$20
+stopwatch reset
+until $6429
+radix h
+m $0090 $00a0
+m $00cb $00cb
+r
+q

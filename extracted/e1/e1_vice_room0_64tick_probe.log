@@ -1,0 +1,11 @@
+Setting default device to `Computer'
+Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
+Stopwatch reset to 0.
+UNTIL: 1  C:$0400  (Stop on exec)
+#1 (Stop on  exec 0400)   92/$05c,  43/$2b
+.C:0400  18          CLC            - A:26 X:00 Y:04 SP:ff ..-...Z.       5833
+>C:0003  23 3e 91 b3  27 3e 00 00  4c 97 00 00  04 28 00 00   #>‘³'>L—(
+>C:0013  00 33 08 19  16 42                                   3B
+>C:f17b  00 04 23 11  05 f5                                   #õ
+  ADDR A  X  Y  SP 00 01 NV-BDIZC LIN CYC  STOPWATCH
+.;0400 26 00 04 ff 2f 35 00100010 092 043       5833

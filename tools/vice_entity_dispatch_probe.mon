@@ -1,0 +1,24 @@
+logname "extracted/e1/e1_vice_entity_dispatch_probe.log"
+log on
+device c:
+bank ram
+bload "extracted/e1/e1_room0_ready_memory.bin" 0 $0000
+bank cpu
+> $0000 $2f
+> $0001 $35
+; Resume the post-overlay room initializer at its C400 record scan.
+r pc=$621b, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $628c
+radix h
+m $009d $00a0
+m $c400 $c41f
+; Dispatch the initialized slot and return to a synthetic sentinel.
+> $0200 $20 $29 $64 $4c $00 $04
+r pc=$0200, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+stopwatch reset
+until $6463
+m $0064 $0067
+m $009d $00a0
+m $c400 $c41f
+r
+q

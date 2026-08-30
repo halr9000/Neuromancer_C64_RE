@@ -173,8 +173,9 @@ alone:
 The exact report is `extracted/e1/e1_room0_vector_trace.json`; its final memory
 hash after init, 64 ticks, and teardown is
 `f1006c2fa4c38ca6b6836d8a547f55b2779dc84c7ef65ddd077fcc912eff9387`.
-A VICE capture remains required to prove interaction with C64 hardware and to
-promote entity-field names beyond the current static/deterministic evidence.
+VICE 3.10 captures now confirm initialize, 64 tick calls, and teardown against
+the same reconstructed snapshot. Live main-loop and entity-dispatch captures
+remain required before promoting entity-field names beyond the current evidence.
 
 ### Bounded entity-dispatcher evidence
 

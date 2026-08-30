@@ -1,0 +1,21 @@
+logname "extracted/e1/e1_vice_room0_64tick_probe.log"
+log on
+device c:
+bank ram
+bload "extracted/e1/e1_room0_ready_memory.bin" 0 $0000
+bank cpu
+> $0000 $2f
+> $0001 $35
+add_label $f00a .room0_initialize_vector
+add_label $f00d .room0_tick_vector
+add_label $f010 .room0_teardown_vector
+; JSR init; repeat JSR tick 64 times; JSR teardown; jump to sentinel.
+> $0200 $20 $0a $f0 $a2 $40 $20 $0d $f0 $ca $d0 $fa $20 $10 $f0 $4c $00 $04
+r pc=$0200, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+stopwatch reset
+until $0400
+radix h
+m $0003 $0018
+m $f17b $f180
+r
+q
