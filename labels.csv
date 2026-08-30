@@ -42,6 +42,10 @@ addr,name,comment
 0x6429,e1_dispatch_entity_scripts,Dispatch active entity records through their opcode handlers
 0x66B7,e1_select_entity_record,Resolve one eight-byte C400 entity slot and its script pointer
 0x6C8C,e1_set_room_data_root,Save the root pointer for room text and record decoding
+0x6CBC,e1_decode_room_string,Resolve and decode one room string ID into E700
+0x6D0E,e1_prepare_room_text_decoder,Split room root into 60-byte dictionary and pointer table
+0x6D26,e1_decode_room_text_character,Decode one dictionary character with capitalization and escape tokens
+0x6D4E,e1_read_room_text_token,Read one LSB-first packed 5-bit token
 0xF00A,e1_room_init_vector,Room-specific initialization jump vector copied from CA0A
 0xF00D,e1_room_tick_vector,Room-specific per-tick jump vector copied from CA0D
 0xF010,e1_room_teardown_vector,Room-specific teardown jump vector copied from CA10

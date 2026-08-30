@@ -1,0 +1,33 @@
+0x00  You've just spent the night sleeping face-down in a plate of synth-spaghetti in a bar called the Chatsubo. After rubbing the sauce out of your eyes, you can see Chiba sky through the window, the color of television tuned to a dead channel.A PAX booth is on the wall. Ratz's prosthetic Russian arm whines as he wipes the bar.  His teeth are a webwork of East European steel and brown decay.
+0x01  In the Chatsubo Bar.
+0x02  I don't care if you eat that spaghettior sleep in it, you still gotta payfor it.  46 credits.
+0x03  Sorry, Ratz. I can't afford it. Wantme to give it back?
+0x04  How about if I owe it to you?  You cantrust me.
+0x05  I'm ready for dessert. Have you gotany pudding for me to sleep in?
+0x06  I'd like to sleep on it some more,if that's okay with you, Ratz.
+0x07  Pay up, cyberscum. Use the PAX if youneed money.
+0x08  You been sleepin' in that stuff allnight. Now pay up or I call a lawbot.
+0x09  I'll give ya 5 minutes to pay up, oryou're outta here.  Use the PAX.
+0x0A  Time's up, lowlife.  Nobody stiffs meand gets away with it!  I'm callin'the lawbot.
+0x0B  Thanks, friend artiste. Shin came by,but he didn't want to interrupt yourbeauty sleep. He still has your deck.
+0x0C  Who you calling an artiste?
+0x0D  What deck does Shin have?
+0x0E  Anything else come up?
+0x0F  You are the artiste of the slightlyfunny deal, Herr .
+0x10  Your Yamamitsu UXB, Herr .Shin says you pawned it at his shop.
+0x11  Somebody's gotta be funny around here.Sure the fuck isn't you.
+0x12  Oh.  THAT deck.
+0x13  One of Lonny Zone's girls was lookingfor you too. You got biz with Zone?
+0x14  First Shin and now this. What kindacreepjoint you running here, Ratz?
+0x15  Zone's a friend of mine, but I don'tknow why you let him run his biz here.
+0x16  Zone shows a percentage. You I letwork here for entertainment value.
+0x17  Did I hear something about the HealthDepartment closing this place?
+0x18  Anything else you want to tell me?
+0x19  A minor problem, friend artiste. I'llbe back in business within the week.
+0x1A  Better find a way to pay your bill atCheap Hotel, or they'll start askingyou to sell your body parts.
+0x1B  So I sell a kidney or two.  Why don'tyou get off my case, Ratz?
+0x1C  That's it.  I'm leaving.
+0x1D  You should have fear, artiste. It maybe your friend. Now get out of herebefore the lawbot arrives.
+0x1E  Good luck, artiste. You're going toneed it.
+0x1F  I said 46 credits, buckwheat. Are youdeaf?
+0x20  Ratz refuses to take your credits.

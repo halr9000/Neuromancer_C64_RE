@@ -1,0 +1,173 @@
+{
+  "source_sha256": "66316f2f3b0ccb2b03dfba6314978afbe665b470290cd51290db2f9837c32089",
+  "root_address": "0xF248",
+  "dictionary_size": 60,
+  "string_count": 33,
+  "strings": [
+    {
+      "id": 0,
+      "id_hex": "0x00",
+      "text": "You've just spent the night sleeping face-down in a plate of synth-spaghetti in a bar called the Chatsubo. After rubbing the sauce out of your eyes, you can see Chiba sky through the window, the color of television tuned to a dead channel.\r\rA PAX booth is on the wall. Ratz's prosthetic Russian arm whines as he wipes the bar.  His teeth are a webwork of East European steel and brown decay."
+    },
+    {
+      "id": 1,
+      "id_hex": "0x01",
+      "text": "In the Chatsubo Bar."
+    },
+    {
+      "id": 2,
+      "id_hex": "0x02",
+      "text": "I don't care if you eat that spaghettior sleep in it, you still gotta pay\rfor it.  46 credits."
+    },
+    {
+      "id": 3,
+      "id_hex": "0x03",
+      "text": "Sorry, Ratz. I can't afford it. Want\rme to give it back?"
+    },
+    {
+      "id": 4,
+      "id_hex": "0x04",
+      "text": "How about if I owe it to you?  You cantrust me."
+    },
+    {
+      "id": 5,
+      "id_hex": "0x05",
+      "text": "I'm ready for dessert. Have you got\rany pudding for me to sleep in?"
+    },
+    {
+      "id": 6,
+      "id_hex": "0x06",
+      "text": "I'd like to sleep on it some more,\rif that's okay with you, Ratz."
+    },
+    {
+      "id": 7,
+      "id_hex": "0x07",
+      "text": "Pay up, cyberscum. Use the PAX if you\rneed money."
+    },
+    {
+      "id": 8,
+      "id_hex": "0x08",
+      "text": "You been sleepin' in that stuff all\rnight. Now pay up or I call a lawbot."
+    },
+    {
+      "id": 9,
+      "id_hex": "0x09",
+      "text": "I'll give ya 5 minutes to pay up, or\ryou're outta here.  Use the PAX."
+    },
+    {
+      "id": 10,
+      "id_hex": "0x0A",
+      "text": "Time's up, lowlife.  Nobody stiffs me\rand gets away with it!  I'm callin'\rthe lawbot."
+    },
+    {
+      "id": 11,
+      "id_hex": "0x0B",
+      "text": "Thanks, friend artiste. Shin came by,\rbut he didn't want to interrupt your\rbeauty sleep. He still has your deck."
+    },
+    {
+      "id": 12,
+      "id_hex": "0x0C",
+      "text": "Who you calling an artiste?"
+    },
+    {
+      "id": 13,
+      "id_hex": "0x0D",
+      "text": "What deck does Shin have?"
+    },
+    {
+      "id": 14,
+      "id_hex": "0x0E",
+      "text": "Anything else come up?"
+    },
+    {
+      "id": 15,
+      "id_hex": "0x0F",
+      "text": "You are the artiste of the slightly\rfunny deal, Herr \u0003."
+    },
+    {
+      "id": 16,
+      "id_hex": "0x10",
+      "text": "Your Yamamitsu UXB, Herr \u0003.\rShin says you pawned it at his shop."
+    },
+    {
+      "id": 17,
+      "id_hex": "0x11",
+      "text": "Somebody's gotta be funny around here.\rSure the fuck isn't you."
+    },
+    {
+      "id": 18,
+      "id_hex": "0x12",
+      "text": "Oh.  THAT deck."
+    },
+    {
+      "id": 19,
+      "id_hex": "0x13",
+      "text": "One of Lonny Zone's girls was looking\rfor you too. You got biz with Zone?"
+    },
+    {
+      "id": 20,
+      "id_hex": "0x14",
+      "text": "First Shin and now this. What kinda\rcreepjoint you running here, Ratz?"
+    },
+    {
+      "id": 21,
+      "id_hex": "0x15",
+      "text": "Zone's a friend of mine, but I don't\rknow why you let him run his biz here."
+    },
+    {
+      "id": 22,
+      "id_hex": "0x16",
+      "text": "Zone shows a percentage. You I let\rwork here for entertainment value."
+    },
+    {
+      "id": 23,
+      "id_hex": "0x17",
+      "text": "Did I hear something about the Health\rDepartment closing this place?"
+    },
+    {
+      "id": 24,
+      "id_hex": "0x18",
+      "text": "Anything else you want to tell me?"
+    },
+    {
+      "id": 25,
+      "id_hex": "0x19",
+      "text": "A minor problem, friend artiste. I'll\rbe back in business within the week."
+    },
+    {
+      "id": 26,
+      "id_hex": "0x1A",
+      "text": "Better find a way to pay your bill at\rCheap Hotel, or they'll start asking\ryou to sell your body parts."
+    },
+    {
+      "id": 27,
+      "id_hex": "0x1B",
+      "text": "So I sell a kidney or two.  Why don't\ryou get off my case, Ratz?"
+    },
+    {
+      "id": 28,
+      "id_hex": "0x1C",
+      "text": "That's it.  I'm leaving."
+    },
+    {
+      "id": 29,
+      "id_hex": "0x1D",
+      "text": "You should have fear, artiste. It may\rbe your friend. Now get out of here\rbefore the lawbot arrives."
+    },
+    {
+      "id": 30,
+      "id_hex": "0x1E",
+      "text": "Good luck, artiste. You're going to\rneed it."
+    },
+    {
+      "id": 31,
+      "id_hex": "0x1F",
+      "text": "I said 46 credits, buckwheat. Are you\rdeaf?"
+    },
+    {
+      "id": 32,
+      "id_hex": "0x20",
+      "text": "\r\rRatz refuses to take your credits."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+Setting default device to `Computer'
+Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
+UNTIL: 1  C:$0400  (Stop on exec)
+#1 (Stop on  exec 0400)  206/$0ce,  15/$0f
+.C:0400  18          CLC            - A:00 X:00 Y:E7 SP:ff N.-....C      91617
+>C:e700  49 6e 20 74  68 65 20 43  68 61 74 73  75 62 6f 20   In the Chatsubo 
+>C:e710  42 61 72 2e  00                                      Bar.
+  ADDR A  X  Y  SP 00 01 NV-BDIZC LIN CYC  STOPWATCH
+.;0400 00 00 e7 ff 2f 35 10100001 206 015      91617
