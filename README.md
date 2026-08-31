@@ -63,6 +63,10 @@ by Vite. It displays a native 320x200 canvas, decoded Chatsubo text, two VIC
 sprite masks at their confirmed hardware coordinates, and a live probe driven
 by the verified room tick.
 
+The latest `main` render is published through GitHub Pages at
+`https://halr9000.github.io/Neuromancer_C64_RE/`. The deployment workflow runs
+the TypeScript checks and web tests before uploading the production bundle.
+
 ## Contributing
 
 Separate verified observations from hypotheses, preserve source offsets and hashes, and include reproducible commands with new findings. Port code should be kept distinct from extraction tooling and should link implementation decisions to verified traces or documented evidence. See [AGENTS.md](AGENTS.md) for contributor conventions and [REVERSE.md](REVERSE.md) for the technical roadmap.

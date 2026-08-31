@@ -6,7 +6,7 @@ import { parseGameData } from "./game-data.ts";
 
 
 test("loads the generated room-zero text and entity record", () => {
-  const source = readFileSync(new URL("../generated/room0.json", import.meta.url), "utf8");
+  const source = readFileSync(new URL("../public/generated/room0.json", import.meta.url), "utf8");
 
   const data = parseGameData(JSON.parse(source));
 

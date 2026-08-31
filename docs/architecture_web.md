@@ -136,7 +136,7 @@ be generated from the existing Python tools, then checked by hash and semantic
 fixtures. Runtime code never parses a D64 or performs emulated disk I/O.
 
 `npm run build:data` currently runs `tools/build_web_data.py` against the
-verified room-0 snapshot and text report. It writes `web/generated/room0.json`
+verified room-0 snapshot and text report. It writes `web/public/generated/room0.json`
 with schema version 1, source provenance, all 33 strings, and the promoted
 `$C400` entity fields while retaining the original eight source bytes.
 

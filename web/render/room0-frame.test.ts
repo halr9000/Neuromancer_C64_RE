@@ -8,7 +8,7 @@ import { buildRoom0Frame } from "./room0-frame.ts";
 
 
 test("builds a 320x200 frame from verified room-zero coordinates", () => {
-  const source = readFileSync(new URL("../generated/room0.json", import.meta.url), "utf8");
+  const source = readFileSync(new URL("../public/generated/room0.json", import.meta.url), "utf8");
   const data = parseGameData(JSON.parse(source));
   const state = createRoom0State();
   enterRoom0(state);
