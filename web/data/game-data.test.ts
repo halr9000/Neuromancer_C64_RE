@@ -29,6 +29,10 @@ test("loads the generated room-zero text and entity record", () => {
     activationState: 0xff,
     scriptAddress: 0,
   });
+  assert.equal(data.room.display.screenCodes.length, 1000);
+  assert.equal(data.room.display.charset.length, 2048);
+  assert.equal(data.room.display.colorCodes.length, 1000);
+  assert.equal(data.room.display.backgroundColor, 0);
 });
 
 

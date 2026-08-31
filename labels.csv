@@ -39,6 +39,7 @@ addr,name,comment
 0x62C5,e1_location_id_table,Room IDs that select optional AC80 overlays
 0x62E3,e1_location_track_table,Track array parallel to the location ID table
 0x6301,e1_location_sector_table,Sector array parallel to the location ID table
+0x633D,e1_decode_frontend_screen,Expand side-1 frontend stream into screen and color RAM
 0x6429,e1_dispatch_entity_scripts,Dispatch active entity records through their opcode handlers
 0x66B7,e1_select_entity_record,Resolve one eight-byte C400 entity slot and its script pointer
 0x6C8C,e1_set_room_data_root,Save the root pointer for room text and record decoding

@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:data": "python tools/build_web_data.py extracted/e1/e1_room0_ready_memory.bin extracted/e1/e1_room0_text.json web/public/generated/room0.json",
+    "build:data": "python tools/build_web_data.py extracted/e1/e1_room0_ready_memory.bin extracted/e1/e1_room0_text.json extracted/e1/e1_room0_screen.bin extracted/e1/e1_room0_charset.bin extracted/e1/e1_room0_color.bin web/public/generated/room0.json",
     "dev": "vite web",
     "build:web": "vite build web --base /Neuromancer_C64_RE/",
     "test:web": "node --experimental-strip-types --test web/**/*.test.ts",

@@ -20,7 +20,13 @@ class BuildWebDataTests(unittest.TestCase):
             ],
         }
 
-        result = build_room0_data(bytes(memory), text_report)
+        result = build_room0_data(
+            bytes(memory),
+            text_report,
+            bytes([0x12]) * 1000,
+            bytes([0x81]) * 2048,
+            bytes([0x19]) * 1000,
+        )
 
         self.assertEqual(1, result["schemaVersion"])
         self.assertEqual("snapshot-hash", result["source"]["snapshotSha256"])
@@ -42,6 +48,9 @@ class BuildWebDataTests(unittest.TestCase):
         )
         self.assertEqual([1, 0, 0, 0, 0, 0, 0, 0], result["room"]["sprites"][0]["rows"][0][:8])
         self.assertEqual([0, 0, 0, 0, 0, 0, 0, 1], result["room"]["sprites"][1]["rows"][0][:8])
+        self.assertEqual([0x12] * 1000, result["room"]["display"]["screenCodes"])
+        self.assertEqual([0x81] * 2048, result["room"]["display"]["charset"])
+        self.assertEqual([0x09] * 1000, result["room"]["display"]["colorCodes"])
 
 
 if __name__ == "__main__":

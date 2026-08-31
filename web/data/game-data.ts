@@ -20,6 +20,14 @@ export interface SpriteDefinition {
   rows: number[][];
 }
 
+export interface DisplayDefinition {
+  screenCodes: number[];
+  charset: number[];
+  colorCodes: number[];
+  backgroundColor: number;
+  borderColor: number;
+}
+
 export interface GameData {
   schemaVersion: 1;
   source: {
@@ -29,6 +37,7 @@ export interface GameData {
   room: {
     id: number;
     text: string[];
+    display: DisplayDefinition;
     sprites: SpriteDefinition[];
     entities: EntityDefinition[];
   };
@@ -67,6 +76,13 @@ function word(value: unknown, name: string): number {
     throw new TypeError(`${name} must be a word`);
   }
   return value as number;
+}
+
+function byteArray(value: unknown, length: number, name: string): number[] {
+  if (!Array.isArray(value) || value.length !== length) {
+    throw new TypeError(`${name} must contain ${length} bytes`);
+  }
+  return value.map((item, index) => byte(item, `${name} byte ${index}`));
 }
 
 
@@ -121,6 +137,7 @@ export function parseGameData(value: unknown): GameData {
   }
   const source = object(root.source, "source");
   const room = object(root.room, "room");
+  const display = object(room.display, "room display");
   if (!Array.isArray(room.text) || !room.text.every((value) => typeof value === "string")) {
     throw new TypeError("room text must be an array of strings");
   }
@@ -139,6 +156,13 @@ export function parseGameData(value: unknown): GameData {
     room: {
       id: byte(room.id, "room id"),
       text: [...room.text] as string[],
+      display: {
+        screenCodes: byteArray(display.screenCodes, 1000, "screen codes"),
+        charset: byteArray(display.charset, 2048, "charset"),
+        colorCodes: byteArray(display.colorCodes, 1000, "color codes"),
+        backgroundColor: byte(display.backgroundColor, "background color"),
+        borderColor: byte(display.borderColor, "border color"),
+      },
       sprites: room.sprites.map(sprite),
       entities: room.entities.map(entity),
     },

@@ -12,38 +12,32 @@ const C64_PALETTE = [
 export interface Room0Frame {
   width: 320;
   height: 200;
-  title: string;
-  description: string;
+  screenCodes: number[];
+  charset: number[];
+  colorCodes: number[];
+  backgroundColor: string;
   sprites: Array<{
     x: number;
     y: number;
     color: string;
     rows: number[][];
   }>;
-  actorProbe: {
-    x: number;
-    y: number;
-    color: string;
-  };
 }
 
 
-export function buildRoom0Frame(data: GameData, state: Room0State): Room0Frame {
+export function buildRoom0Frame(data: GameData, _state: Room0State): Room0Frame {
   return {
     width: 320,
     height: 200,
-    title: data.room.text[1],
-    description: data.room.text[0],
+    screenCodes: data.room.display.screenCodes,
+    charset: data.room.display.charset,
+    colorCodes: data.room.display.colorCodes,
+    backgroundColor: C64_PALETTE[data.room.display.backgroundColor & 0x0f],
     sprites: data.room.sprites.map((sprite) => ({
       x: sprite.x,
       y: sprite.y,
       color: C64_PALETTE[sprite.color & 0x0f],
       rows: sprite.rows,
     })),
-    actorProbe: {
-      x: (state.logicalX2 + 0x0c) * 2,
-      y: state.logicalY2 + 0x36,
-      color: C64_PALETTE[4],
-    },
   };
 }

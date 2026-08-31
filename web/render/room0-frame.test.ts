@@ -18,10 +18,12 @@ test("builds a 320x200 frame from verified room-zero coordinates", () => {
 
   assert.equal(frame.width, 320);
   assert.equal(frame.height, 200);
-  assert.equal(frame.title, "In the Chatsubo Bar.");
+  assert.equal(frame.screenCodes.length, 1000);
+  assert.equal(frame.charset.length, 2048);
+  assert.equal(frame.colorCodes.length, 1000);
   assert.deepEqual(frame.sprites.map((sprite) => [sprite.x, sprite.y, sprite.color]), [
     [64, 88, "#6d5412"],
     [64, 109, "#883932"],
   ]);
-  assert.deepEqual(frame.actorProbe, { x: 204, y: 104, color: "#8b3f96" });
+  assert.equal(frame.backgroundColor, "#000000");
 });

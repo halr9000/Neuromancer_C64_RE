@@ -29,9 +29,17 @@ def decode_hires_sprite(data: bytes) -> list[list[int]]:
     ]
 
 
-def build_room0_data(memory: bytes, text_report: dict[str, Any]) -> dict[str, Any]:
+def build_room0_data(
+    memory: bytes,
+    text_report: dict[str, Any],
+    screen: bytes,
+    charset: bytes,
+    colors: bytes,
+) -> dict[str, Any]:
     if len(memory) != MEMORY_SIZE:
         raise ValueError("room-0 snapshot must be exactly 64 KiB")
+    if len(screen) != 1000 or len(charset) != 2048 or len(colors) != 1000:
+        raise ValueError("room display must contain 1000 screen/color and 2048 charset bytes")
 
     strings = text_report.get("strings")
     if not isinstance(strings, list) or text_report.get("string_count") != len(strings):
@@ -55,6 +63,13 @@ def build_room0_data(memory: bytes, text_report: dict[str, Any]) -> dict[str, An
         "room": {
             "id": 0,
             "text": text,
+            "display": {
+                "screenCodes": list(screen),
+                "charset": list(charset),
+                "colorCodes": [value & 0x0F for value in colors],
+                "backgroundColor": 0,
+                "borderColor": 0,
+            },
             "sprites": [
                 {
                     "pointer": pointer,
@@ -90,11 +105,20 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("snapshot", type=Path)
     parser.add_argument("room_text", type=Path)
+    parser.add_argument("screen", type=Path)
+    parser.add_argument("charset", type=Path)
+    parser.add_argument("colors", type=Path)
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
 
     text_report = json.loads(args.room_text.read_text(encoding="utf-8"))
-    result = build_room0_data(args.snapshot.read_bytes(), text_report)
+    result = build_room0_data(
+        args.snapshot.read_bytes(),
+        text_report,
+        args.screen.read_bytes(),
+        args.charset.read_bytes(),
+        args.colors.read_bytes(),
+    )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(f"wrote room 0 web data to {args.output}")
