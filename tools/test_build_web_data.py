@@ -9,8 +9,9 @@ class BuildWebDataTests(unittest.TestCase):
     def test_room_zero_keeps_entity_source_bytes_and_promoted_fields(self) -> None:
         memory = bytearray(0x10000)
         memory[0xC400:0xC408] = bytes.fromhex("00 C1 14 22 29 FF 00 00")
-        memory[0x0840] = 0x80
-        memory[0x0880] = 0x01
+        sprite_workspace = bytearray(128)
+        sprite_workspace[0] = 0x80
+        sprite_workspace[64] = 0x01
         text_report = {
             "source_sha256": "snapshot-hash",
             "string_count": 2,
@@ -26,6 +27,7 @@ class BuildWebDataTests(unittest.TestCase):
             bytes([0x12]) * 1000,
             bytes([0x81]) * 2048,
             bytes([0x19]) * 1000,
+            bytes(sprite_workspace),
         )
 
         self.assertEqual(1, result["schemaVersion"])
@@ -46,8 +48,10 @@ class BuildWebDataTests(unittest.TestCase):
             },
             result["room"]["entities"][0],
         )
-        self.assertEqual([1, 0, 0, 0, 0, 0, 0, 0], result["room"]["sprites"][0]["rows"][0][:8])
-        self.assertEqual([0, 0, 0, 0, 0, 0, 0, 1], result["room"]["sprites"][1]["rows"][0][:8])
+        self.assertEqual([2, 2, 0, 0, 0, 0, 0, 0], result["room"]["sprites"][0]["rows"][0][:8])
+        self.assertEqual([0, 0, 0, 0, 0, 0, 1, 1], result["room"]["sprites"][1]["rows"][0][:8])
+        self.assertTrue(result["room"]["sprites"][0]["multicolor"])
+        self.assertEqual([0, 0], result["room"]["sprites"][0]["sharedColors"])
         self.assertEqual([0x12] * 1000, result["room"]["display"]["screenCodes"])
         self.assertEqual([0x81] * 2048, result["room"]["display"]["charset"])
         self.assertEqual([0x09] * 1000, result["room"]["display"]["colorCodes"])

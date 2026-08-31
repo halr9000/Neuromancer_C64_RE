@@ -1,0 +1,19 @@
+{
+  "dimensions": [
+    320,
+    200
+  ],
+  "vice_crop": {
+    "left": 32,
+    "top": 35,
+    "width": 320,
+    "height": 200
+  },
+  "mismatched_pixels": 0,
+  "mismatched_channels": 0,
+  "maximum_channel_delta": 0,
+  "source_sha256": {
+    "vice_screenshot": "b0b9c80dd171c3dda0f83dda8b8bb21bb43a4b810749543cc8592a4c7f83edaf",
+    "browser_frame": "e1df973b0f6ac6f31fcae30d9dd8c1431b7b032aabe6ecc609fa745059cf7ba0"
+  }
+}

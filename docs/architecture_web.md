@@ -147,7 +147,7 @@ The first slice is ready to expand only when all of these hold:
 - a headless room-0 test matches the checked 64-tick trace;
 - room text IDs `$00-$20` match `e1_room0_text.json`, preserving `\r` breaks;
 - actor positions, frame slots, and colors match the VICE entity/VIC capture;
-- at least one browser screenshot is pixel-compared at the 320x200 game surface;
+- the browser compositor buffer pixel-matches the normalized VICE room-0 frame;
 - new/load persistence round-trips a versioned `GameState` without losing
   retained unknown source fields;
 - unsupported room records or script operations fail with actionable IDs.

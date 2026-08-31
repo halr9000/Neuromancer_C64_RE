@@ -22,8 +22,18 @@ screen and charset bytes and masks color RAM to its low nybble. Canvas draws
 each standard-text cell at native 320x200 resolution before overlaying the two
 verified room sprites.
 
-## Remaining comparison
+## Exact comparison
 
-The structure and source bytes are verified. A crop-normalized pixel diff
-between the VICE active display and browser canvas remains the next graphics
-verification step.
+The complete VICE screenshot is 384x272; its active 320x200 display begins at
+pixel `(32,35)`. The enabled sprites use multicolor mode (`$D01C=$FF`) and the
+post-initialization `$0840-$08BF` workspace, whose SHA-256 is
+`D6B13CCD516ACFC900FF78D83E3D4D304B3EB618341C9E557E81E5653EC6A8EC`.
+The VIC positions `(64,88)/(64,109)` map to active-display coordinates
+`(40,38)/(40,59)`.
+
+`npm run compare:frame` exports the exact browser compositor buffer, crops the
+VICE reference, and writes `e1_vice_room0_active.png`,
+`e1_browser_room0.png`, `e1_room0_pixel_diff.png`, and
+`e1_room0_pixel_diff.json`. The checked report records zero mismatched pixels,
+zero mismatched channels, and a maximum channel delta of zero across all
+64,000 pixels.

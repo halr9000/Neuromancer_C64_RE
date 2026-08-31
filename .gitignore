@@ -22,3 +22,4 @@ Thumbs.db
 # Browser-port dependencies and build products
 node_modules/
 dist/
+extracted/e1/e1_browser_room0.ppm

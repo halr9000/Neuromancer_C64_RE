@@ -29,17 +29,34 @@ def decode_hires_sprite(data: bytes) -> list[list[int]]:
     ]
 
 
+def decode_multicolor_sprite(data: bytes) -> list[list[int]]:
+    if len(data) != SPRITE_WIDTH * SPRITE_HEIGHT // 8:
+        raise ValueError("VIC sprite source must contain 63 bytes")
+    rows: list[list[int]] = []
+    for row in range(SPRITE_HEIGHT):
+        pixels: list[int] = []
+        for value in data[row * 3 : row * 3 + 3]:
+            for shift in (6, 4, 2, 0):
+                color = (value >> shift) & 0x03
+                pixels.extend((color, color))
+        rows.append(pixels)
+    return rows
+
+
 def build_room0_data(
     memory: bytes,
     text_report: dict[str, Any],
     screen: bytes,
     charset: bytes,
     colors: bytes,
+    sprite_workspace: bytes,
 ) -> dict[str, Any]:
     if len(memory) != MEMORY_SIZE:
         raise ValueError("room-0 snapshot must be exactly 64 KiB")
     if len(screen) != 1000 or len(charset) != 2048 or len(colors) != 1000:
         raise ValueError("room display must contain 1000 screen/color and 2048 charset bytes")
+    if len(sprite_workspace) != 128:
+        raise ValueError("room sprite workspace must contain two 64-byte slots")
 
     strings = text_report.get("strings")
     if not isinstance(strings, list) or text_report.get("string_count") != len(strings):
@@ -75,10 +92,12 @@ def build_room0_data(
                     "pointer": pointer,
                     "sourceAddress": f"0x{pointer * 64:04X}",
                     "color": color,
+                    "multicolor": True,
+                    "sharedColors": [0, 0],
                     "x": 64,
                     "y": y,
-                    "rows": decode_hires_sprite(
-                        memory[pointer * 64 : pointer * 64 + 63]
+                    "rows": decode_multicolor_sprite(
+                        sprite_workspace[(pointer - 0x21) * 64 : (pointer - 0x21) * 64 + 63]
                     ),
                 }
                 for pointer, color, y in ((0x21, 0x09, 88), (0x22, 0x02, 109))
@@ -108,6 +127,7 @@ def main() -> int:
     parser.add_argument("screen", type=Path)
     parser.add_argument("charset", type=Path)
     parser.add_argument("colors", type=Path)
+    parser.add_argument("sprite_workspace", type=Path)
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
 
@@ -118,6 +138,7 @@ def main() -> int:
         args.screen.read_bytes(),
         args.charset.read_bytes(),
         args.colors.read_bytes(),
+        args.sprite_workspace.read_bytes(),
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

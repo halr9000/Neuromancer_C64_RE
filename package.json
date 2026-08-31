@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:data": "python tools/build_web_data.py extracted/e1/e1_room0_ready_memory.bin extracted/e1/e1_room0_text.json extracted/e1/e1_room0_screen.bin extracted/e1/e1_room0_charset.bin extracted/e1/e1_room0_color.bin web/public/generated/room0.json",
+    "build:data": "python tools/build_web_data.py extracted/e1/e1_room0_ready_memory.bin extracted/e1/e1_room0_text.json extracted/e1/e1_room0_screen.bin extracted/e1/e1_room0_charset.bin extracted/e1/e1_room0_color.bin extracted/e1/e1_room0_sprite_workspace.bin web/public/generated/room0.json",
+    "export:frame": "node --experimental-strip-types web/render/export-room0-frame.ts extracted/e1/e1_browser_room0.ppm",
+    "compare:frame": "npm run export:frame && python -m tools.compare_room0_frames extracted/e1/e1_vice_room0_background_probe.png extracted/e1/e1_browser_room0.ppm extracted/e1",
     "dev": "vite web",
     "build:web": "vite build web --base /Neuromancer_C64_RE/",
     "test:web": "node --experimental-strip-types --test web/**/*.test.ts",

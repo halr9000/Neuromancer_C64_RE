@@ -15,6 +15,8 @@ export interface SpriteDefinition {
   pointer: number;
   sourceAddress: string;
   color: number;
+  multicolor: boolean;
+  sharedColors: [number, number];
   x: number;
   y: number;
   rows: number[][];
@@ -114,8 +116,8 @@ function sprite(value: unknown, index: number): SpriteDefinition {
   }
   const rows = item.rows.map((row, rowIndex) => {
     if (!Array.isArray(row) || row.length !== 24 ||
-        !row.every((pixel) => pixel === 0 || pixel === 1)) {
-      throw new TypeError(`sprite ${index} row ${rowIndex} must contain 24 bits`);
+        !row.every((pixel) => Number.isInteger(pixel) && pixel >= 0 && pixel <= 3)) {
+      throw new TypeError(`sprite ${index} row ${rowIndex} must contain 24 two-bit pixels`);
     }
     return [...row] as number[];
   });
@@ -123,6 +125,11 @@ function sprite(value: unknown, index: number): SpriteDefinition {
     pointer: byte(item.pointer, `sprite ${index} pointer`),
     sourceAddress: string(item.sourceAddress, `sprite ${index} sourceAddress`),
     color: byte(item.color, `sprite ${index} color`),
+    multicolor: item.multicolor === true,
+    sharedColors: (() => {
+      const colors = byteArray(item.sharedColors, 2, `sprite ${index} shared colors`);
+      return [colors[0], colors[1]];
+    })(),
     x: word(item.x, `sprite ${index} x`),
     y: word(item.y, `sprite ${index} y`),
     rows,

@@ -84,6 +84,7 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 - **Verified (web data boundary):** `tools/build_web_data.py` deterministically converts the checked room-0 snapshot and text report into schema-versioned `web/public/generated/room0.json`. `web/data/game-data.ts` validates the schema and byte ranges before exposing all 33 strings and the `$C400` entity record, retaining its original bytes beside promoted slot, position, color, and flag fields.
 - **Verified (visible web slice):** `web/index.html` connects the room-0 data and tick runtime to a native 320x200 Canvas 2D frame. The generated artifact carries the recovered 40x25 screen, 2 KiB charset, color RAM, and VIC pointers `$21/$22`; the renderer draws the decoded Chatsubo frame and places the sprites at captured coordinates `(64,88)/(64,109)` with colors `$9/$2`. Browser inspection confirms the coherent frame renders without a current console error. Exact emulator-to-browser pixel comparison remains open.
 - **Verified (room-0 background recovery):** `$4B22` confirms VIC shadows `$D018=$18`, `$DD00=$03`, selecting screen `$0400`, charset `$2000`, and sprite-pointer space in bank 0. The ready snapshot still held the erased startup stub at `$0400`; `$633D` was the missing stage. With `$91-$97 = $00/$27/$00/$C0/$C0/$00/$18`, it expands `e1_side1_frontend_ca00.bin` first into `$0400` screen RAM and then `$D800` color RAM. `tools/vice_room0_background_probe.mon` runs that decoder before room/entity initialization and produces the first coherent bar frame; the earlier noisy capture is rejected as uninitialized screen/color evidence.
+- **Verified (exact room-0 frame):** the VICE 384x272 screenshot's active display is `$320x200` at crop `(32,35)`. `$D01C=$FF` makes the two enabled room sprites multicolor, and their post-initialization `$0840-$08BF` workspace differs from the pre-room snapshot. The browser now preserves two-bit sprite pixels, shared colors, VIC-to-active-display offsets `(-24,-50)`, and the capture's RGB palette. `npm run compare:frame` reports zero mismatched pixels and retains normalized reference, browser, diff, and JSON evidence under `extracted/e1/`.
 - **Environment finding (2026-08-29):** VICE 3.10 GTK3 is installed through Winget (`VICE-Team.VICE.GTK3`), including `x64sc`, `c1541`, and `petcat`. The first scripted hardware-accurate room-vector capture is checked in at `extracted/e1/e1_vice_room0_probe.log`; tick/dispatcher tracing remains open.
 - **Verified (first sprite assets):** the 127-byte module loaded at `$0380-$03FE` contains two 63-byte, MSB-first, high-resolution VIC-II sprites plus one padding byte. Startup writes pointers `$0E/$0F` to `$07F8/$07F9`; `tools/extract_e1_assets.py` reproducibly exports both 24x21 masks and their combined sheet under `extracted/e1/assets/`. The shapes are complementary pointer-arrow sprites with 58 and 53 set pixels.
 - **Verified (sprite bank and VICE pixel check):** `e1_module_a400.bin` is 34 contiguous 64-byte sprite slots. Its contact sheet resolves humanoid standing/movement frames; VICE 3.10 renders the first five unchanged slots at native 24x21 high-resolution geometry with pixels matching the extractor masks. See `docs/e1_sprite_assets.md` and `extracted/e1/assets/vice_a400_sprites.png`. The apparent `$07F8-$07FF` pointers in the pre-frame room snapshot were rejected after their targets decoded as unrelated code/data.
@@ -169,7 +170,7 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 - [x] Ph4: 5+ sprites/tiles extracted and visually compared to emulator
 - [ ] Ph5: key data struct confirmed in emulator memory dump, all fields match
 - [ ] Ph6: full game session played, no major logic gaps found
-- [ ] Ph7: web port pixel-compared against emulator screenshots
+- [x] Ph7: web port pixel-compared against emulator screenshots
 
 ---
 
@@ -211,6 +212,7 @@ The immutable hashes and intake details are recorded in `Neuromancer_C64_RE_Inta
 - [x] Load decoded room-0 text and entity data through a versioned game-data boundary
 - [x] Render the verified room-0 actor frame at native 320x200 coordinates
 - [x] Recover room-0 screen, character, and color RAM for a real Chatsubo background
-- [ ] Pixel-compare the reconstructed browser room against a complete VICE capture
+- [x] Pixel-compare the reconstructed browser room against a complete VICE capture
+- [ ] Trace the complete Chatsubo/PAX/payment/exit opening route in VICE
 
-SESSION_SUMMARY: E5 is fully readable; E1 is reconstructed from LOAD through stable startup `$03E7`, hidden module assembly, engine `$4836`, the E2-E4 room/location catalog, and the first cross-side room runtime at `$F000`.
+SESSION_SUMMARY: Room 0 now matches a normalized VICE frame exactly at all 64,000 pixels; the next milestone is the complete opening-route trace.

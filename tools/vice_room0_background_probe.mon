@@ -41,6 +41,9 @@ io $d000
 r pc=$0200
 radix d
 step 20000
+bank ram
+bsave "extracted/e1/e1_room0_sprite_workspace.bin" 0 $0840 $08bf
+bank cpu
 screenshot "extracted/e1/e1_vice_room0_background_probe" 2
 r
 q
