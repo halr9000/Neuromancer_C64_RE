@@ -9,6 +9,8 @@ class BuildWebDataTests(unittest.TestCase):
     def test_room_zero_keeps_entity_source_bytes_and_promoted_fields(self) -> None:
         memory = bytearray(0x10000)
         memory[0xC400:0xC408] = bytes.fromhex("00 C1 14 22 29 FF 00 00")
+        memory[0x0840] = 0x80
+        memory[0x0880] = 0x01
         text_report = {
             "source_sha256": "snapshot-hash",
             "string_count": 2,
@@ -38,6 +40,8 @@ class BuildWebDataTests(unittest.TestCase):
             },
             result["room"]["entities"][0],
         )
+        self.assertEqual([1, 0, 0, 0, 0, 0, 0, 0], result["room"]["sprites"][0]["rows"][0][:8])
+        self.assertEqual([0, 0, 0, 0, 0, 0, 0, 1], result["room"]["sprites"][1]["rows"][0][:8])
 
 
 if __name__ == "__main__":

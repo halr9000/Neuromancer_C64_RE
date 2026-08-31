@@ -1,0 +1,85 @@
+:root {
+  color-scheme: dark;
+  font-family: "Courier New", monospace;
+  background: #070908;
+  color: #c7d6c1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 25%, #182019 0, #090c0a 38rem, #030403 100%);
+}
+
+.terminal-shell {
+  width: min(94vw, 920px);
+  padding: 1.5rem clamp(1rem, 4vw, 3rem) 1.25rem;
+  border: 1px solid #364438;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #151a16, #090b09 72%);
+  box-shadow: 0 2rem 6rem #000, inset 0 0 0 1px #080a08;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.eyebrow, .status, footer { letter-spacing: .12em; }
+.eyebrow { grid-column: 1 / -1; margin: 0 0 .25rem; color: #788477; font-size: .68rem; }
+h1 { margin: 0; font-size: clamp(1.4rem, 4vw, 2.4rem); letter-spacing: .18em; color: #e0e7dc; }
+.status { margin: 0 0 .3rem; font-size: .68rem; color: #96ad93; }
+.status-light { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; background: #82d173; box-shadow: 0 0 .7rem #82d173; }
+
+.display {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  overflow: hidden;
+  border: clamp(8px, 2vw, 18px) solid #252b26;
+  border-radius: 16px;
+  background: #111;
+  box-shadow: inset 0 0 2rem #000, 0 0 0 1px #465047;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .2;
+  background: repeating-linear-gradient(to bottom, transparent 0 2px, #000 2px 3px);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: .85rem;
+  color: #687367;
+  font-size: clamp(.52rem, 1.4vw, .68rem);
+}
+
+footer p { margin: 0; }
+.counter { color: #a4b6a1; white-space: nowrap; }
+
+@media (max-width: 620px) {
+  .terminal-shell { width: 100vw; min-height: 100vh; border: 0; border-radius: 0; padding: 1rem .75rem; }
+  header { grid-template-columns: 1fr; }
+  .status { margin-top: .35rem; }
+  footer { flex-direction: column; }
+}

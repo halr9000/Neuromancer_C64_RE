@@ -53,9 +53,15 @@ The headless browser-port checks use Node.js and TypeScript:
 ```text
 npm install
 npm run build:data
+npm run dev
 npm run typecheck
 npm run test:web
 ```
+
+`npm run dev` opens the tangible room-0 reconstruction at the local URL printed
+by Vite. It displays a native 320x200 canvas, decoded Chatsubo text, two VIC
+sprite masks at their confirmed hardware coordinates, and a live probe driven
+by the verified room tick.
 
 ## Contributing
 

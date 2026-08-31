@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuromancer C64 — Room 0 Reconstruction</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main class="terminal-shell">
+      <header>
+        <p class="eyebrow">FRONTLINE BUILD / ROOM 00</p>
+        <h1>NEUROMANCER</h1>
+        <p class="status"><span class="status-light"></span> LIVE RECONSTRUCTION</p>
+      </header>
+
+      <section class="display" aria-label="Room zero game reconstruction">
+        <canvas id="game" width="320" height="200"></canvas>
+        <div class="scanlines" aria-hidden="true"></div>
+      </section>
+
+      <footer>
+        <p>VERIFIED 6510 ROOM HOOK · DECODED CHATSUBO TEXT · VIC SPRITE PROBE</p>
+        <p class="counter">TICK <span id="tick">0000</span> · 320×200</p>
+      </footer>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

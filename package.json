@@ -4,11 +4,14 @@
   "type": "module",
   "scripts": {
     "build:data": "python tools/build_web_data.py extracted/e1/e1_room0_ready_memory.bin extracted/e1/e1_room0_text.json web/generated/room0.json",
+    "dev": "vite web",
+    "build:web": "vite build web",
     "test:web": "node --experimental-strip-types --test web/**/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^26.4.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vite": "^8.2.2"
   }
 }

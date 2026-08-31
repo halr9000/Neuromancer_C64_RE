@@ -46,7 +46,7 @@ main.ts
 | `systems/room.ts` | `enterRoom()`, `tickRoom()`, `leaveRoom()` | Implements the room vector lifecycle and applies room transitions. |
 | `systems/entity-scripts.ts` | `tickEntities()`, `ScriptHandler` | Dispatches typed script operations corresponding to the verified `$6429` path. Unsupported opcodes fail visibly in development. |
 | `systems/input.ts` | `InputState`, `InputAction`, `mapInput()` | Normalizes pointer, keyboard, and controller actions; hit regions are game-space data. |
-| `render/c64-renderer.ts` | `C64Renderer`, `ViewportTransform` | Draws the 320x200 game surface, palette, text, sprites, and cursor to Canvas 2D. |
+| `render/canvas-renderer.ts` | `drawRoom0Frame()` | Draws the implemented 320x200 room-0 evidence frame, text, VIC masks, and logic probe to Canvas 2D. |
 | `audio/audio-system.ts` | `AudioSystem`, `AudioCue` | Web Audio boundary. Initially silent/placeholder until SID behavior is mapped. |
 | `persistence/save-store.ts` | `SaveStore`, `SaveEnvelope` | Versioned IndexedDB/local-storage adapter; never leaks storage concerns into `GameState`. |
 
@@ -155,3 +155,17 @@ The first slice is ready to expand only when all of these hold:
 This architecture intentionally leaves audio fidelity and full-session
 coverage outside the first slice. They remain required for the finished port,
 but neither should block proving the core room/data/render pipeline end to end.
+
+## First visible slice
+
+`web/index.html` and `web/main.ts` now connect the generated data, room-0 tick,
+frame model, and Canvas 2D renderer. The page integer-scales a native 320x200
+surface and animates at a 50 ms diagnostic cadence. Two sprites are decoded
+directly from the VICE-confirmed pointers `$21/$22` (`$0840/$0880`) and drawn at
+the captured coordinates/colors. A separate purple room-logic probe follows the
+verified slot-2 `(X+$0C)*2`, `Y+$36` transform as `$F10E` advances its tables.
+
+The available VICE room screenshot contains incomplete screen/background RAM
+and is visibly corrupt. The page therefore labels itself a reconstruction and
+does not claim a pixel-matched Chatsubo background. Recovering the real screen,
+character, and color RAM is the next visual reverse-engineering gate.

@@ -13,6 +13,20 @@ MEMORY_SIZE = 0x10000
 ROOM0_ENTITY_ADDRESS = 0xC400
 ENTITY_RECORD_SIZE = 8
 SCHEMA_VERSION = 1
+SPRITE_WIDTH = 24
+SPRITE_HEIGHT = 21
+
+
+def decode_hires_sprite(data: bytes) -> list[list[int]]:
+    if len(data) != SPRITE_WIDTH * SPRITE_HEIGHT // 8:
+        raise ValueError("VIC sprite source must contain 63 bytes")
+    return [
+        [
+            (data[row * 3 + column // 8] >> (7 - column % 8)) & 1
+            for column in range(SPRITE_WIDTH)
+        ]
+        for row in range(SPRITE_HEIGHT)
+    ]
 
 
 def build_room0_data(memory: bytes, text_report: dict[str, Any]) -> dict[str, Any]:
@@ -41,6 +55,19 @@ def build_room0_data(memory: bytes, text_report: dict[str, Any]) -> dict[str, An
         "room": {
             "id": 0,
             "text": text,
+            "sprites": [
+                {
+                    "pointer": pointer,
+                    "sourceAddress": f"0x{pointer * 64:04X}",
+                    "color": color,
+                    "x": 64,
+                    "y": y,
+                    "rows": decode_hires_sprite(
+                        memory[pointer * 64 : pointer * 64 + 63]
+                    ),
+                }
+                for pointer, color, y in ((0x21, 0x09, 88), (0x22, 0x02, 109))
+            ],
             "entities": [
                 {
                     "sourceAddress": "0xC400",

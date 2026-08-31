@@ -12,6 +12,11 @@ test("loads the generated room-zero text and entity record", () => {
 
   assert.equal(data.room.text.length, 0x21);
   assert.equal(data.room.text[1], "In the Chatsubo Bar.");
+  assert.equal(data.room.sprites[0].pointer, 0x21);
+  assert.deepEqual(data.room.sprites.map((sprite) => [sprite.x, sprite.y, sprite.color]), [
+    [64, 88, 9],
+    [64, 109, 2],
+  ]);
   assert.deepEqual(data.room.entities[0], {
     sourceAddress: "0xC400",
     sourceBytes: [0x00, 0xc1, 0x14, 0x22, 0x29, 0xff, 0x00, 0x00],

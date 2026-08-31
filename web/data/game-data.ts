@@ -11,6 +11,15 @@ export interface EntityDefinition {
   scriptAddress: number;
 }
 
+export interface SpriteDefinition {
+  pointer: number;
+  sourceAddress: string;
+  color: number;
+  x: number;
+  y: number;
+  rows: number[][];
+}
+
 export interface GameData {
   schemaVersion: 1;
   source: {
@@ -20,6 +29,7 @@ export interface GameData {
   room: {
     id: number;
     text: string[];
+    sprites: SpriteDefinition[];
     entities: EntityDefinition[];
   };
 }
@@ -81,6 +91,29 @@ function entity(value: unknown, index: number): EntityDefinition {
 }
 
 
+function sprite(value: unknown, index: number): SpriteDefinition {
+  const item = object(value, `sprite ${index}`);
+  if (!Array.isArray(item.rows) || item.rows.length !== 21) {
+    throw new TypeError(`sprite ${index} must contain 21 rows`);
+  }
+  const rows = item.rows.map((row, rowIndex) => {
+    if (!Array.isArray(row) || row.length !== 24 ||
+        !row.every((pixel) => pixel === 0 || pixel === 1)) {
+      throw new TypeError(`sprite ${index} row ${rowIndex} must contain 24 bits`);
+    }
+    return [...row] as number[];
+  });
+  return {
+    pointer: byte(item.pointer, `sprite ${index} pointer`),
+    sourceAddress: string(item.sourceAddress, `sprite ${index} sourceAddress`),
+    color: byte(item.color, `sprite ${index} color`),
+    x: word(item.x, `sprite ${index} x`),
+    y: word(item.y, `sprite ${index} y`),
+    rows,
+  };
+}
+
+
 export function parseGameData(value: unknown): GameData {
   const root = object(value, "game data");
   if (root.schemaVersion !== 1) {
@@ -94,6 +127,9 @@ export function parseGameData(value: unknown): GameData {
   if (!Array.isArray(room.entities)) {
     throw new TypeError("room entities must be an array");
   }
+  if (!Array.isArray(room.sprites)) {
+    throw new TypeError("room sprites must be an array");
+  }
   return {
     schemaVersion: 1,
     source: {
@@ -103,6 +139,7 @@ export function parseGameData(value: unknown): GameData {
     room: {
       id: byte(room.id, "room id"),
       text: [...room.text] as string[],
+      sprites: room.sprites.map(sprite),
       entities: room.entities.map(entity),
     },
   };
