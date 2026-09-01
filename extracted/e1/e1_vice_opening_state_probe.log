@@ -1,0 +1,16 @@
+Setting default device to `Computer'
+Loading 'extracted/e1/e1_room0_ready_memory.bin' from 0000 to FFFF (10000 bytes)
+Loading 'extracted/e1/e1_pax_bank.bin' from 1000 to 1427 (0428 bytes)
+UNTIL: 1  C:$1141  (Stop on exec)
+#1 (Stop on  exec 1141)    2/$002,  11/$0b
+.C:1141  A9 0A       LDA #$0A       - A:00 X:00 Y:07 SP:ff ..-...Z.        137
+>C:c33a   46   0   0 168    7   0           .¨
+Loading 'extracted/e1/e1_pax_send_message.bin' from 1000 to 1B5C (0B5D bytes)
+UNTIL: 1  C:$1336  (Stop on exec)
+#1 (Stop on  exec 1336)    3/$003,  58/$3a
+.C:1336  60          RTS            - A:00 X:04 Y:00 SP:ff ..-...Z.        247
+>C:c33a   46   0   0 184   46   0           .¸.
+UNTIL: 1  C:$68c5  (Stop on exec)
+#1 (Stop on  exec 68c5)    4/$004,  34/$22
+.C:68c5  20 5A 59    JSR $595A      - A:00 X:00 Y:00 SP:ff ..-...ZC        286
+>C:c33a    0   0   0 184   46   0           ¸.

@@ -25,13 +25,13 @@
 - [x] Normalize the VICE active-display crop and export the browser compositor buffer.
 - [x] Correct palette, sprite mode, sprite workspace, and VIC coordinate mapping.
 - [x] Retain reference, candidate, diff, hashes, and a zero-mismatch report.
-- [ ] Commit, push, deploy, and verify the milestone.
+- [x] Commit, push, deploy, and verify the milestone.
 
 ### Task 2: Opening-route evidence
 
-- [ ] Trace Ratz dialogue, PAX activation, transfer, optional Armitage branch, payment, exit, teardown, and destination load.
-- [ ] Export machine-readable golden traces and confirm all promoted state/entity fields in VICE.
-- [ ] Commit, push, deploy, and verify the milestone.
+- [x] Trace Ratz dialogue, PAX activation, transfer, optional Armitage branch, payment, exit, teardown, and the selector boundary (no destination auto-load exists).
+- [x] Export machine-readable golden traces and confirm all promoted state/entity fields in VICE.
+- [x] Commit, push, deploy, and verify the milestone.
 
 ### Task 3: Destination and asset extraction
 

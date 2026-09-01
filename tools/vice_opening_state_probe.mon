@@ -1,0 +1,26 @@
+logname "extracted/e1/e1_vice_opening_state_probe.log"
+log on
+device c:
+bank ram
+bload "extracted/e1/e1_room0_ready_memory.bin" 0 $0000
+; PAX bank child: transfer 40 from bank to cash.
+bload "extracted/e1/e1_pax_bank.bin" 0 $1000
+> $0057 $28 $00 $00
+r pc=$10e8, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $1141
+radix d
+m $c33a $c33f
+; PAX mail child: accepted Armitage/BAMA message gives a one-shot 10000 deposit.
+bload "extracted/e1/e1_pax_send_message.bin" 0 $1000
+> $0048 $00 $02
+> $0200 $00
+r pc=$12ec, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $1336
+m $c33a $c33f
+; Resident GIVE debit: subtract 46 before room 0 receives the event.
+> $c33a $2e $00 $00
+> $0057 $2e $00 $00
+r pc=$68a8, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $68c5
+m $c33a $c33f
+q

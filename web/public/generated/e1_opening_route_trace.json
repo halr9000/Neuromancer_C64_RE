@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "sources": {
+    "snapshot_sha256": "66316f2f3b0ccb2b03dfba6314978afbe665b470290cd51290db2f9837c32089",
+    "side1_sha256": "a3deff9c8206173489afdd8c33b537a168ecd16a52a960b94b3cdd4e8f6dc5ad",
+    "pax_root": {
+      "name": "pax_root",
+      "role": "room PAX shell",
+      "start": "T12/S03",
+      "sectors": [
+        "T12/S03",
+        "T12/S04",
+        "T12/S05",
+        "T12/S06",
+        "T12/S07",
+        "T12/S08",
+        "T12/S09",
+        "T12/S10",
+        "T12/S11",
+        "T12/S12"
+      ],
+      "sector_count": 10,
+      "encoded_length": 2486,
+      "destination": "0x7400",
+      "end_exclusive": "0x7DB6",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0x7400-0x7DB5"
+      ],
+      "sha256": "2b94ea84a932ec609f8415b7f1636862b29c7573fa603d35ffb5d762870e122e"
+    },
+    "pax_children": [
+      {
+        "name": "pax_messages",
+        "role": "PAX child overlay",
+        "start": "T13/S11",
+        "sectors": [
+          "T13/S11",
+          "T13/S12",
+          "T13/S13",
+          "T13/S14",
+          "T13/S15",
+          "T13/S16",
+          "T13/S17",
+          "T13/S18",
+          "T13/S19",
+          "T13/S20",
+          "T14/S00",
+          "T14/S01",
+          "T14/S02"
+        ],
+        "sector_count": 13,
+        "encoded_length": 3085,
+        "destination": "0x1000",
+        "end_exclusive": "0x1C0D",
+        "wraps_address_space": false,
+        "address_ranges": [
+          "0x1000-0x1C0C"
+        ],
+        "sha256": "e68150ec7b6f8b8956e6b6d8e5a55eaa236a96e1734472b54a805a52f0d35cc9"
+      },
+      {
+        "name": "pax_bank",
+        "role": "PAX child overlay",
+        "start": "T17/S14",
+        "sectors": [
+          "T17/S14",
+          "T17/S15",
+          "T17/S16",
+          "T17/S17",
+          "T17/S18"
+        ],
+        "sector_count": 5,
+        "encoded_length": 1064,
+        "destination": "0x1000",
+        "end_exclusive": "0x1428",
+        "wraps_address_space": false,
+        "address_ranges": [
+          "0x1000-0x1427"
+        ],
+        "sha256": "3d75928abcae86be1ecc319badea8046dd99b2f95ac7454f92d557cca39380e6"
+      },
+      {
+        "name": "pax_directory",
+        "role": "PAX child overlay",
+        "start": "T14/S05",
+        "sectors": [
+          "T14/S05",
+          "T14/S06",
+          "T14/S07",
+          "T14/S08",
+          "T14/S09",
+          "T14/S10",
+          "T14/S11",
+          "T14/S12"
+        ],
+        "sector_count": 8,
+        "encoded_length": 1948,
+        "destination": "0x1000",
+        "end_exclusive": "0x179C",
+        "wraps_address_space": false,
+        "address_ranges": [
+          "0x1000-0x179B"
+        ],
+        "sha256": "4cdd0674cb80ec32fe6292c595c46b95bf69d0f321df30056039d3c4bab11128"
+      },
+      {
+        "name": "pax_send_message",
+        "role": "PAX child overlay",
+        "start": "T34/S00",
+        "sectors": [
+          "T34/S00",
+          "T34/S01",
+          "T34/S02",
+          "T34/S03",
+          "T34/S04",
+          "T34/S05",
+          "T34/S06",
+          "T34/S07",
+          "T34/S08",
+          "T34/S09",
+          "T34/S10",
+          "T34/S11"
+        ],
+        "sector_count": 12,
+        "encoded_length": 2909,
+        "destination": "0x1000",
+        "end_exclusive": "0x1B5D",
+        "wraps_address_space": false,
+        "address_ranges": [
+          "0x1000-0x1B5C"
+        ],
+        "sha256": "5fccd856a437123cdee51fcebc854d0002947801549a7e21993bb501a114e816"
+      }
+    ]
+  },
+  "promoted_state": {
+    "cash": {
+      "address": "0xC33A",
+      "width": 3
+    },
+    "bank": {
+      "address": "0xC33D",
+      "width": 3
+    },
+    "transfer_amount": {
+      "address": "0x0057",
+      "width": 3
+    },
+    "transfer_ring_index": {
+      "address": "0xC348",
+      "width": 1
+    },
+    "transfer_ring": {
+      "address": "0xC34A",
+      "records": 4,
+      "record_bytes": 4
+    },
+    "room_id": {
+      "address": "0xC330",
+      "width": 1
+    },
+    "room_entity": {
+      "address": "0xC400",
+      "record_bytes": 8
+    }
+  },
+  "routes": {
+    "required": [
+      {
+        "event": "new_game",
+        "cash": 6,
+        "bank": 2000
+      },
+      {
+        "event": "ratz_demands_payment",
+        "room_string_id": 2,
+        "amount": 46
+      },
+      {
+        "event": "pax_activate",
+        "module_entry": "0x7400"
+      },
+      {
+        "event": "pax_transfer_to_cash",
+        "amount": 40,
+        "cash": 46,
+        "bank": 1960
+      },
+      {
+        "event": "pax_logoff",
+        "module_exit": "0x74B5"
+      },
+      {
+        "event": "pay_ratz",
+        "amount": 46,
+        "cash": 0,
+        "bank": 1960
+      },
+      {
+        "event": "leave_chatsubo",
+        "room_string_id": 28
+      }
+    ],
+    "armitage_optional": [
+      {
+        "event": "send_bama_to_armitage",
+        "bama_id": "056306118"
+      },
+      {
+        "event": "armitage_deposit",
+        "amount": 10000,
+        "cash": 46,
+        "bank": 11960
+      }
+    ]
+  },
+  "executed_code": {
+    "bank_to_cash": {
+      "start": "0x10E8",
+      "stop": "0x1141",
+      "steps": 40
+    },
+    "armitage_deposit": {
+      "start": "0x12EC",
+      "stop": "0x1336",
+      "steps": 34
+    },
+    "ratz_payment_debit": {
+      "start": "0x68A8",
+      "stop": "0x68C5",
+      "steps": 13
+    },
+    "ratz_conditional_refund": {
+      "start": "0xF0DA",
+      "stop": "0xF0F5"
+    },
+    "room0_teardown": {
+      "address": "0xF10D",
+      "bytes": "60"
+    }
+  },
+  "boundary": {
+    "verified": "Chatsubo payment, leave dialogue, and no-op teardown",
+    "open": "Exit enters the Chiba location selector; no destination room is automatic until the player chooses one."
+  }
+}
