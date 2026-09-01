@@ -3,13 +3,22 @@ log on
 device c:
 bank ram
 bload "extracted/e1/e1_room0_ready_memory.bin" 0 $0000
-bload "extracted/e1/e1_side1_frontend_ca00.bin" 0 $ca00
 bank cpu
 > $0000 $2f
 > $0001 $35
-; Reproduce $4F55-$4F69, then decode the frontend into $0400 and color RAM.
+; Reproduce startup $4F23-$4F69: initialize the persistent display shell.
+bank ram
+bload "extracted/e1/e1_side1_frontend_ca00.bin" 0 $ca00
+bank cpu
 > $0091 $00 $27 $00 $c0 $c0 $00 $18
 > $0200 $20 $3d $63 $4c $00 $03
+r pc=$0200, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $0300
+; Restore the selected room logic, then reproduce $61FC-$6218 to overlay it.
+bank ram
+bload "extracted/e1/e1_side2_room0_logic_ca00.bin" 0 $ca00
+bank cpu
+> $0091 $01 $26 $08 $78 $70 $01 $0f
 r pc=$0200, a=$00, x=$00, y=$00, sp=$ff, fl=$20
 until $0300
 radix h
@@ -19,10 +28,6 @@ bsave "extracted/e1/e1_room0_screen.bin" 0 $0400 $07e7
 bsave "extracted/e1/e1_room0_charset.bin" 0 $2000 $27ff
 bank cpu
 bsave "extracted/e1/e1_room0_color.bin" 0 $d800 $dbe7
-bank ram
-bload "extracted/e1/e1_side2_room0_overlay_ac80.bin" 0 $ac80
-bload "extracted/e1/e1_side2_room0_logic_ca00.bin" 0 $ca00
-bank cpu
 ; Initialize room records and build the first sprite frame without replacing screen RAM.
 > $0002 $ff $ff $ff $ff
 > $009d $ff $ff $ff $ff

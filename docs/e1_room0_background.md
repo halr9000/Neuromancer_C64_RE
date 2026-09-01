@@ -4,17 +4,21 @@
 
 The VIC-II setup routine at `$4B22` selects bank 0, screen RAM at `$0400`, and
 character RAM at `$2000` (`$DD00=$03`, `$D018=$18`). The earlier room-ready
-snapshot did not contain an initialized screen. Routine `$633D` is the missing
-frontend decoder: with `$91-$97 = 00 27 00 C0 C0 00 18`, it expands the side-1
-frontend stream at `$CA00` into screen RAM and color RAM.
+snapshot did not contain an initialized screen. Routine `$633D` is used twice:
+first, `$91-$97 = 00 27 00 C0 C0 00 18` expands the side-1 frontend stream at
+`$CA00` into the persistent display shell; then the room loader restores the
+selected room module at `$CA00` and invokes `$633D` with
+`$91-$97 = 01 26 08 78 70 01 0F` to overlay the room scene. Running only the
+first decode produced the repetitive tile output previously published by the
+web port. Running only the second left the lower shell uninitialized.
 
 `tools/vice_room0_background_probe.mon` reproduces the decode in VICE before
 room-0 entity and sprite initialization. It exports the exact buffers consumed
 by the browser renderer:
 
-- `e1_room0_screen.bin`: 1000 bytes, SHA-256 `2B96F5BB67AEB10806D6506CF2D306E798EEBE054563B9B7CBAAA66832AFD05D`
-- `e1_room0_charset.bin`: 2048 bytes, SHA-256 `D557BF10B0037D946C78978983C24D7F264CEC65B3CC173916C32D95AA759707`
-- `e1_room0_color.bin`: 1000 bytes, SHA-256 `E27A4B66BDDFA8AD0D8CF69BBC764CF5DC3B38A9CE838CFC46236FF9DBB5FF66`
+- `e1_room0_screen.bin`: 1000 bytes, SHA-256 `9F308EBEA687B1B460DC60D3800811959B65A6E009E59805ED234884A86C2382`
+- `e1_room0_charset.bin`: 2048 bytes, SHA-256 `11DDD2B5FC37B46F0BB91C64BB87D80A2B727602D2F39B256D399AC8503AA1B7`
+- `e1_room0_color.bin`: 1000 bytes, SHA-256 `A88E8E6EC1E5B46AAD305B3A4C745CEC5A2B4BB943713591D6753F6B29A5A100`
 
 The checked VICE screenshot is `extracted/e1/e1_vice_room0_background_probe.png`.
 It shows a coherent Chatsubo bar frame. The web data generator preserves the
@@ -34,6 +38,7 @@ The VIC positions `(64,88)/(64,109)` map to active-display coordinates
 `npm run compare:frame` exports the exact browser compositor buffer, crops the
 VICE reference, and writes `e1_vice_room0_active.png`,
 `e1_browser_room0.png`, `e1_room0_pixel_diff.png`, and
-`e1_room0_pixel_diff.json`. The checked report records zero mismatched pixels,
-zero mismatched channels, and a maximum channel delta of zero across all
-64,000 pixels.
+`e1_room0_pixel_diff.json`. The checked report records 541 mismatched pixels,
+all confined to the animated sprite layer; the 40-by-25 character display is
+byte-identical to the buffers exported from the same VICE run. Pixel-perfect
+sprite timing remains separate from the corrected background decode.

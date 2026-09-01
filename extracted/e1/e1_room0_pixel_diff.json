@@ -9,11 +9,11 @@
     "width": 320,
     "height": 200
   },
-  "mismatched_pixels": 0,
-  "mismatched_channels": 0,
-  "maximum_channel_delta": 0,
+  "mismatched_pixels": 541,
+  "mismatched_channels": 1623,
+  "maximum_channel_delta": 61,
   "source_sha256": {
-    "vice_screenshot": "b0b9c80dd171c3dda0f83dda8b8bb21bb43a4b810749543cc8592a4c7f83edaf",
-    "browser_frame": "e1df973b0f6ac6f31fcae30d9dd8c1431b7b032aabe6ecc609fa745059cf7ba0"
+    "vice_screenshot": "4a5a5cc0b922b03ffeaf1b8a4d4f90533680358adf1d02104edf1289cf93983a",
+    "browser_frame": "34bb9f91972813f3204b3b4fa6ccbc3d0bf443d08718d97e402975cf8905d1b7"
   }
 }
