@@ -1,0 +1,50 @@
+logname "extracted/e1/room6/e1_vice_room6_background_probe.log"
+log on
+device c:
+bank ram
+bload "extracted/e1/room6/e1_room6_ready_memory.bin" 0 $0000
+bank cpu
+> $0000 $2f
+> $0001 $35
+; Initialize the persistent frontend shell exactly as startup $4F23-$4F69 does.
+bank ram
+bload "extracted/e1/e1_side1_frontend_ca00.bin" 0 $ca00
+bank cpu
+> $0091 $00 $27 $00 $c0 $c0 $00 $18
+> $0200 $20 $3d $63 $4c $00 $03
+r pc=$0200, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $0300
+; Restore Cheap Hotel room logic and reproduce room-loader decode $61FC-$6218.
+bank ram
+bload "extracted/e1/room6/e1_room6_logic_ca00.bin" 0 $ca00
+bank cpu
+> $0091 $01 $26 $08 $78 $70 $01 $0f
+r pc=$0200, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $0300
+bank ram
+bsave "extracted/e1/room6/e1_room6_screen.bin" 0 $0400 $07e7
+bsave "extracted/e1/room6/e1_room6_charset.bin" 0 $2000 $27ff
+bank cpu
+bsave "extracted/e1/room6/e1_room6_color.bin" 0 $d800 $dbe7
+; Initialize selected-room entities and produce the first sprite frame.
+> $0002 $ff $ff $ff $ff
+> $009d $ff $ff $ff $ff
+r pc=$621b, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $6298
+> $dd02 $3f
+> $dd00 $03
+> $d011 $1b
+> $d016 $08
+> $d018 $18
+r pc=$4d46, a=$00, x=$00, y=$00, sp=$ff, fl=$20
+until $4d81
+> $0200 $ea $4c $00 $02
+r pc=$0200
+radix d
+step 20000
+bank ram
+bsave "extracted/e1/room6/e1_room6_sprite_workspace.bin" 0 $0840 $08bf
+bank cpu
+screenshot "extracted/e1/room6/e1_vice_room6_background_probe" 2
+r
+q

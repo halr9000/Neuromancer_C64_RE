@@ -1,0 +1,25 @@
+{
+  "format": [
+    "x",
+    "y",
+    "width",
+    "height",
+    "event"
+  ],
+  "source": "PAX shell inline pointer at 0x7454 -> 0x774D",
+  "sets": [
+    {
+      "name": "pax_primary",
+      "address": "0x774D",
+      "regions": [
+        {
+          "x": 4,
+          "y": 5,
+          "width": 2,
+          "height": 25,
+          "event": 1
+        }
+      ]
+    }
+  ]
+}

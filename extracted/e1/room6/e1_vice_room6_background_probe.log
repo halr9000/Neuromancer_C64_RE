@@ -1,0 +1,24 @@
+Setting default device to `Computer'
+Loading 'extracted/e1/room6/e1_room6_ready_memory.bin' from 0000 to FFFF (10000 bytes)
+Loading 'extracted/e1/e1_side1_frontend_ca00.bin' from CA00 to D6BF (0CC0 bytes)
+UNTIL: 1  C:$0300  (Stop on exec)
+#1 (Stop on  exec 0300)  130/$082,  47/$2f
+.C:0300  34 03       NOOP $03,X     - A:2B X:28 Y:C0 SP:ff ..-...ZC     794477
+Loading 'extracted/e1/room6/e1_room6_logic_ca00.bin' from CA00 to D9CC (0FCD bytes)
+UNTIL: 1  C:$0300  (Stop on exec)
+#1 (Stop on  exec 0300)  151/$097,  24/$18
+.C:0300  34 03       NOOP $03,X     - A:AA X:27 Y:78 SP:ff ..-...ZC    1365801
+Saving file 'extracted/e1/room6/e1_room6_screen.bin' from $0400 to $07e7
+Saving file 'extracted/e1/room6/e1_room6_charset.bin' from $2000 to $27ff
+Saving file 'extracted/e1/room6/e1_room6_color.bin' from $d800 to $dbe7
+UNTIL: 1  C:$6298  (Stop on exec)
+#1 (Stop on  exec 6298)  247/$0f7,   9/$09
+.C:6298  28          PLP            - A:FD X:FF Y:FF SP:ff N.-B...C    1548738
+UNTIL: 1  C:$4d81  (Stop on exec)
+#1 (Stop on  exec 4d81)  256/$100,  39/$27
+.C:4d81  4C 65 4E    JMP $4E65      - A:FF X:FF Y:00 SP:ff ..-...ZC    1549335
+Stepping through the next 20000 instruction(s).
+.C:0200  EA          NOP            - A:FF X:FF Y:00 SP:ff ..-...ZC    1602087
+Saving file 'extracted/e1/room6/e1_room6_sprite_workspace.bin' from $0840 to $08bf
+  ADDR A  X  Y  SP 00 01 NV-BDIZC LIN CYC  STOPWATCH
+.;0200 ff ff 00 ff 2f 35 00100011 157 060    1602087

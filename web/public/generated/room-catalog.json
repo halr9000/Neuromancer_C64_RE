@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "rooms": [
+    {
+      "id": 0,
+      "name": "Chatsubo",
+      "location": "In the Chatsubo Bar.",
+      "description": "You've just spent the night sleeping face-down in a plate of synth-spaghetti in a bar called the Chatsubo. After rubbing the sauce out of your eyes, you can see Chiba sky through the window, the color of television tuned to a dead channel.\r\rA PAX booth is on the wall. Ratz's prosthetic Russian arm whines as he wipes the bar.  His teeth are a webwork of East European steel and brown decay.",
+      "frame": "./generated/catalog/room0.png",
+      "frameSha256": "f7747bacb84a0559c2df0f9bb014d5cb510c5a8dad669efd4ba69447468008d2",
+      "terminalEnabled": true,
+      "entityCount": 2,
+      "provenance": {
+        "side": 2,
+        "start": "T06/S00",
+        "moduleSha256": "e0b974a828ba62a90c8ce1faa54b8a8335184218291e8bc2d268016a6eb870b0"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Cheap Hotel",
+      "location": "You're at the Cheap Hotel.",
+      "description": "Cheap Hotel smells of cigarettes and cheap perfume.  The roof is made of thin laminated matting that rattles in the wind.  White fiberglass coffins serve as the rooms, stacked like surplus Godzilla teeth.  Your coffin is number 92, three meters long with an oval hatch at the end. There is also a PAX booth here.",
+      "frame": "./generated/catalog/room6.png",
+      "frameSha256": "2665c471fc9ea3d2092212e609172183a807048792d5bb21523e79a2cf581ca5",
+      "terminalEnabled": true,
+      "entityCount": 1,
+      "provenance": {
+        "side": 2,
+        "start": "T11/S14",
+        "moduleSha256": "81b9263440aa2bd8da6a1260f9272955cf0368609f439f2f7beb017f8b902746"
+      }
+    }
+  ]
+}

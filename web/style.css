@@ -77,9 +77,42 @@ footer {
 footer p { margin: 0; }
 .counter { color: #a4b6a1; white-space: nowrap; }
 
+.evidence {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #303b32;
+}
+
+.evidence h2 { margin: .15rem 0 .5rem; color: #e0e7dc; font-size: clamp(1.25rem, 3vw, 1.8rem); }
+.evidence-intro { max-width: 68ch; margin: 0 0 1.5rem; color: #91a08f; line-height: 1.55; }
+.room-catalog { display: grid; gap: 1.25rem; }
+.room-card {
+  display: grid;
+  grid-template-columns: minmax(280px, 320px) 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid #344037;
+  background: #0b0e0c;
+}
+.room-card img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #5b695c;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+.room-copy h3 { margin: .2rem 0 .15rem; color: #fff3d6; font-size: 1.35rem; }
+.room-copy p { line-height: 1.48; }
+.room-number, .room-facts { color: #748675; font-size: .7rem; letter-spacing: .08em; }
+.room-number { margin: 0; }
+.room-location { margin: 0 0 .8rem; color: #a8d5a0; }
+.room-facts { margin-bottom: 0; }
+
 @media (max-width: 620px) {
   .terminal-shell { width: 100vw; min-height: 100vh; border: 0; border-radius: 0; padding: 1rem .75rem; }
   header { grid-template-columns: 1fr; }
   .status { margin-top: .35rem; }
   footer { flex-direction: column; }
+  .room-card { grid-template-columns: 1fr; }
 }

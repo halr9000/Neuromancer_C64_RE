@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "room_id": 6,
+  "display_name": "You're at the Cheap Hotel.",
+  "source_memory_sha256": "a2972b228a6305475f84aa82f7c18cf25d7c3fb144d14b9adbe5b2d9bbd03e1a",
+  "selection": {
+    "room": {
+      "side": 2,
+      "track": 11,
+      "sector": 14
+    },
+    "location": {
+      "room_id": 0,
+      "index": 0,
+      "side": 2,
+      "track": 1,
+      "sector": 17
+    }
+  },
+  "modules": [
+    {
+      "name": "location_room0_ac80",
+      "role": "selected location overlay retained while entering the room",
+      "start": "T01/S17",
+      "sectors": [
+        "T01/S17",
+        "T01/S18",
+        "T01/S19",
+        "T01/S20",
+        "T02/S00",
+        "T02/S01",
+        "T02/S02",
+        "T02/S03"
+      ],
+      "sector_count": 8,
+      "encoded_length": 1856,
+      "destination": "0xAC80",
+      "end_exclusive": "0xB3C0",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xAC80-0xB3BF"
+      ],
+      "sha256": "774af0a906e953d352e637889eb1dc48a03be95ca4c05ccfb70f98f4c8d52dce",
+      "source_image_sha256": "6bf683b9c688e3c999ec46657d18bbcc7268c5538d22440a8280110dcb1c30d0"
+    },
+    {
+      "name": "room6_logic_ca00",
+      "role": "room logic, compressed display, strings, and sprite data",
+      "start": "T11/S14",
+      "sectors": [
+        "T11/S14",
+        "T11/S15",
+        "T11/S16",
+        "T11/S17",
+        "T11/S18",
+        "T11/S19",
+        "T11/S20",
+        "T12/S00",
+        "T12/S01",
+        "T12/S02",
+        "T12/S03",
+        "T12/S04",
+        "T12/S05",
+        "T12/S06",
+        "T12/S07",
+        "T12/S08"
+      ],
+      "sector_count": 16,
+      "encoded_length": 4045,
+      "destination": "0xCA00",
+      "end_exclusive": "0xD9CD",
+      "wraps_address_space": false,
+      "address_ranges": [
+        "0xCA00-0xD9CC"
+      ],
+      "sha256": "81b9263440aa2bd8da6a1260f9272955cf0368609f439f2f7beb017f8b902746",
+      "source_image_sha256": "6bf683b9c688e3c999ec46657d18bbcc7268c5538d22440a8280110dcb1c30d0"
+    }
+  ],
+  "runtime": {
+    "address": "0xF000",
+    "length": 3072,
+    "sha256": "060ee752b86c3e870267c7caa72229ee2751fbd982c18c7ea128b86f1a052ac0",
+    "text_root": "0xF0A3"
+  },
+  "strings": [
+    {
+      "id": 0,
+      "text": "Cheap Hotel smells of cigarettes and cheap perfume.  The roof is made of thin laminated matting that rattles in the wind.  White fiberglass coffins serve as the rooms, stacked like surplus Godzilla teeth.  Your coffin is number 92, three meters long with an oval hatch at the end. There is also a PAX booth here."
+    },
+    {
+      "id": 1,
+      "text": "You're at the Cheap Hotel."
+    },
+    {
+      "id": 2,
+      "text": "Your room service order is delivered to you."
+    },
+    {
+      "id": 3,
+      "text": "The management kicks you out for not paying your bill."
+    },
+    {
+      "id": 4,
+      "text": "You're carrying too much stuff to receive your order.  Leave hotel, discard items and try again."
+    }
+  ],
+  "entities": [
+    {
+      "index": 6,
+      "address": "0xC430",
+      "raw": "0601000033ff0000",
+      "slot": 1,
+      "render_flags": 1,
+      "logical_x": 0,
+      "logical_y": 0,
+      "colors": 51,
+      "activation": 255
+    }
+  ],
+  "terminal": {
+    "pax_enabled": true,
+    "room_flag_address": "0xF027",
+    "room_flag_value": 1,
+    "resident_entry": "0x49CB",
+    "shell_entry": "0x7400"
+  },
+  "hit_regions": {
+    "format": [
+      "x",
+      "y",
+      "width",
+      "height",
+      "event"
+    ],
+    "source": "PAX shell inline pointer at 0x7454 -> 0x774D",
+    "sets": [
+      {
+        "name": "pax_primary",
+        "address": "0x774D",
+        "regions": [
+          {
+            "x": 4,
+            "y": 5,
+            "width": 2,
+            "height": 25,
+            "event": 1
+          }
+        ]
+      }
+    ]
+  },
+  "native_assets": {
+    "screen": {
+      "address": "0x0400",
+      "length": 1000
+    },
+    "charset": {
+      "address": "0x2000",
+      "length": 2048
+    },
+    "color": {
+      "address": "0xD800",
+      "length": 1000
+    },
+    "sprite_workspace": {
+      "address": "0x0840",
+      "length": 128
+    },
+    "logical_dimensions": [
+      320,
+      200
+    ]
+  }
+}
