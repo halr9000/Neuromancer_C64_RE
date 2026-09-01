@@ -37,7 +37,7 @@
 
 - [x] Generalize room extraction around the traced destination ID.
 - [x] Export native room, sprite, terminal, hit-region, and provenance assets plus a visual catalog.
-- [ ] Commit, push, deploy, and verify the milestone.
+- [x] Commit, push, deploy, and verify the milestone.
 
 ### Task 4: Four-times placeholder pipeline
 
